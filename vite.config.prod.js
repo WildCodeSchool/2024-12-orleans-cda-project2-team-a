@@ -3,6 +3,6 @@ import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/2023-09-orleans-cda-projet1-template/', // TODO: use the right repo name
+  base: '/Projet/', // TODO: use the right repo name
   plugins: [react()],
 });
