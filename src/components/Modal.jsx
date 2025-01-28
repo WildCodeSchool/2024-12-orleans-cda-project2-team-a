@@ -5,8 +5,18 @@ const Modal = ({ open, onClose }) => {
 
   return (
     <>
-      <h1>hello from modal</h1>
-      <button onClick={onClose}>Close</button>
+      <div className='overlay'></div>
+
+      <div className='modal'>
+        <img src='/public/marspider.webp' alt='marvel' />
+        <h1>Marvel</h1>
+        <div className='comicsContent'>
+          <img src='..//public/marvel.jpg' alt='comic presentation' />
+          <img src='..//public/marvel.jpg' alt='comic presentation' />
+          <img src='..//public/marvel.jpg' alt='comic presentation' />
+        </div>
+        <button onClick={onClose}>X</button>
+      </div>
     </>
   );
 };
