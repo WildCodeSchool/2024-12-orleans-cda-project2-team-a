@@ -1,4 +1,4 @@
-import '../style/Modal.scss';
+import '../style/modal.scss';
 
 const Modal = ({ open, onClose }) => {
   if (!open) return null;
@@ -8,7 +8,7 @@ const Modal = ({ open, onClose }) => {
       <div className='overlay'></div>
 
       <div className='modal'>
-        <img src='/public/marspider.webp' alt='marvel' />
+        <img src='/marspider.webp' alt='marvel' />
         <h1>Marvel</h1>
         <div className='comicsContent'>
           <img src='..//public/marvel.jpg' alt='comic presentation' />

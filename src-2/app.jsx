@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import './App.scss';
-import Modal from './components/Modal';
+import Modal from './components/modal';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
