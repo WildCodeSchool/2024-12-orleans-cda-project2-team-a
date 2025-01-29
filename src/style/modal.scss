@@ -1,6 +1,30 @@
 @use 'settings' as *;
 
 .modal {
+  //version mobile:
+  @media (max-width: 768px) {
+    width: 90%;
+    height: 90%;
+    padding: 10px;
+    div {
+      img {
+        width: 100%;
+      }
+      h1 {
+        font-size: 1rem;
+        top: 150px;
+        width: 100%;
+        margin-top: -20px;
+      }
+    }
+    .comics-content {
+      height: 30vh;
+      img {
+        width: 40%;
+      }
+    }
+  }
+
   position: fixed;
   text-align: center;
   left: 50%;
@@ -26,7 +50,7 @@
     h1 {
       position: absolute;
       top: 238px;
-      background: #000000bf;
+      background: $background-card;
       padding: 10px;
       left: 50%;
       border: 1px solid #f4f4f4;
@@ -40,16 +64,17 @@
   }
 
   .comics-content {
-    background-color: $background-comics;
+    background-color: #000000bf;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
+    height: 20vh;
 
     img {
       width: 28%;
-      height: 100px;
     }
   }
 
