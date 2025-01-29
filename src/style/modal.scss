@@ -1,0 +1,78 @@
+@use 'settings' as *;
+
+.modal {
+  position: fixed;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  width: 18%;
+  transform: translate(-50%, -50%);
+  background: $background-image;
+  background-position: center;
+  background-size: cover;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: $background-shadow;
+  z-index: 1000;
+
+  div {
+    margin: 0 0 20px 0px;
+    position: relative;
+
+    img {
+      width: 105%;
+    }
+
+    h1 {
+      position: absolute;
+      top: 238px;
+      background: #000000bf;
+      padding: 10px;
+      left: 50%;
+      border: 1px solid #f4f4f4;
+      border-radius: 10px;
+      transform: translateX(-50%);
+      color: #f4f4f4;
+      width: 50%;
+      font-size: 1.5rem;
+      margin-top: -26px;
+    }
+  }
+
+  .comics-content {
+    background-color: $background-comics;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    img {
+      width: 28%;
+      height: 100px;
+    }
+  }
+
+  button {
+    padding: 8px;
+    border-radius: 50px;
+    border: none;
+    transition: all 0.5s ease;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+      background-color: #0f0;
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
