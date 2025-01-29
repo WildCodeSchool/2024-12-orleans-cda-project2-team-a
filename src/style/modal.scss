@@ -1,3 +1,5 @@
+@use 'settings' as *;
+
 .modal {
   position: fixed;
   text-align: center;
@@ -5,27 +7,50 @@
   top: 50%;
   width: 18%;
   transform: translate(-50%, -50%);
-  background-color: ulr('../../public/44gbw2j81od51.webp');
+  background: $background-image;
+  background-position: center;
+  background-size: cover;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: $background-shadow;
   z-index: 1000;
 
-  img {
-    width: 100px;
-  }
+  div {
+    margin: 0 0 20px 0px;
+    position: relative;
 
-  h1 {
-    font-size: 1.5rem;
-    margin: 10px 0;
+    .thanos {
+      width: 250px;
+    }
+
+    h1 {
+      position: absolute;
+      top: 238px;
+      background: #000000bf;
+      padding: 10px;
+      left: 50%;
+      border: 1px solid #f4f4f4;
+      border-radius: 10px;
+      transform: translateX(-50%);
+      color: #f4f4f4;
+      width: 50%;
+      font-size: 1.5rem;
+      margin-top: -26px;
+    }
   }
 
   .comics-content {
+    background-color: $background-comics;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
   }
 
   button {

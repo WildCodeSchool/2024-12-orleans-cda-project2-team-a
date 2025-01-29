@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import './App.scss';
+import './app.scss';
 import Modal from './components/modal';
 
 function App() {
