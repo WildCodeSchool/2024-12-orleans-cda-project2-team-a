@@ -16,7 +16,7 @@ function App() {
   return (
     <div className='absolute-center-container'>
       <Modal open={isOpen} onClose={onClose} />
-      <button className='openModal' onClick={() => toggleModal(true)}>
+      <button className='open-modal' onClick={() => toggleModal(true)}>
         Modal button
       </button>
     </div>

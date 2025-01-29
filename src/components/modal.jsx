@@ -10,10 +10,10 @@ const Modal = ({ open, onClose }) => {
       <div className='modal'>
         <img src='/marspider.webp' alt='marvel' />
         <h1>Marvel</h1>
-        <div className='comicsContent'>
-          <img src='..//public/marvel.jpg' alt='comic presentation' />
-          <img src='..//public/marvel.jpg' alt='comic presentation' />
-          <img src='..//public/marvel.jpg' alt='comic presentation' />
+        <div className='comics-content'>
+          <img src='/marvel.jpg' alt='comic presentation' />
+          <img src='../marvel.jpg' alt='comic presentation' />
+          <img src='../marvel.jpg' alt='comic presentation' />
         </div>
         <button onClick={onClose}>X</button>
       </div>
