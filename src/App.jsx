@@ -1,7 +1,12 @@
 import './App.css';
+import Card from './components/card.tsx';
 
 function App() {
-  return <div className='absolute-center-container'>{'Coucou !'}</div>;
+  return  <>
+  <body>
+ <Card/>
+  </body>
+  </>
 }
 
 export default App;
