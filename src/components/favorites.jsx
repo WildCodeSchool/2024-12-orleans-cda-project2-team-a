@@ -1,4 +1,4 @@
-import '/src/favorites.scss';
+import '/src/style/favorites.scss';
 
 function Favorites() {
   return (

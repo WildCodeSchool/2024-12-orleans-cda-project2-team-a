@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import '/src/navbar.scss';
+import '/src/style/navbar.scss';
 
 function Navbar() {
   const [input, setInput] = useState('');
