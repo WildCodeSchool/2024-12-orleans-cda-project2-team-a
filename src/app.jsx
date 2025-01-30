@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import Card from './components/card';
+
 import './app.scss';
+import Card from './components/card';
 import Modal from './components/modal';
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
       <button className='open-modal' onClick={() => toggleModal(true)}>
         Modal button
       </button>
-      <Card/>
+      <Card />
     </div>
   );
 }

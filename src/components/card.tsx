@@ -1,5 +1,6 @@
 import React from 'react';
-import '../style/card.scss'
+
+import '../style/card.scss';
 
 function Card() {
   return (
@@ -7,7 +8,7 @@ function Card() {
       <body>
         <div className='flexBox'>
           <div className='card'>
-            <img className='thanos' src='../public/imagelogo/thanos.png' alt='' />
+            <img className='thanos' src='/imagelogo/thanos.png' alt='' />
 
             <div>
               <div className='rectangle'></div>
@@ -24,7 +25,7 @@ function Card() {
             </div>
           </div>
           <div className='card'>
-            <img className='thanos' src='../public/imagelogo/thanos.png' alt='' />
+            <img className='thanos' src='/imagelogo/thanos.png' alt='' />
 
             <div>
               <div className='rectangle'></div>
@@ -41,7 +42,7 @@ function Card() {
             </div>
           </div>
           <div className='card'>
-            <img className='thanos' src='../public/imagelogo/thanos.png' alt='' />
+            <img className='thanos' src='/imagelogo/thanos.png' alt='' />
 
             <div>
               <div className='rectangle'></div>
@@ -58,7 +59,7 @@ function Card() {
             </div>
           </div>
           <div className='card'>
-            <img className='thanos' src='../public/imagelogo/thanos.png' alt='' />
+            <img className='thanos' src='/imagelogo/thanos.png' alt='' />
 
             <div>
               <div className='rectangle'></div>
@@ -75,7 +76,7 @@ function Card() {
             </div>
           </div>
           <div className='card'>
-            <img className='thanos' src='../public/imagelogo/thanos.png' alt='' />
+            <img className='thanos' src='/imagelogo/thanos.png' alt='' />
 
             <div>
               <div className='rectangle'></div>
@@ -92,7 +93,7 @@ function Card() {
             </div>
           </div>
           <div className='card'>
-            <img className='thanos' src='../public/imagelogo/thanos.png' alt='' />
+            <img className='thanos' src='/imagelogo/thanos.png' alt='' />
 
             <div>
               <div className='rectangle'></div>
@@ -109,7 +110,7 @@ function Card() {
             </div>
           </div>
           <div className='card'>
-            <img className='thanos' src='../public/imagelogo/thanos.png' alt='' />
+            <img className='thanos' src='/imagelogo/thanos.png' alt='' />
 
             <div>
               <div className='rectangle'></div>
@@ -126,7 +127,7 @@ function Card() {
             </div>
           </div>
           <div className='card'>
-            <img className='thanos' src='../public/imagelogo/thanos.png' alt='' />
+            <img className='thanos' src='/imagelogo/thanos.png' alt='' />
 
             <div>
               <div className='rectangle'></div>

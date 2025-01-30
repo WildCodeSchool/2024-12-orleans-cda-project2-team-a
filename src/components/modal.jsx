@@ -9,13 +9,13 @@ const Modal = ({ open, onClose }) => {
 
       <div className='modal'>
         <div>
-          <img className='thanos' src='../public/imagelogo/thanos.png' alt='marvel' />
+          <img className='thanos' src='/imagelogo/thanos.png' alt='marvel' />
           <h1>Thanos</h1>
         </div>
         <div className='comics-content'>
-          <img src='../public/imagelogo/comics.png' alt='comic presentation' />
-          <img src='../public/imagelogo//comics.png' alt='comic presentation' />
-          <img src='../public/imagelogo//comics.png' alt='comic presentation' />
+          <img src='/imagelogo/comics.png' alt='comic presentation' />
+          <img src='/imagelogo//comics.png' alt='comic presentation' />
+          <img src='/imagelogo//comics.png' alt='comic presentation' />
         </div>
         <button onClick={onClose}>X</button>
       </div>
