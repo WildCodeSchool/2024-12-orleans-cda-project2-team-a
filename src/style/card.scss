@@ -1,0 +1,141 @@
+body {
+    background: linear-gradient(#670208, #151414, #670208);
+    background-repeat: no-repeat;
+  }
+  
+  .card {
+    background-image: url(/public/imagelogo/fond2.jpg);
+    width: 100%;
+    height: 105%;
+    object-fit: cover;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    border:
+      solid 4px,
+      white;
+    border-radius: 8px;
+  }
+  .thanos {
+    width: 72%;
+    margin-left: 14%;
+    border: solid 4.5px black;
+    margin-top: 4%;
+    border-radius: 8px;
+  }
+  h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 16%;
+    font-size: 1.5rem;
+    margin-top: -11%;
+    opacity: 90%;
+    margin-left: -5%;
+  }
+  .rectangle {
+    border: solid, white;
+    background-color: black;
+    opacity: 80%;
+    width: 38%;
+    height: 159%;
+    margin-top: -20px;
+    margin-left: 93px;
+    border-radius: 8px;
+  }
+  h2 {
+    color: white;
+    margin-top: -32%;
+    margin-left: 6%;
+    position: relative;
+    padding-bottom: 8%;
+  }
+  p {
+    font-size: 0.7rem;
+    position: relative;
+    color: white;
+    max-width: 90%;
+    margin-left: 6%;
+    margin-top: -6%;
+  }
+  .bio {
+    border:
+      solid 1.6px,
+      white;
+    background-color: black;
+    opacity: 80%;
+    height: 105px;
+    width: 310px;
+    margin-left: 1.4%;
+    margin-top: 5%;
+    border-radius: 8px;
+    
+  }
+  .flexBox {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    margin-left: -20px;
+    padding: 2%;
+  }
+  
+  @media (max-width: 500px) {
+    .flexBox {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-row: 1fr;
+    }
+    .card {
+      background-image: url(../public/imagelogo/fond2.jpg);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      border:
+        solid 4px,
+        white;
+      border-radius: 8px;
+    }
+    .thanos {
+      width: 80%;
+      height: 80%;
+      object-fit: cover;
+      margin-left: 13px;
+      border: solid 4.5px black;
+      margin-top: 5px;
+      border-radius: 8px;
+    }
+    h1 {
+      color: white;
+      text-align: center;
+      margin-bottom: 33px;
+      margin-top: -24px;
+      font-size: 1.2rem;
+      margin-top: -24px;
+      opacity: 90%;
+      margin-left: -10px;
+    }
+    .rectangle {
+      border: solid, white;
+      background-color: black;
+      opacity: 80%;
+      width: 50%;
+      height: 20px;
+      margin-top: -2px;
+      margin-left: 35px;
+      border-radius: 8px;
+    }
+    h2 {
+      display: none;
+    }
+    p {
+      display: none;
+    }
+    .bio {
+      display: none;
+    }
+  }
+  
