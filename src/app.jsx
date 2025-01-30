@@ -1,9 +1,9 @@
-import './app.scss';
-import Modal from './components/modal';
-import Favorites from "./components/favorites"
-import NavBar from "./components/navbar"
 import { useState } from 'react';
 
+import './app.scss';
+import Favorites from './components/favorites';
+import Modal from './components/modal';
+import NavBar from './components/navbar';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,8 +22,8 @@ function App() {
         Modal button
       </button>
 
-      <NavBar/>
-      <Favorites/>
+      <NavBar />
+      <Favorites />
     </div>
   );
 }

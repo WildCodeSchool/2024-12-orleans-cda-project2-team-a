@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
 
-.Favorite {
+.favorite {
   h1 {
     background-color: red;
     font-family: 'Aclonica', sans-serif;
@@ -26,18 +26,9 @@
     justify-content: space-evenly;
     // background-color: blue;
   }
-  .cards2 {
-    display: flex;
+ 
 
-    padding-left: 20px;
-    list-style: none;
-    margin-top: 20px;
-    justify-content: center;
-    justify-content: space-evenly;
-    // background-color: blue;
-  }
-
-  .carte1 {
+  .carte {
     border-radius: 10px;
     width: 170px;
     height: 230px;
@@ -45,21 +36,5 @@
     background-color: red;
   }
 
-  .carte2 {
-    border-radius: 10px;
-    padding-left: 20px;
-    width: 170px;
-    height: 230px;
-    background-color: red;
-  }
-
-  .carte3 {
-    border-radius: 10px;
-    width: 170px;
-    height: 230px;
-
-    padding-left: 20px;
-
-    background-color: red;
-  }
+  
 }
