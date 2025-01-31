@@ -4,6 +4,8 @@ import './app.scss';
 import Card from './components/card';
 import Modal from './components/modal';
 
+// import Burger from './components/burger';
+
 function App() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -20,6 +22,7 @@ function App() {
       <button className='open-modal' onClick={() => toggleModal(true)}>
         Modal button
       </button>
+      {/* <Burger/> */}
       <Card />
     </div>
   );

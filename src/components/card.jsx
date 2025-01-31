@@ -1,5 +1,4 @@
-import React from 'react';
-
+// import React from 'react';
 import '../style/card.scss';
 
 function Card() {
@@ -96,9 +95,9 @@ function Card() {
             <div></div>
           </div>
         </div>
-        <nav className='fleche'>
+        <nav className='arrow'>
           <input type='image' id='image' alt='Login' src='/imagelogo/fleche-gauche.png' />
-          <input type='image' id='image' alt='Login' src='/imagelogo/fleche-test.png' />
+          <input type='image' id='image' alt='Login' src='/imagelogo/fleche-droite.png' />
         </nav>
       </body>
     </>
