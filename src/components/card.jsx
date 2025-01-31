@@ -6,7 +6,7 @@ function Card() {
       <body>
         <div className='flexBox'>
           <div className='card'>
-            <img className='thanos' src='/image-logo/thanos.png' alt='' />
+            <img className='thanos' src='/pictures/thanos.png' alt='' />
 
             <div>
               <div className='rectangle'></div>

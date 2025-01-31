@@ -2,6 +2,7 @@ import './app.scss';
 import Burger from './components/burger';
 import Card from './components/card';
 import Favorites from './components/favorites';
+import Footer from './components/footer';
 import NavBar from './components/navbar';
 import ProfilePage from './pages/profile-page';
 
@@ -9,15 +10,18 @@ import ProfilePage from './pages/profile-page';
 
 function App() {
   return (
-    <div>
-      <NavBar />
-      <Favorites />
-      <ProfilePage />
-      <div className='absolute-center-container'>
-        <Card />
+    <>
+      <div>
         <Burger />
+        <NavBar />
+        <Favorites />
+        <ProfilePage />
+        <div className='absolute-center-container'>
+          <Card />
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }
 
