@@ -1,6 +1,5 @@
 import './app.scss';
 import Card from './components/card';
-import Modal from './components/modal';
 
 import Favorites from './components/favorites';
 import NavBar from './components/navbar';
@@ -15,11 +14,7 @@ function App() {
       <NavBar />
       <Favorites />
       <ProfilePage />
-      <div className='absolute-center-container'>
-        <Modal open={isOpen} onClose={onClose} />
-        <button className='open-modal' onClick={() => toggleModal(true)}>
-          Modal button
-        </button>
+      <div className='absolute-center-container'>       
         <Card />
       </div>
     </div>
