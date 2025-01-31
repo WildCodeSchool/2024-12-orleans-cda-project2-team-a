@@ -1,10 +1,3 @@
-body {
-  background: linear-gradient(#670208, #151414, #670208);
-  // background-repeat: no-repeat;
-  // max-width: 900px;
-  // margin: auto;
-}
-
 .card {
   background-image: url(public/imagelogo/fond2.jpg);
   width: 170px;
@@ -17,6 +10,12 @@ body {
     solid 4px,
     white;
   border-radius: 8px;
+  body {
+    background: linear-gradient(#670208, #151414, #670208);
+    // background-repeat: no-repeat;
+    // max-width: 900px;
+    // margin: auto;
+  }
   .thanos {
     width: 94%;
     height: 62%;
