@@ -1,5 +1,5 @@
 import '../style/footer.scss';
-import Socials from './socials.jsx'
+import Socials from './socials.jsx';
 
 function Footer() {
   return (
@@ -24,7 +24,7 @@ function Footer() {
           <a href='https://help.marvel.com/'>Help/Faq</a>
         </div>
       </div>
-      <Socials/>
+      <Socials />
     </div>
   );
 }
