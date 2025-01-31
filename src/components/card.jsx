@@ -14,7 +14,7 @@ function Card() {
             </div>
           </div>
           <div className='card'>
-            <img className='thanos' src='/image-logo/thanos.png' alt='' />
+            <img className='thanos' src='/pictures/thanos.png' alt='' />
 
             <div>
               <div className='rectangle'></div>
@@ -23,7 +23,7 @@ function Card() {
             <div></div>
           </div>
           <div className='card'>
-            <img className='thanos' src='/image-logo/thanos.png' alt='' />
+            <img className='thanos' src='/pictures/thanos.png' alt='' />
 
             <div>
               <div className='rectangle'></div>
@@ -32,7 +32,7 @@ function Card() {
             <div></div>
           </div>
           <div className='card'>
-            <img className='thanos' src='/image-logo/thanos.png' alt='' />
+            <img className='thanos' src='/pictures/thanos.png' alt='' />
 
             <div>
               <div className='rectangle'></div>
@@ -40,16 +40,7 @@ function Card() {
             </div>
           </div>
           <div className='card'>
-            <img className='thanos' src='/image-logo/thanos.png' alt='' />
-
-            <div>
-              <div className='rectangle'></div>
-              <h1>Thanos</h1>
-            </div>
-            <div></div>
-          </div>
-          <div className='card'>
-            <img className='thanos' src='/image-logo/thanos.png' alt='' />
+            <img className='thanos' src='/pictures/thanos.png' alt='' />
 
             <div>
               <div className='rectangle'></div>
@@ -58,7 +49,7 @@ function Card() {
             <div></div>
           </div>
           <div className='card'>
-            <img className='thanos' src='/image-logo/thanos.png' alt='' />
+            <img className='thanos' src='/pictures/thanos.png' alt='' />
 
             <div>
               <div className='rectangle'></div>
@@ -67,7 +58,7 @@ function Card() {
             <div></div>
           </div>
           <div className='card'>
-            <img className='thanos' src='/image-logo/thanos.png' alt='' />
+            <img className='thanos' src='/pictures/thanos.png' alt='' />
 
             <div>
               <div className='rectangle'></div>
@@ -76,7 +67,7 @@ function Card() {
             <div></div>
           </div>
           <div className='card'>
-            <img className='thanos' src='/image-logo/thanos.png' alt='' />
+            <img className='thanos' src='/pictures/thanos.png' alt='' />
 
             <div>
               <div className='rectangle'></div>
@@ -85,7 +76,16 @@ function Card() {
             <div></div>
           </div>
           <div className='card'>
-            <img className='thanos' src='/image-logo/thanos.png' alt='' />
+            <img className='thanos' src='/pictures/thanos.png' alt='' />
+
+            <div>
+              <div className='rectangle'></div>
+              <h1>Thanos</h1>
+            </div>
+            <div></div>
+          </div>
+          <div className='card'>
+            <img className='thanos' src='/pictures/thanos.png' alt='' />
 
             <div>
               <div className='rectangle'></div>
@@ -95,8 +95,8 @@ function Card() {
           </div>
         </div>
         <nav className='arrow'>
-          <input type='image' id='image' alt='Login' src='/image-logo/fleche-gauche.png' />
-          <input type='image' id='image' alt='Login' src='/image-logo/fleche-droite.png' />
+          <input type='image' id='image' alt='Login' src='/pictures/fleche-gauche.png' />
+          <input type='image' id='image' alt='Login' src='/pictures/fleche-droite.png' />
         </nav>
       </body>
     </>

@@ -1,7 +1,7 @@
 function Burger() {
   return (
     <>
-      <nav>
+      <nav className='burger'>
         <div>
           <ul>
             <li>

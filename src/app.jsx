@@ -1,4 +1,5 @@
 import './app.scss';
+import Burger from './components/burger';
 import Card from './components/card';
 import Favorites from './components/favorites';
 import NavBar from './components/navbar';
@@ -14,6 +15,7 @@ function App() {
       <ProfilePage />
       <div className='absolute-center-container'>
         <Card />
+        <Burger />
       </div>
     </div>
   );
