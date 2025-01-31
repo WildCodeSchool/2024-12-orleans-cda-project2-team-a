@@ -24,8 +24,8 @@ function App() {
         <Modal open={isOpen} onClose={onClose} />
         <button className='open-modal' onClick={() => toggleModal(true)}>
           Modal button
-        </button> 
-          <Card />
+        </button>
+        <Card />
       </div>
     </>
   );
