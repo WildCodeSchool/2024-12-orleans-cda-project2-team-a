@@ -1,8 +1,33 @@
 @use 'settings' as *;
 
 .modal {
+  //version mobile:
+  @media (max-width: 768px) {
+    width: 90%;
+    height: 90%;
+    padding: 10px;
+    div {
+      img {
+        width: 100%;
+      }
+      h1 {
+        font-size: 1rem;
+        top: 150px;
+        width: 100%;
+        margin-top: -20px;
+      }
+    }
+    .comics-content {
+      height: 30vh;
+      img {
+        width: 40%;
+      }
+    }
+  }
+
   position: fixed;
   text-align: center;
+  border: 2 solid $text-color;
   left: 50%;
   top: 50%;
   width: 18%;
@@ -26,13 +51,13 @@
     h1 {
       position: absolute;
       top: 238px;
-      background: #000000bf;
+      background: $background-card;
       padding: 10px;
       left: 50%;
-      border: 1px solid #f4f4f4;
+      border: 1px solid $text-color;
       border-radius: 10px;
       transform: translateX(-50%);
-      color: #f4f4f4;
+      color: $text-color;
       width: 50%;
       font-size: 1.5rem;
       margin-top: -26px;
@@ -41,15 +66,16 @@
 
   .comics-content {
     background-color: $background-comics;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
+    height: 20vh;
 
     img {
       width: 28%;
-      height: 100px;
     }
   }
 
@@ -62,7 +88,7 @@
     &:hover {
       cursor: pointer;
       transform: scale(1.1);
-      background-color: #0f0;
+      background-color: $button-color-hover;
     }
   }
 }
