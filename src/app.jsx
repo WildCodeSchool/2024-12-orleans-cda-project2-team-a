@@ -2,7 +2,6 @@ import './app.scss';
 
 import Favorites from './components/favorites';
 import NavBar from './components/navbar';
-import Modal from './components/modal';
 import ProfilePage from './pages/profile-page';
 
 
