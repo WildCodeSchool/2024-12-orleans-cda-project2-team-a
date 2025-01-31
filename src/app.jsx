@@ -1,12 +1,18 @@
 import './app.scss';
+
 import Favorites from './components/favorites';
 import NavBar from './components/navbar';
+import Modal from './components/modal';
+import ProfilePage from './pages/profile-page';
+
 
 function App() {
   return (
-    <div className='absolute-center-container'>
+
+    <div >
       <NavBar />
       <Favorites />
+    <ProfilePage />
     </div>
   );
 }
