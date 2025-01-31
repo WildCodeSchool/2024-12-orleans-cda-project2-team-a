@@ -27,12 +27,12 @@ function Favorites() {
           <p> ddddddffff</p>
         </div>
 
-        <div className='carte' onClick={ toggleModal}>
+        <div className='carte' onClick={toggleModal}>
           <h2> Spider Man</h2>
           <p>fsdfsffsdfd</p>
         </div>
 
-        <div className='carte' onClick={ toggleModal}>
+        <div className='carte' onClick={toggleModal}>
           <h2> Spider Man</h2>
           <p>fsdfsffsdfd</p>
         </div>
