@@ -1,29 +1,15 @@
-import { useState } from 'react';
-
 import './app.scss';
-import Modal from './components/modal';
+import Favorites from './components/favorites';
+import NavBar from './components/navbar';
 import ProfilePage from './pages/profile-page';
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleModal = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const onClose = () => {
-    setIsOpen(false);
-  };
   return (
-    <>
+    <div>
+      <NavBar />
+      <Favorites />
       <ProfilePage />
-      <div className='absolute-center-container'>
-        <Modal open={isOpen} onClose={onClose} />
-        <button className='open-modal' onClick={() => toggleModal(true)}>
-          Modal button
-        </button>
-      </div>
-    </>
+    </div>
   );
 }
 
