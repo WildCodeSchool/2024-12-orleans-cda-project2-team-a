@@ -1,24 +1,19 @@
-import { useState } from 'react';
-
 import './app.scss';
 import Card from './components/card';
 import Modal from './components/modal';
+
+import Favorites from './components/favorites';
+import NavBar from './components/navbar';
+ 
 import ProfilePage from './pages/profile-page';
 
 // import Burger from './components/burger';
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleModal = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const onClose = () => {
-    setIsOpen(false);
-  };
   return (
-    <>
+    <div>
+      <NavBar />
+      <Favorites />
       <ProfilePage />
       <div className='absolute-center-container'>
         <Modal open={isOpen} onClose={onClose} />
@@ -27,7 +22,8 @@ function App() {
         </button>
         <Card />
       </div>
-    </>
+    </div>
+
   );
 }
 
