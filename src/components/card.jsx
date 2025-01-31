@@ -95,8 +95,8 @@ function Card() {
           </div>
         </div>
         <nav className='arrow'>
-          <input type='image' id='image' alt='Login' src='/pictures/fleche-gauche.png' />
-          <input type='image' id='image' alt='Login' src='/pictures/fleche-droite.png' />
+          <input type='image' id='image' alt='Login' src='/pictures/arrow-left.png' />
+          <input type='image' id='image' alt='Login' src='/pictures/arrow-right.png' />
         </nav>
       </body>
     </>
