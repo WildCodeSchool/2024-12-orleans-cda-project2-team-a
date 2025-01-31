@@ -17,73 +17,73 @@ function Favorites() {
       <h1>My Favorite Characters</h1>
       <Modal open={isOpen} onClose={onClose} />
       <div className='cards'>
-        <div className='carte' onClick={toggleModal}>
+        <div className='card' onClick={toggleModal}>
           <h2> Thanos</h2>
           <p> Le plus grand des méchants</p>
         </div>
 
-        <div className='carte' onClick={toggleModal}>
+        <div className='card' onClick={toggleModal}>
           <h2> Iron Man</h2>
           <p> ddddddffff</p>
         </div>
 
-        <div className='carte' onClick={toggleModal}>
+        <div className='card' onClick={toggleModal}>
           <h2> Spider Man</h2>
           <p>fsdfsffsdfd</p>
         </div>
 
-        <div className='carte' onClick={toggleModal}>
+        <div className='card' onClick={toggleModal}>
           <h2> Spider Man</h2>
           <p>fsdfsffsdfd</p>
         </div>
 
-        <div className='carte' onClick={toggleModal}>
+        <div className='card' onClick={toggleModal}>
           <h2> Spider Man</h2>
           <p>fsdfsffsdfd</p>
         </div>
 
-        <div className='carte' onClick={toggleModal}>
+        <div className='card' onClick={toggleModal}>
           <h2> Spider Man</h2>
           <p>fsdfsffsdfd</p>
         </div>
 
-        <div className='carte' onClick={toggleModal}>
+        <div className='card' onClick={toggleModal}>
           <h2> Spider Man</h2>
           <p>fsdfsffsdfd</p>
         </div>
       </div>
       <div className='cards'>
-        <div className='carte' onClick={toggleModal}>
+        <div className='card' onClick={toggleModal}>
           <h2> Thanos</h2>
           <p> Le plus grand des méchants</p>
         </div>
 
-        <div className='carte' onClick={toggleModal}>
+        <div className='card' onClick={toggleModal}>
           <h2> Iron Man</h2>
           <p> ddddddffff</p>
         </div>
 
-        <div className='carte' onClick={toggleModal}>
+        <div className='card' onClick={toggleModal}>
           <h2> Spider Man</h2>
           <p>fsdfsffsdfd</p>
         </div>
 
-        <div className='carte' onClick={toggleModal}>
+        <div className='card' onClick={toggleModal}>
           <h2> Spider Man</h2>
           <p>fsdfsffsdfd</p>
         </div>
 
-        <div className='carte' onClick={toggleModal}>
+        <div className='card' onClick={toggleModal}>
           <h2> Spider Man</h2>
           <p>fsdfsffsdfd</p>
         </div>
 
-        <div className='carte' onClick={toggleModal}>
+        <div className='card' onClick={toggleModal}>
           <h2> Spider Man</h2>
           <p>fsdfsffsdfd</p>
         </div>
 
-        <div className='carte' onClick={toggleModal}>
+        <div className='card' onClick={toggleModal}>
           <h2> Spider Man</h2>
           <p>fsdfsffsdfd</p>
         </div>
