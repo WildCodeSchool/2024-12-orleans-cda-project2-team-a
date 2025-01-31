@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import './app.scss';
 import Modal from './components/modal';
+import Footer from './components/footer';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
