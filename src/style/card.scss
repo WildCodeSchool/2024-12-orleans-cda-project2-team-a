@@ -1,5 +1,5 @@
 body {
-   background: linear-gradient(#670208, #151414, #670208);
+  background: linear-gradient(#670208, #151414, #670208);
   // background-repeat: no-repeat;
   // max-width: 900px;
   // margin: auto;
@@ -7,8 +7,8 @@ body {
 
 .card {
   background-image: url(/public/imagelogo/fond2.jpg);
-     width: 170px;
-   height: 260px;
+  width: 170px;
+  height: 260px;
   object-fit: cover;
   display: flex;
   flex-direction: column;
@@ -37,13 +37,13 @@ h1 {
 }
 .rectangle {
   border: solid, white;
-    background-color: black;
-    opacity: 80%;
-    width: 63%;
-    height: 78%;
-    margin-top: 10px;
-    margin-left: 28px;
-    border-radius: 8px;
+  background-color: black;
+  opacity: 80%;
+  width: 63%;
+  height: 78%;
+  margin-top: 10px;
+  margin-left: 28px;
+  border-radius: 8px;
 }
 
 .flexBox {
@@ -51,13 +51,13 @@ h1 {
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr 1fr;
   gap: 1.5rem 0;
-  align-items: start;
+  align-items: center;
   padding: 2%;
   margin: auto;
   max-width: 1000px;
 }
 
-.fleche{
+.fleche {
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -65,7 +65,6 @@ h1 {
   height: 15%;
   margin-left: 8%;
   margin-right: 8%;
-  
 }
 
 @media (max-width: 500px) {
@@ -73,6 +72,8 @@ h1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-row: 1fr;
+    max-width: 350px;
+    gap: 8px;
   }
   .card {
     background-image: url(../public/imagelogo/fond2.jpg);
@@ -92,37 +93,28 @@ h1 {
     height: 80%;
     object-fit: cover;
     margin-left: 13px;
-    border: solid 4.5px black;
+    border: solid 4.5px white;
     margin-top: 5px;
     border-radius: 8px;
   }
   h1 {
     color: white;
     text-align: center;
-    margin-bottom: 33px;
-    margin-top: -24px;
     font-size: 1.2rem;
     margin-top: -24px;
     opacity: 90%;
-    margin-left: -10px;
+    
   }
   .rectangle {
     border: solid, white;
     background-color: black;
     opacity: 80%;
     width: 50%;
-    height: 20px;
-    margin-top: -2px;
+    height: 25px;
     margin-left: 35px;
     border-radius: 8px;
   }
-  h2 {
-    display: none;
-  }
-  p {
-    display: none;
-  }
-  .bio {
+  .fleche{
     display: none;
   }
 }
