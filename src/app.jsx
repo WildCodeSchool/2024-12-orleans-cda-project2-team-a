@@ -1,5 +1,4 @@
 import './app.scss';
-import Burger from './components/burger';
 import Card from './components/card';
 import Favorites from './components/favorites';
 import Footer from './components/footer';
@@ -12,7 +11,6 @@ function App() {
   return (
     <>
       <div>
-        <Burger />
         <NavBar />
         <Favorites />
         <ProfilePage />
