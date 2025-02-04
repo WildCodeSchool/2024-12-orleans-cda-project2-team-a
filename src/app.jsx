@@ -19,6 +19,7 @@ function App() {
         return res.json();
       })
       .then((data) => setFetchData(data.data.results))
+      // eslint-disable-next-line no-console
       .catch((err) => console.error(err));
   }, []);
 
