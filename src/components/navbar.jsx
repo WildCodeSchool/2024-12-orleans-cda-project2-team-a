@@ -7,7 +7,6 @@ function Navbar() {
   const [input, setInput] = useState('');
 
   return (
-
     <>
       <header>
         <nav>
@@ -36,8 +35,6 @@ function Navbar() {
 
       <Outlet />
     </>
-
-    
   );
 }
 

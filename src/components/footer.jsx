@@ -5,7 +5,6 @@ import Socials from './socials.jsx';
 
 function Footer() {
   return (
-
     <>
       <Outlet />
 
