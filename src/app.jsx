@@ -1,11 +1,11 @@
 import './app.scss';
+import Burger from './components/burger';
 import Card from './components/card';
 import Favorites from './components/favorites';
 import Footer from './components/footer';
 import NavBar from './components/navbar';
+import HomePage from './pages/home-page';
 import ProfilePage from './pages/profile-page';
-
-// import Burger from './components/burger';
 
 function App() {
   return (
@@ -16,9 +16,11 @@ function App() {
         <ProfilePage />
         <div className='absolute-center-container'>
           <Card />
+          <Burger />
         </div>
       </div>
       <Footer />
+      <HomePage />
     </>
   );
 }

@@ -38,6 +38,24 @@ function Card() {
               <div className='rectangle'></div>
               <h1>Thanos</h1>
             </div>
+            <div></div>
+          </div>
+          <div className='card'>
+            <img className='thanos' src='/pictures/thanos.png' alt='' />
+
+            <div>
+              <div className='rectangle'></div>
+              <h1>Thanos</h1>
+            </div>
+            <div></div>
+          </div>
+          <div className='card'>
+            <img className='thanos' src='/pictures/thanos.png' alt='' />
+
+            <div>
+              <div className='rectangle'></div>
+              <h1>Thanos</h1>
+            </div>
           </div>
           <div className='card'>
             <img className='thanos' src='/pictures/thanos.png' alt='' />

@@ -10,12 +10,7 @@
     solid 4px,
     white;
   border-radius: 8px;
-  body {
-    background: linear-gradient(#670208, #151414, #670208);
-    // background-repeat: no-repeat;
-    // max-width: 900px;
-    // margin: auto;
-  }
+
   .thanos {
     width: 94%;
     height: 62%;
@@ -47,13 +42,13 @@
 
 .flexBox {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 1fr 1fr;
   gap: 1.5rem 0;
   align-items: center;
   padding: 2%;
   margin: auto;
-  max-width: 1000px;
+  max-width: 1300px;
 }
 
 .arrow {
@@ -62,8 +57,8 @@
   position: relative;
   margin-top: -324px;
   height: 15%;
-  margin-left: 8%;
-  margin-right: 8%;
+  margin-left: 2%;
+  margin-right: 4%;
 }
 
 @media (max-width: 500px) {
