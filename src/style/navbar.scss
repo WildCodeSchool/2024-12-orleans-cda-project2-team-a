@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
 
-nav {
+.navbar {
   display: flex;
   justify-content: center;
+  background-color: #670208;
+  padding-top: 30px;
 
   ul {
     list-style: none;
     display: flex;
     align-items: center;
     padding: 20px;
-    gap: 190px;
+    gap: 40px;
 
     .myLink {
       color: white;

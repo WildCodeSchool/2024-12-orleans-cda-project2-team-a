@@ -1,16 +1,12 @@
-import { Outlet } from 'react-router-dom';
-
 import '../style/footer.scss';
 import Socials from './socials.jsx';
 
 function Footer() {
   return (
     <>
-      <Outlet />
-
       <footer>
         <div className='footer'>
-          <img src='/marvel-logo.png' alt='marvel-logo' />
+          <img src='\pictures\marvel-logo.png' alt='marvel-logo' />
           <div className='footer-nav'>
             <div>
               <a href='https://marvelofficial.com/shop/?srsltid=AfmBOorVehT8ELdv9CSRuSbn2YBFn_1tngBPVsIlMT4j70lF8KhpRGsb'>
@@ -31,7 +27,7 @@ function Footer() {
             </div>
           </div>
           <Socials />
-        </div>{' '}
+        </div>
       </footer>
     </>
   );

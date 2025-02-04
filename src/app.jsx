@@ -2,20 +2,17 @@ import { Route, Routes } from 'react-router-dom';
 
 import './app.scss';
 import Favorites from './components/favorites';
-import Footer from './components/footer';
 import Home from './components/home';
-import NavBar from './components/navbar';
-import ProfilePage from './pages/profile-page';
+import Layout from './components/layout';
+import Profile from './components/profile';
 
 function App() {
   return (
     <Routes>
-      <Route element={<NavBar />}>
-        <Route element={<Footer />}>
-          <Route path='/' element={<Home />} />
-          <Route path='/favorites' element={<Favorites />} />
-          <Route path='/profilePage' element={<ProfilePage />} />
-        </Route>
+      <Route element={<Layout />}>
+        <Route path='/' element={<Home />} />
+        <Route path='/favorites' element={<Favorites />} />
+        <Route path='/profilePage' element={<Profile />} />
       </Route>
     </Routes>
   );
