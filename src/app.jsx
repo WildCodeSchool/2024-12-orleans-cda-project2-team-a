@@ -1,15 +1,13 @@
 import './app.scss';
-import Favorites from './components/favorites';
-import NavBar from './components/navbar';
+import HomePage from './pages/home-page';
 import ProfilePage from './pages/profile-page';
 
 function App() {
   return (
-    <div>
-      <NavBar />
-      <Favorites />
+    <>
+      <HomePage />
       <ProfilePage />
-    </div>
+    </>
   );
 }
 
