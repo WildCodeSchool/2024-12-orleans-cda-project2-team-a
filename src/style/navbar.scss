@@ -11,10 +11,15 @@ nav {
     align-items: center;
     padding: 20px;
 
+    .myLink {
+      color: white;
+      text-decoration: none;
+      display: flex;
+    }
     img {
       width: 23px;
       height: 23px;
-      margin-bottom: 04px;
+      margin-bottom: 05px;
       padding-right: 1px;
     }
 
@@ -22,7 +27,7 @@ nav {
       display: flex;
       align-items: center;
       /* padding:20 ; */
-      font-size: 20px;
+      font-size: 22px;
       color: white;
       /* padding-left: 10%; */
       font-family: 'Aclonica', sans-serif;
