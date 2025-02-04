@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import Burger from '../components/burger';
-import Card from '../components/card';
 import '../style/home.scss';
+import Burger from './burger';
+import Card from './card';
 
 function Home() {
   const [input, setInput] = useState('');
