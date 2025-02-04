@@ -4,20 +4,19 @@ import Burger from '../components/burger';
 import Card from '../components/card';
 import Footer from '../components/footer';
 import Navbar from '../components/navbar';
-import '../style/home.scss';
+import '../style/home-page.scss';
 
 function HomePage() {
   const [input, setInput] = useState('');
 
   return (
-    <body className='body'>
+    <div className='body'>
       <header>
-        <div className='navbar'>
-          <Navbar />
-        </div>
+        <Navbar />
+
         <div className='burger-home'>
           <Burger />
-          <img className='loupe' src='/pictures/search.png' alt='' />
+          <img className='glass' src='/pictures/search.png' alt='' />
           <input
             className='search'
             type='text'
@@ -33,7 +32,7 @@ function HomePage() {
       <footer className='footer'>
         <Footer />
       </footer>
-    </body>
+    </div>
   );
 }
 export default HomePage;
