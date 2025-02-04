@@ -33,9 +33,7 @@ function Navbar() {
         </nav>
       </header>
 
-      
-        <Outlet />
-      
+      <Outlet />
     </>
   );
 }
