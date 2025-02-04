@@ -10,15 +10,15 @@ function Navbar() {
       <ul>
         <li>
           {' '}
-          <img src='/home.png' alt='' /> Home
+          <img src='/pictures/home.png' alt='' /> Home
         </li>
 
         <li className='input-wrapper'>
-          <img src='/search.png' alt='' />
+          <img src='/pictures/search.png' alt='' />
           <input type='text' placeholder='Search' value={input} onChange={(e) => setInput(e.target.value)} />
         </li>
         <li>
-          <img src='/heart.png' alt='' />
+          <img src='/pictures/heart.png' alt='' />
           Favorites
         </li>
       </ul>

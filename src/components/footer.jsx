@@ -4,7 +4,7 @@ import Socials from './socials.jsx';
 function Footer() {
   return (
     <div className='footer'>
-      <img src='/marvel-logo.png' alt='marvel-logo' />
+      <img src='/pictures/marvel-logo.png' alt='marvel-logo' />
       <div className='footer-nav'>
         <div>
           <a href='https://marvelofficial.com/shop/?srsltid=AfmBOorVehT8ELdv9CSRuSbn2YBFn_1tngBPVsIlMT4j70lF8KhpRGsb'>

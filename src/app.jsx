@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 
 import Appp from './Appp';
 import './app.scss';
+import HomePage from './pages/home-page';
+import ProfilePage from './pages/profile-page';
 
 function App() {
   const [fetchData, setFetchData] = useState([]);
@@ -25,6 +27,9 @@ function App() {
 
   return (
     <>
+      <HomePage />
+      <ProfilePage />
+
       {fetchData.map((character) => (
         <ul key={character.id}>
           <li>{character.name}</li>
