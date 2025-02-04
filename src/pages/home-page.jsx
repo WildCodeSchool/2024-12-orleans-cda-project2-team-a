@@ -17,7 +17,7 @@ function HomePage() {
         </div>
         <div className='burger-home'>
           <Burger />
-          <img className='loupe' src='/search.png' alt='' />
+          <img className='loupe' src='/pictures/search.png' alt='' />
           <input
             className='search'
             type='text'
