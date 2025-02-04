@@ -3,8 +3,8 @@ import { Route, Routes } from 'react-router-dom';
 import './app.scss';
 import Favorites from './components/favorites';
 import Home from './components/home';
-import Layout from './components/layout';
 import Profile from './components/profile';
+import Layout from './layout';
 
 function App() {
   return (
