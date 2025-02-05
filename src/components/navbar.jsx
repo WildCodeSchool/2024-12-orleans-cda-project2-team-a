@@ -12,7 +12,6 @@ function Navbar() {
         <nav className='navbar'>
           <ul>
             <li>
-              {' '}
               <Link to='/' className='myLink'>
                 <img src='\pictures\home.png' alt='' /> Home
               </Link>
