@@ -5,11 +5,11 @@ import Card from './card';
 
 function Favorites() {
   return (
-    <body className='favorite'>
+    <div className='favorite'>
       <h1 className='Favorite-typo'>My Favorite Characters</h1>
 
       <Card />
-    </body>
+    </div>
   );
 }
 
