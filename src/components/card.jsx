@@ -1,11 +1,23 @@
+import { useState } from 'react';
+
 import '../style/card.scss';
+import Modal from './modal';
 
 function Card() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleModal = () => {
+    setIsOpen(!isOpen);
+  };
+  const onClose = () => {
+    setIsOpen(false);
+  };
+
   return (
     <>
       <body>
+        <Modal open={isOpen} onClose={onClose} />
         <div className='flexBox'>
-          <div className='card'>
+          <div className='card' onClick={toggleModal}>
             <img className='thanos' src='/pictures/thanos.png' alt='' />
 
             <div>
@@ -13,16 +25,7 @@ function Card() {
               <h1>Thanos</h1>
             </div>
           </div>
-          <div className='card'>
-            <img className='thanos' src='/pictures/thanos.png' alt='' />
-
-            <div>
-              <div className='rectangle'></div>
-              <h1>Thanos</h1>
-            </div>
-            <div></div>
-          </div>
-          <div className='card'>
+          <div className='card' onClick={toggleModal}>
             <img className='thanos' src='/pictures/thanos.png' alt='' />
 
             <div>
@@ -31,7 +34,7 @@ function Card() {
             </div>
             <div></div>
           </div>
-          <div className='card'>
+          <div className='card' onClick={toggleModal}>
             <img className='thanos' src='/pictures/thanos.png' alt='' />
 
             <div>
@@ -40,7 +43,7 @@ function Card() {
             </div>
             <div></div>
           </div>
-          <div className='card'>
+          <div className='card' onClick={toggleModal}>
             <img className='thanos' src='/pictures/thanos.png' alt='' />
 
             <div>
@@ -49,15 +52,7 @@ function Card() {
             </div>
             <div></div>
           </div>
-          <div className='card'>
-            <img className='thanos' src='/pictures/thanos.png' alt='' />
-
-            <div>
-              <div className='rectangle'></div>
-              <h1>Thanos</h1>
-            </div>
-          </div>
-          <div className='card'>
+          <div className='card' onClick={toggleModal}>
             <img className='thanos' src='/pictures/thanos.png' alt='' />
 
             <div>
@@ -66,7 +61,15 @@ function Card() {
             </div>
             <div></div>
           </div>
-          <div className='card'>
+          <div className='card' onClick={toggleModal}>
+            <img className='thanos' src='/pictures/thanos.png' alt='' />
+
+            <div>
+              <div className='rectangle'></div>
+              <h1>Thanos</h1>
+            </div>
+          </div>
+          <div className='card' onClick={toggleModal}>
             <img className='thanos' src='/pictures/thanos.png' alt='' />
 
             <div>
@@ -75,7 +78,7 @@ function Card() {
             </div>
             <div></div>
           </div>
-          <div className='card'>
+          <div className='card' onClick={toggleModal}>
             <img className='thanos' src='/pictures/thanos.png' alt='' />
 
             <div>
@@ -84,7 +87,7 @@ function Card() {
             </div>
             <div></div>
           </div>
-          <div className='card'>
+          <div className='card' onClick={toggleModal}>
             <img className='thanos' src='/pictures/thanos.png' alt='' />
 
             <div>
@@ -93,7 +96,7 @@ function Card() {
             </div>
             <div></div>
           </div>
-          <div className='card'>
+          <div className='card' onClick={toggleModal}>
             <img className='thanos' src='/pictures/thanos.png' alt='' />
 
             <div>
@@ -102,7 +105,16 @@ function Card() {
             </div>
             <div></div>
           </div>
-          <div className='card'>
+          <div className='card' onClick={toggleModal}>
+            <img className='thanos' src='/pictures/thanos.png' alt='' />
+
+            <div>
+              <div className='rectangle'></div>
+              <h1>Thanos</h1>
+            </div>
+            <div></div>
+          </div>
+          <div className='card' onClick={toggleModal}>
             <img className='thanos' src='/pictures/thanos.png' alt='' />
 
             <div>
@@ -112,10 +124,6 @@ function Card() {
             <div></div>
           </div>
         </div>
-        <nav className='arrow'>
-          <input type='image' id='image' alt='Login' src='/pictures/arrow-left.png' />
-          <input type='image' id='image' alt='Login' src='/pictures/arrow-right.png' />
-        </nav>
       </body>
     </>
   );
