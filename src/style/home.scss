@@ -1,5 +1,7 @@
-.body {
+.home-page {
   background: linear-gradient(#670208, #151414 25% 76%, #670208);
+
+  height: 690px;
 }
 
 .burger-home {
@@ -9,8 +11,19 @@
   padding-top: 60px;
 }
 
-footer {
-  margin-top: 450px;
+.arrow {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: -324px;
+  height: 15%;
+  margin-left: 2%;
+  margin-right: 4%;
+
+  #arrows {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 @media (max-width: 500px) {

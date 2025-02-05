@@ -52,16 +52,6 @@
   max-width: 1300px;
 }
 
-.arrow {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  margin-top: -324px;
-  height: 15%;
-  margin-left: 2%;
-  margin-right: 4%;
-}
-
 @media (max-width: 500px) {
   .flexBox {
     display: grid;

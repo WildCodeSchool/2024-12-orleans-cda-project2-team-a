@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 
 import './app.scss';
 import Card from './components/card';
@@ -20,7 +20,6 @@ function App() {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
         setFetchData(data.data.results);
       })
       // eslint-disable-next-line no-console
@@ -34,7 +33,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <>
       <nav>
         <Link to='/'>Home</Link>
         <Link to='/favorites'>Favorites</Link>
@@ -65,7 +64,7 @@ function App() {
         />
         <Route path='/favorites' element={<FavoritePage favorites={favorites} />} />
       </Routes>
-    </Router>
+    </>
   );
 }
 
