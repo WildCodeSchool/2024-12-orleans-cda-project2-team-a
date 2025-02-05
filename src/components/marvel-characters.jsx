@@ -16,6 +16,7 @@ export default function MarvelCharacters({ addToFavorites }) {
       .then((data) => {
         setMarvelCharacter(data.data.results);
       })
+      // eslint-disable-next-line no-console
       .catch((err) => console.error(err));
   }, []);
 
