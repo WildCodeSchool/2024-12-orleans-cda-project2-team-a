@@ -8,7 +8,7 @@ function Home() {
   const [input, setInput] = useState('');
 
   return (
-    <body className='home-page'>
+    <div className='home-page'>
       <div>
         <div className='burger-home'>
           <Burger />
@@ -22,15 +22,15 @@ function Home() {
           />
         </div>
 
-        <main className='main'>
+        <div className='main'>
           <Card />
-        </main>
+        </div>
       </div>
       <nav className='arrow'>
         <input type='image' id='arrows' alt='Login' src='/pictures/arrow-left.png' />
         <input type='image' id='arrows' alt='Login' src='/pictures/arrow-right.png' />
       </nav>
-    </body>
+    </div>
   );
 }
 export default Home;
