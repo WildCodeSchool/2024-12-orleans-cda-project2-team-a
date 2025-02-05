@@ -5,30 +5,29 @@ import './app.scss';
 import Card from './components/card';
 import FavoritePage from './pages/favorite-page';
 import HomePage from './pages/home-page';
-import ProfilePage from './pages/profile-page';
+
+const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
 function App() {
-  const [fetchData, setFetchData] = useState([]);
+  const [marvelCharacter, setMarvelCharacter] = useState([]);
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
-    const publicKey = import.meta.env.VITE_PUBLIC_KEY;
-
     fetch(`https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}`)
       .then((res) => {
         if (!res.ok) throw new Error('Erreur réseau');
         return res.json();
       })
       .then((data) => {
-        setFetchData(data.data.results);
+        setMarvelCharacter(data.data.results);
       })
       // eslint-disable-next-line no-console
       .catch((err) => console.error(err));
   }, []);
 
-  const addToFavorites = (character) => {
-    if (!favorites.some((fav) => fav.id === character.id)) {
-      setFavorites([...favorites, character]);
+  const addToFavorites = (char) => {
+    if (!favorites.some((fav) => fav.id === char.id)) {
+      setFavorites([...favorites, char]);
     }
   };
 
@@ -44,10 +43,10 @@ function App() {
           element={
             <>
               <HomePage />
-              <ProfilePage />
+              {/* <ProfilePage /> */}
               <h1>fetch</h1>
-              {fetchData
-                .filter((character) => character.thumbnail && character.thumbnail.path && character.thumbnail.extension)
+              {marvelCharacter
+                .filter((marvel) => marvel.thumbnail && marvel.thumbnail.path && marvel.thumbnail.extension)
                 .slice(0, 20)
                 .map((character) => {
                   return (
