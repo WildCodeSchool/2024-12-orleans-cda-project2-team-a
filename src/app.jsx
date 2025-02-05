@@ -1,43 +1,71 @@
-import md5 from 'md5';
 import { useEffect, useState } from 'react';
+import { Link, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
-import Appp from './Appp';
 import './app.scss';
+import Card from './components/card';
+import FavoritePage from './pages/favorite-page';
 import HomePage from './pages/home-page';
 import ProfilePage from './pages/profile-page';
 
 function App() {
   const [fetchData, setFetchData] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
     const publicKey = import.meta.env.VITE_PUBLIC_KEY;
-    const privateKey = import.meta.env.VITE_PRIVATE_KEY;
-    const ts = new Date().getTime();
-    const hash = md5(ts + privateKey + publicKey);
 
-    fetch(`https://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}`)
+    fetch(`https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}`)
       .then((res) => {
         if (!res.ok) throw new Error('Erreur réseau');
         return res.json();
       })
-      .then((data) => setFetchData(data.data.results))
+      .then((data) => {
+        console.log(data);
+        setFetchData(data.data.results);
+      })
       // eslint-disable-next-line no-console
       .catch((err) => console.error(err));
   }, []);
 
-  return (
-    <>
-      <HomePage />
-      <ProfilePage />
+  const addToFavorites = (character) => {
+    if (!favorites.some((fav) => fav.id === character.id)) {
+      setFavorites([...favorites, character]);
+    }
+  };
 
-      {fetchData.map((character) => (
-        <ul key={character.id}>
-          <li>{character.name}</li>
-        </ul>
-      ))}
-      <Appp />
-      <h1>fetch</h1>
-    </>
+  return (
+    <Router>
+      <nav>
+        <Link to='/'>Home</Link>
+        <Link to='/favorites'>Favorites</Link>
+      </nav>
+      <Routes>
+        <Route
+          path='/'
+          element={
+            <>
+              <HomePage />
+              <ProfilePage />
+              <h1>fetch</h1>
+              {fetchData
+                .filter((character) => character.thumbnail && character.thumbnail.path && character.thumbnail.extension)
+                .slice(0, 20)
+                .map((character) => {
+                  return (
+                    <Card
+                      key={character.id}
+                      character={character.name}
+                      image={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+                      onAddToFavorites={() => addToFavorites(character)}
+                    />
+                  );
+                })}
+            </>
+          }
+        />
+        <Route path='/favorites' element={<FavoritePage favorites={favorites} />} />
+      </Routes>
+    </Router>
   );
 }
 
