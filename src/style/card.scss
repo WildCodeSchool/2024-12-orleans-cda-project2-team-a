@@ -10,41 +10,81 @@
     solid 4px,
     white;
   border-radius: 8px;
+}
+img {
+  width: 150px;
+  height: 150px;
+  margin-left: 3.5%;
+  border: solid 4px white;
+  margin-top: 4%;
+  border-radius: 8px;
+}
+button {
+  background: none;
+  border: none;
+}
+.heart {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  transform: rotate(-45deg);
+  animation: beat 1s infinite ease-in-out;
+  margin-left: -103px;
+  margin-top: 16px;
 
-  .thanos {
-    width: 94%;
-    height: 62%;
-    margin-left: 2.5%;
-    border: solid 4px white;
-    margin-top: 4%;
-    border-radius: 8px;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
   }
-  h1 {
-    color: white;
-    text-align: center;
-    margin-bottom: 16%;
-    font-size: 1.5rem;
-    margin-top: -18%;
-    opacity: 90%;
-    margin-left: -5%;
-    font-family: 'Aclonica', sans-serif;
+
+  &::before {
+    top: -50px;
+    left: 0;
   }
-  .rectangle {
-    border: solid, white;
-    background-color: black;
-    opacity: 80%;
-    width: 69%;
-    height: 86%;
-    margin-top: 10px;
-    margin-left: 23px;
-    border-radius: 8px;
+
+  &::after {
+    top: 0;
+    left: 50px;
   }
 }
 
-.flexBox {
+@keyframes beat {
+  0%,
+  100% {
+    transform: scale(1) rotate(-15deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(-35deg);
+  }
+}
+h2 {
+  color: white;
+  text-align: center;
+  /* margin-bottom: 16%; */
+  font-size: 1.3em;
+  /* margin-top: -18%; */
+  opacity: 90%;
+  /* margin-left: -5%; */
+  font-family: 'Aclonica', sans-serif;
+  border: solid, white;
+  background-color: black;
+  opacity: 85%;
+  /* width: 86%; */
+  height: 13%;
+  margin-top: 10px;
+  border-radius: 8px;
+  overflow-y: scroll;
+}
+// .rectangle {
+// }
+
+.gridBox {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 1fr 1fr;
   gap: 1.5rem 0;
   align-items: center;
   padding: 2%;
@@ -73,7 +113,7 @@
       white;
     border-radius: 8px;
   }
-  .thanos {
+  img {
     width: 80%;
     height: 80%;
     object-fit: cover;

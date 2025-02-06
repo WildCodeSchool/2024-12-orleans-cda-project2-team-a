@@ -27,10 +27,10 @@ export default function MarvelCharacters({ addToFavorites }) {
   return (
     <div>
       <h1>Marvel Characters</h1>
-      <div className='flex'>
+      <div className='gridBox'>
         {marvelCharacter
           .filter((marvel) => marvel.thumbnail && marvel.thumbnail.path && marvel.thumbnail.extension)
-          .slice(0, 20)
+          .slice(0, 50)
           .map((character) => (
             <Card
               key={character.id}
