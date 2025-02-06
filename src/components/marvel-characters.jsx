@@ -27,7 +27,7 @@ export default function MarvelCharacters({ addToFavorites }) {
   return (
     <div>
       <h1>Marvel Characters</h1>
-      <div className='gridBox'>
+      <div className='grid-box'>
         {marvelCharacter
           .filter((marvel) => marvel.thumbnail && marvel.thumbnail.path && marvel.thumbnail.extension)
           .slice(0, 50)
