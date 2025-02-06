@@ -1,4 +1,4 @@
-import '../style/profile.scss';
+import '../style/profile-page.scss';
 
 export default function Profile() {
   return (
@@ -6,7 +6,7 @@ export default function Profile() {
       {' '}
       <section className='profile-container'>
         <div>
-          <img src='/thanos.png' alt='' />
+          <img src='/pictures/thanos.png' alt='' />
           <div className='btn'>
             <button>Event</button>
             <button>History</button>
@@ -24,7 +24,7 @@ export default function Profile() {
       <section className='comics'>
         <div className='comic-container'>
           <div>
-            <img src='/comics.png' alt='' />
+            <img src='/pictures/comics.png' alt='' />
             <h3>Description</h3>
             <p>
               Comic books have captured the imagination of readers for nearly a century. From the golden age of
@@ -33,7 +33,7 @@ export default function Profile() {
             </p>
           </div>
           <div>
-            <img src='/comics.png' alt='' />
+            <img src='/pictures/comics.png' alt='' />
             <h3>Description</h3>
             <p>
               Comic books have captured the imagination of readers for nearly a century. From the golden age of
@@ -42,7 +42,7 @@ export default function Profile() {
             </p>
           </div>
           <div>
-            <img src='/comics.png' alt='' />
+            <img src='/pictures/comics.png' alt='' />
             <h3>Description</h3>
             <p>
               Comic books have captured the imagination of readers for nearly a century. From the golden age of
@@ -51,7 +51,7 @@ export default function Profile() {
             </p>
           </div>
           <div>
-            <img src='/comics.png' alt='' />
+            <img src='/pictures/comics.png' alt='' />
             <h3>Description</h3>
             <p>
               Comic books have captured the imagination of readers for nearly a century. From the golden age of

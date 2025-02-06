@@ -1,131 +1,13 @@
-import { useState } from 'react';
-
 import '../style/card.scss';
-import Modal from './modal';
 
-function Card() {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleModal = () => {
-    setIsOpen(!isOpen);
-  };
-  const onClose = () => {
-    setIsOpen(false);
-  };
-
+function Card({ character, image, onAddToFavorites }) {
   return (
-    <>
-      <body>
-        <Modal open={isOpen} onClose={onClose} />
-        <div className='flexBox'>
-          <div className='card' onClick={toggleModal}>
-            <img className='thanos' src='/pictures/thanos.png' alt='' />
-
-            <div>
-              <div className='rectangle'></div>
-              <h1>Thanos</h1>
-            </div>
-          </div>
-          <div className='card' onClick={toggleModal}>
-            <img className='thanos' src='/pictures/thanos.png' alt='' />
-
-            <div>
-              <div className='rectangle'></div>
-              <h1>Thanos</h1>
-            </div>
-            <div></div>
-          </div>
-          <div className='card' onClick={toggleModal}>
-            <img className='thanos' src='/pictures/thanos.png' alt='' />
-
-            <div>
-              <div className='rectangle'></div>
-              <h1>Thanos</h1>
-            </div>
-            <div></div>
-          </div>
-          <div className='card' onClick={toggleModal}>
-            <img className='thanos' src='/pictures/thanos.png' alt='' />
-
-            <div>
-              <div className='rectangle'></div>
-              <h1>Thanos</h1>
-            </div>
-            <div></div>
-          </div>
-          <div className='card' onClick={toggleModal}>
-            <img className='thanos' src='/pictures/thanos.png' alt='' />
-
-            <div>
-              <div className='rectangle'></div>
-              <h1>Thanos</h1>
-            </div>
-            <div></div>
-          </div>
-          <div className='card' onClick={toggleModal}>
-            <img className='thanos' src='/pictures/thanos.png' alt='' />
-
-            <div>
-              <div className='rectangle'></div>
-              <h1>Thanos</h1>
-            </div>
-          </div>
-          <div className='card' onClick={toggleModal}>
-            <img className='thanos' src='/pictures/thanos.png' alt='' />
-
-            <div>
-              <div className='rectangle'></div>
-              <h1>Thanos</h1>
-            </div>
-            <div></div>
-          </div>
-          <div className='card' onClick={toggleModal}>
-            <img className='thanos' src='/pictures/thanos.png' alt='' />
-
-            <div>
-              <div className='rectangle'></div>
-              <h1>Thanos</h1>
-            </div>
-            <div></div>
-          </div>
-          <div className='card' onClick={toggleModal}>
-            <img className='thanos' src='/pictures/thanos.png' alt='' />
-
-            <div>
-              <div className='rectangle'></div>
-              <h1>Thanos</h1>
-            </div>
-            <div></div>
-          </div>
-          <div className='card' onClick={toggleModal}>
-            <img className='thanos' src='/pictures/thanos.png' alt='' />
-
-            <div>
-              <div className='rectangle'></div>
-              <h1>Thanos</h1>
-            </div>
-            <div></div>
-          </div>
-          <div className='card' onClick={toggleModal}>
-            <img className='thanos' src='/pictures/thanos.png' alt='' />
-
-            <div>
-              <div className='rectangle'></div>
-              <h1>Thanos</h1>
-            </div>
-            <div></div>
-          </div>
-          <div className='card' onClick={toggleModal}>
-            <img className='thanos' src='/pictures/thanos.png' alt='' />
-
-            <div>
-              <div className='rectangle'></div>
-              <h1>Thanos</h1>
-            </div>
-            <div></div>
-          </div>
-        </div>
-      </body>
-    </>
+    <div className='card'>
+      <img src={image} alt={character} />
+      <h2>{character}</h2>
+      <button onClick={onAddToFavorites}>Add to Favorites</button>
+    </div>
   );
 }
+
 export default Card;
