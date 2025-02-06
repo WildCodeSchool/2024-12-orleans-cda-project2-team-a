@@ -5,7 +5,9 @@ function Card({ character, image, onAddToFavorites }) {
     <div className='card'>
       <img src={image} alt={character} />
       <h2>{character}</h2>
-      <button onClick={onAddToFavorites}>Add to Favorites</button>
+      <button onClick={onAddToFavorites}>
+        <img className='heart' src='/pictures/heart-cards.png' alt='' />
+      </button>
     </div>
   );
 }
