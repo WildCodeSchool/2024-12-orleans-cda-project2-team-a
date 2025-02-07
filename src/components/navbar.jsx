@@ -8,28 +8,26 @@ function Navbar() {
 
   return (
     <>
-      <header>
-        <nav className='navbar'>
-          <ul>
-            <li>
-              <Link to='/' className='myLink'>
-                <img src='\pictures\home.png' alt='' /> Home
-              </Link>
-            </li>
+      <nav className='navbar'>
+        <ul>
+          <li>
+            <Link to='/' className='myLink'>
+              <img src='\pictures\home.png' alt='' /> Home
+            </Link>
+          </li>
 
-            <li className='input-wrapper'>
-              <img src='\pictures\search.png' alt='' />
-              <input type='text' placeholder='Search' value={input} onChange={(e) => setInput(e.target.value)} />
-            </li>
-            <li>
-              <Link to='/favorites' className='myLink'>
-                <img src='\pictures\heart.png' alt='' />
-                Favorites
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
+          <li className='input-wrapper'>
+            <img src='\pictures\search.png' alt='' />
+            <input type='text' placeholder='Search' value={input} onChange={(e) => setInput(e.target.value)} />
+          </li>
+          <li>
+            <Link to='/favorites' className='myLink'>
+              <img src='\pictures\heart.png' alt='' />
+              Favorites
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </>
   );
 }

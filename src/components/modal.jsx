@@ -17,7 +17,7 @@ const Modal = ({ open, onClose }) => {
           <img src='/pictures/comics.png' alt='comic presentation' />
           <img src='/pictures/comics.png' alt='comic presentation' />
         </div>
-        <button type='button' onClick={onClose}>
+        <button className='btn-modal' type='button' onClick={onClose}>
           X
         </button>
       </div>
