@@ -17,12 +17,12 @@ function App() {
 
   return (
     <>
-      <Layout>
-        <Routes>
+      <Routes>
+        <Route element={<Layout />}>
           <Route path='/' element={<MarvelCharacters addToFavorites={addToFavorites} />} />
           <Route path='/favorites' element={<FavoritePage favorites={favorites} />} />
-        </Routes>
-      </Layout>
+        </Route>
+      </Routes>
     </>
   );
 }
