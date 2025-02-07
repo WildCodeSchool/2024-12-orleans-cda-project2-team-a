@@ -1,5 +1,6 @@
 import '../style/burger.scss';
 import '../style/favorites.scss';
+
 import Burger from './burger';
 
 function Favorites() {
@@ -10,6 +11,8 @@ function Favorites() {
         <h1 className='Favorite-typo'>My Favorite Characters</h1>
       </div>
     </>
+
+
   );
 }
 
