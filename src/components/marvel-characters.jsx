@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 
 import '../style/marvel-characters.scss';
 import Card from './card';
-import Profile from './profile';
 
 const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
@@ -30,24 +29,17 @@ export default function MarvelCharacters({ addToFavorites }) {
 
   return (
     <div>
-      <h1>Marvel Characters</h1>
-      <div className='marvel-box'>
+      <div className='grid-box'>
         {marvelCharacter
           .filter((marvel) => marvel.thumbnail && marvel.thumbnail.path && marvel.thumbnail.extension)
-          .slice(0, 20)
+          .slice(0, 18)
           .map((character) => (
-            <>
-              <Card
-                key={character.id}
-                character={character.name}
-                image={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-                onAddToFavorites={() => handleAddToFavorites(character)}
-              />
-              <Profile
-                characterProfil={character.name}
-                profimage={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-              />
-            </>
+            <Card
+              key={character.id}
+              character={character.name}
+              image={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+              onAddToFavorites={() => handleAddToFavorites(character)}
+            />
           ))}
       </div>
     </div>
