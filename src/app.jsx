@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 
 import './app.scss';
+import Footer from './components/footer';
 import MarvelCharacters from './components/marvel-characters';
+import Navbar from './components/navbar';
 import FavoritePage from './pages/favorite-page';
 
 function App() {
@@ -16,14 +18,12 @@ function App() {
 
   return (
     <>
-      <nav>
-        <Link to='/'>Home</Link>
-        <Link to='/favorites'>Favorites</Link>
-      </nav>
+      <Navbar />
       <Routes>
         <Route path='/' element={<MarvelCharacters addToFavorites={addToFavorites} />} />
         <Route path='/favorites' element={<FavoritePage favorites={favorites} />} />
       </Routes>
+      <Footer />
     </>
   );
 }

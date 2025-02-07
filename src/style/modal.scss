@@ -21,6 +21,9 @@
       img {
         width: 40%;
       }
+      .test {
+        background-color: yellow;
+      }
     }
   }
 
@@ -29,7 +32,8 @@
   border: 2 solid $text-color;
   left: 50%;
   top: 50%;
-  width: 18%;
+  width: 80%;
+  height: 77%;
   transform: translate(-50%, -50%);
   background: $background-image;
   background-position: center;
@@ -79,11 +83,14 @@
   }
 
   button {
+    position: absolute;
+    left: 50%;
+    top: 86%;
     padding: 8px;
     border-radius: 50px;
     border: none;
     transition: all 0.5s ease;
-
+    background-color: black;
     &:hover {
       cursor: pointer;
       transform: scale(1.1);
