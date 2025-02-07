@@ -2,9 +2,7 @@ import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import './app.scss';
-import Footer from './components/footer';
 import MarvelCharacters from './components/marvel-characters';
-import Navbar from './components/navbar';
 import Layout from './components/router-layout';
 import FavoritePage from './pages/favorite-page';
 
