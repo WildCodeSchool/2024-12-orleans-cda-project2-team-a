@@ -1,5 +1,3 @@
-import '../style/card.scss';
-import '../style/favorite-responsive.scss';
 import '../style/favorites.scss';
 
 function Favorites() {
