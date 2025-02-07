@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import './app.scss';
 import Footer from './components/footer';
