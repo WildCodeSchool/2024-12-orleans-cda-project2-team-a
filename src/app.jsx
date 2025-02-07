@@ -5,6 +5,7 @@ import './app.scss';
 import Footer from './components/footer';
 import MarvelCharacters from './components/marvel-characters';
 import Navbar from './components/navbar';
+import Layout from './components/router-layout';
 import FavoritePage from './pages/favorite-page';
 
 function App() {
@@ -18,12 +19,12 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<MarvelCharacters addToFavorites={addToFavorites} />} />
-        <Route path='/favorites' element={<FavoritePage favorites={favorites} />} />
-      </Routes>
-      <Footer />
+      <Layout>
+        <Routes>
+          <Route path='/' element={<MarvelCharacters addToFavorites={addToFavorites} />} />
+          <Route path='/favorites' element={<FavoritePage favorites={favorites} />} />
+        </Routes>
+      </Layout>
     </>
   );
 }
