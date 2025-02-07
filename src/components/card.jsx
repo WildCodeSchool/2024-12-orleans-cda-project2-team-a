@@ -13,8 +13,6 @@ function Card({ character, image, onAddToFavorites }) {
     setDisplayProfil(false);
   };
 
-  console.log(displayProfil);
-
   return (
     <div className='card'>
       <img src={image} alt={character} onClick={handleDisplayProfil} />
