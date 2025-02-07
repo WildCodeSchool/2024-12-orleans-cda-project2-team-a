@@ -1,32 +1,6 @@
 @use 'settings' as *;
 
 .modal {
-  @media (max-width: 768px) {
-    width: 90%;
-    height: 90%;
-    padding: 10px;
-    div {
-      img {
-        width: 100%;
-      }
-      h1 {
-        font-size: 1rem;
-        top: 150px;
-        width: 100%;
-        margin-top: -20px;
-      }
-    }
-    .comics-content {
-      height: 30vh;
-      img {
-        width: 40%;
-      }
-      .test {
-        background-color: yellow;
-      }
-    }
-  }
-
   position: fixed;
   text-align: center;
   border: 2 solid $text-color;
@@ -82,7 +56,7 @@
     }
   }
 
-  button {
+  .btn-modal {
     position: absolute;
     left: 50%;
     top: 86%;
@@ -90,11 +64,37 @@
     border-radius: 50px;
     border: none;
     transition: all 0.5s ease;
-    background-color: black;
+    background: red;
     &:hover {
       cursor: pointer;
       transform: scale(1.1);
       background-color: $button-color-hover;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    height: 90%;
+    padding: 10px;
+    div {
+      img {
+        width: 100%;
+      }
+      h1 {
+        font-size: 1rem;
+        top: 150px;
+        width: 100%;
+        margin-top: -20px;
+      }
+    }
+    .comics-content {
+      height: 30vh;
+      img {
+        width: 40%;
+      }
+      .test {
+        background-color: yellow;
+      }
     }
   }
 }
