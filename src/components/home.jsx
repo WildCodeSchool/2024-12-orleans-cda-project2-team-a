@@ -12,24 +12,24 @@ function Home() {
       <div>
         <div className='burger-home'>
           <Burger />
-          <div className='searchBar'>
-            <img className='glass' src='/pictures/search.png' alt='' />
-            <input
-              className='search'
-              type='text'
-              placeholder='Search'
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-            />
-          </div>
+          <img className='glass' src='/pictures/search.png' alt='' />
+          <input
+            className='search'
+            type='text'
+            placeholder='Search'
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+          />
         </div>
 
         <div className='main'>
           <Card />
-          <Card />
-          <Card />
         </div>
       </div>
+      <nav className='arrow'>
+        <input type='image' id='arrows' alt='Login' src='/pictures/arrow-left.png' />
+        <input type='image' id='arrows' alt='Login' src='/pictures/arrow-right.png' />
+      </nav>
     </div>
   );
 }
