@@ -1,15 +1,15 @@
-import '../style/card.scss';
-import '../style/favorite-responsive.scss';
+import '../style/burger.scss';
 import '../style/favorites.scss';
-import Card from './card';
+import Burger from './burger';
 
 function Favorites() {
   return (
-    <div className='favorite'>
-      <h1 className='Favorite-typo'>My Favorite Characters</h1>
-
-      <Card />
-    </div>
+    <>
+      <Burger />
+      <div className='favorite'>
+        <h1 className='Favorite-typo'>My Favorite Characters</h1>
+      </div>
+    </>
   );
 }
 

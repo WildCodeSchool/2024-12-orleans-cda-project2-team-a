@@ -1,39 +1,46 @@
 .home-page {
   background: linear-gradient(#670208, #151414 25% 76%, #670208);
 
-  height: 690px;
+  height: 1100px;
 }
 
 .burger-home {
   display: none;
+
+  .arrow {
+    display: flex;
+    justify-content: space-evenly;
+    // position: relative;
+    margin-top: -324px;
+    height: 15%;
+    margin-left: 2%;
+    margin-right: 4%;
+
+    #arrows {
+      width: 40px;
+      height: 40px;
+    }
+
+    button.leftButton {
+      background: transparent;
+    }
+  }
 }
 .main {
   padding-top: 60px;
 }
 
-.arrow {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  margin-top: -324px;
-  height: 15%;
-  margin-left: 2%;
-  margin-right: 4%;
-
-  #arrows {
-    width: 40px;
-    height: 40px;
-  }
-}
-
-@media (max-width: 500px) {
+@media (min-width: 320px) and (max-width: 450px) {
   .navbar {
     display: none;
   }
   .burger-home {
+    justify-content: flex-start;
     display: flex;
-    justify-content: space-evenly;
+    align-items: center;
+    gap: 90px;
   }
+
   .search {
     font-family: 'Aclonica', sans-serif;
     height: 30px;
@@ -44,22 +51,26 @@
     font-size: 20px;
     width: 140px;
     color: white;
-    margin-top: 10px;
+  }
+
+  .searchBar {
     width: 170px;
     border-radius: 5px;
     box-shadow: 0px 0px 8px;
     display: flex;
     align-items: center;
-    justify-content: center;
+  }
+
+  .search::placeholder {
+    color: white;
+  }
+
+  .search:focus {
+    outline: none;
   }
   .glass {
     width: 23px;
     height: 23px;
-    position: absolute;
-    margin-top: 14px;
-    margin-left: -50px;
-  }
-  .footer {
-    margin-top: 10px;
+    margin-top: 3px;
   }
 }
