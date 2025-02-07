@@ -24,7 +24,10 @@
     img {
       width: 105%;
     }
-
+    img.thanos {
+      height: 15%;
+      width: 15%;
+    }
     h1 {
       position: absolute;
       top: 238px;
@@ -42,17 +45,20 @@
   }
 
   .comics-content {
-    background-color: $background-comics;
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
-    height: 20vh;
-
+    height: 39%;
+    width: 50%;
+    left: 25%;
+    top: 9%;
     img {
       width: 28%;
+      height: 85%;
     }
   }
 
