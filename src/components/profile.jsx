@@ -1,8 +1,6 @@
 import '../style/profile-page.scss';
 
 export default function Profile({ characterProfil, profimage, img, title, description }) {
-  console.log(characterProfil);
-
   return (
     <div className='comics-characters'>
       <p>{characterProfil} </p>;
@@ -18,14 +16,14 @@ export default function Profile({ characterProfil, profimage, img, title, descri
         </div>
         <p> {'hello'} </p>
       </div>
-      {/* <div className='comics'>
+      <div className='comics'>
         <h2>Comics</h2>
         <div className='comics-list'>
           <img src={img} alt='' />
           <h2> {title} </h2>
           <p> {description} </p>
         </div>{' '}
-      </div> */}
+      </div>
     </div>
   );
 }
