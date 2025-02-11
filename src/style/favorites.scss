@@ -20,6 +20,12 @@
     align-items: center;
     text-shadow: 3px 2px 8px black;
   }
+
+  h1 {
+    color: white;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 450px) {

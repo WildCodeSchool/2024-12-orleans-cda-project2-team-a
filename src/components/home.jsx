@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import '../style/home.scss';
 import Burger from './burger';
-import Card from './card';
+import MarvelCharacters from './marvel-characters';
 
 function Home() {
   const [input, setInput] = useState('');
@@ -23,7 +23,7 @@ function Home() {
         </div>
 
         <div className='main'>
-          <Card />
+          <MarvelCharacters />
         </div>
       </div>
       <nav className='arrow'>
