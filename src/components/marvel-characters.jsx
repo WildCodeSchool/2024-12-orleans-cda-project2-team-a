@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import "../style/card.scss";
-import Card from "./card";
+import '../style/card.scss';
+import Card from './card';
 
 const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
@@ -11,7 +11,7 @@ export default function MarvelCharacters({ addToFavorites }) {
   useEffect(() => {
     fetch(`https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}`)
       .then((res) => {
-        if (!res.ok) throw new Error("Erreur réseau");
+        if (!res.ok) throw new Error('Erreur réseau');
         return res.json();
       })
       .then((data) => {
@@ -28,14 +28,14 @@ export default function MarvelCharacters({ addToFavorites }) {
 
   return (
     <div>
-      <div className="grid-box">
+      <div className='grid-box'>
         {marvelCharacter
           .filter(
             (marvel) =>
               marvel.thumbnail &&
               marvel.thumbnail.path &&
               marvel.thumbnail.extension &&
-              !marvel.thumbnail.path.includes("image_not_available"),
+              !marvel.thumbnail.path.includes('image_not_available'),
           )
           .slice(0, 12)
           .map((character) => (
