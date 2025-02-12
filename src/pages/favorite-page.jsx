@@ -1,3 +1,4 @@
+
 import Card from "../components/card";
 import "../style/burger.scss";
 import "../style/favorites.scss";
@@ -18,6 +19,7 @@ export default function FavoritePage({ favorites }) {
           />
         ))
       )}
+
     </div>
   );
 }

@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 
-import Card from "./card";
+
+import '../style/card.scss';
+import Card from './card';
+
 
 const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
@@ -16,6 +19,7 @@ export default function MarvelCharacters({ addToFavorites }) {
       .then((data) => {
         setMarvelCharacter(data.data.results);
       })
+
       // eslint-disable-next-line no-console
       .catch((err) => console.error(err));
   }, []);
@@ -32,9 +36,11 @@ export default function MarvelCharacters({ addToFavorites }) {
             (marvel) =>
               marvel.thumbnail &&
               marvel.thumbnail.path &&
-              marvel.thumbnail.extension,
+
+              marvel.thumbnail.extension &&
+              !marvel.thumbnail.path.includes('image_not_available'),
           )
-          .slice(0, 18)
+          .slice(0, 12)
           .map((character) => (
             <Card
               key={character.id}
