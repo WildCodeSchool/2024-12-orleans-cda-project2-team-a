@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 
-
-import '../style/card.scss';
-import Card from './card';
-
+import "../style/card.scss";
+import Card from "./card";
 
 const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
@@ -36,9 +34,8 @@ export default function MarvelCharacters({ addToFavorites }) {
             (marvel) =>
               marvel.thumbnail &&
               marvel.thumbnail.path &&
-
               marvel.thumbnail.extension &&
-              !marvel.thumbnail.path.includes('image_not_available'),
+              !marvel.thumbnail.path.includes("image_not_available"),
           )
           .slice(0, 12)
           .map((character) => (
