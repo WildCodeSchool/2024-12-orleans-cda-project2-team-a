@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import './app.scss';
+import Burger from './components/burger';
 import MarvelCharacters from './components/marvel-characters';
 import Layout from './components/router-layout';
 import FavoritePage from './pages/favorite-page';

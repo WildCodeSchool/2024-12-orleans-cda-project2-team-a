@@ -6,7 +6,7 @@ const Burger = () => {
   const [burger, setBurger] = useState(false);
 
   const toggleBurger = () => {
-    setBurger(!burger); // Utilisation de "burger" et non "Burger"
+    setBurger(!burger);
   };
 
   return (
