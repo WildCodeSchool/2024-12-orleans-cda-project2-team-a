@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import '../style/card.scss';
 import Card from './card';
 
 const publicKey = import.meta.env.VITE_PUBLIC_KEY;
@@ -16,6 +17,7 @@ export default function MarvelCharacters({ addToFavorites }) {
       .then((data) => {
         setMarvelCharacter(data.data.results);
       })
+
       // eslint-disable-next-line no-console
       .catch((err) => console.error(err));
   }, []);
@@ -28,8 +30,14 @@ export default function MarvelCharacters({ addToFavorites }) {
     <div>
       <div className='grid-box'>
         {marvelCharacter
-          .filter((marvel) => marvel.thumbnail && marvel.thumbnail.path && marvel.thumbnail.extension)
-          .slice(0, 18)
+          .filter(
+            (marvel) =>
+              marvel.thumbnail &&
+              marvel.thumbnail.path &&
+              marvel.thumbnail.extension &&
+              !marvel.thumbnail.path.includes('image_not_available'),
+          )
+          .slice(0, 12)
           .map((character) => (
             <Card
               key={character.id}
