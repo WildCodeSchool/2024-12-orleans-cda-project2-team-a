@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import './app.scss';
 import MarvelCharacters from './components/marvel-characters';
 import Layout from './components/router-layout';
+import ComicPage from './pages/comics-page';
 import FavoritePage from './pages/favorite-page';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path='/' element={<MarvelCharacters addToFavorites={addToFavorites} />} />
           <Route path='/favorites' element={<FavoritePage favorites={favorites} />} />
+          <Route path='/comics' element={<ComicPage />}></Route>
         </Route>
       </Routes>
     </>

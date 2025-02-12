@@ -1,0 +1,22 @@
+.grid-comics {
+  background-color: black;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.5rem 0;
+  align-items: center;
+  padding: 11%;
+  margin: auto;
+  max-width: 1300px;
+
+  .titre {
+    color: white;
+  }
+  .id {
+    color: white;
+  }
+
+  .img-comics {
+    width: 150px;
+  }
+}
