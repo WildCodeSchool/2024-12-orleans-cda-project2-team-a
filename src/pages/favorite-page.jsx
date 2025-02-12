@@ -1,12 +1,11 @@
-import Card from '../components/card';
-import '../style/burger.scss';
-import '../style/favorites.scss';
+import Card from "../components/card";
+import "../style/burger.scss";
+import "../style/favorites.scss";
 
 export default function FavoritePage({ favorites }) {
   return (
-
-    <div className='favorite'>
-      <h1 className='Favorite-typo'>My Favorite Characters</h1>
+    <div className="favorite">
+      <h1 className="Favorite-typo">My Favorite Characters</h1>
 
       {favorites.length === 0 ? (
         <h1>No favorites added yet.</h1>
@@ -19,7 +18,6 @@ export default function FavoritePage({ favorites }) {
           />
         ))
       )}
-
     </div>
   );
 }
