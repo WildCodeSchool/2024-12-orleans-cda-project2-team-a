@@ -30,7 +30,13 @@ export default function MarvelCharacters({ addToFavorites }) {
     <div>
       <div className='grid-box'>
         {marvelCharacter
-          .filter((marvel) => marvel.thumbnail && marvel.thumbnail.path && marvel.thumbnail.extension)
+          .filter(
+            (marvel) =>
+              marvel.thumbnail &&
+              marvel.thumbnail.path &&
+              marvel.thumbnail.extension &&
+              !marvel.thumbnail.path.includes('image_not_available'),
+          )
           .slice(0, 12)
           .map((character) => (
             <Card
