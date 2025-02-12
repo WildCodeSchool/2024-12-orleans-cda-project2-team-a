@@ -1,4 +1,5 @@
 .grid-box {
+  background-color: black;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 1.5rem 0;
@@ -26,8 +27,14 @@
       border: solid 4px white;
       margin-top: 4%;
       border-radius: 8px;
+      cursor: pointer;
     }
-    button {
+    img:hover {
+      transform: scale(1.1);
+      transition: transform 0.5s;
+      filter: brightness(0.9);
+    }
+    .btn {
       background: none;
       border: none;
 
@@ -39,6 +46,8 @@
         animation: beat 1s infinite ease-in-out;
         margin-left: -103px;
         margin-top: 16px;
+        box-shadow: 5px 3px 5px;
+        cursor: pointer;
 
         &::before,
         &::after {
@@ -93,9 +102,9 @@
   .grid-box {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-row: 1fr;
-    max-width: 350px;
+    max-width: 75%;
     gap: 8px;
+    background-color: black;
   }
   .card {
     background-image: url(pictures/background-amended.jpg);
@@ -118,7 +127,14 @@
     border: solid 4.5px white;
     margin-top: 5px;
     border-radius: 8px;
+    cursor: pointer;
   }
+  img:hover {
+    transform: scale(0.1);
+    transition: transform 0.1s;
+    filter: brightness(0.1);
+  }
+
   h2 {
     color: white;
     text-align: center;
@@ -128,9 +144,7 @@
     border: solid, white;
     background-color: black;
     opacity: 80%;
-    width: 50%;
     height: 25px;
-    margin-left: 35px;
     border-radius: 8px;
   }
 

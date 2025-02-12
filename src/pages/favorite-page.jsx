@@ -1,4 +1,3 @@
-import Burger from '../components/burger';
 import Card from '../components/card';
 import '../style/burger.scss';
 import '../style/favorites.scss';
@@ -6,7 +5,7 @@ import '../style/favorites.scss';
 export default function FavoritePage({ favorites }) {
   return (
     <div className='favorite'>
-      <Burger />
+      {/* <Burger /> */}
 
       <h1 className='Favorite-typo'>My Favorite Characters</h1>
 
