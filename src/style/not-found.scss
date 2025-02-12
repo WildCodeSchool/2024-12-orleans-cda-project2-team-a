@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+
+.notFound {
+  background: linear-gradient(#670208, #151414 25% 76%, #670208);
+  height: 1100px;
+  display: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 100px;
+    color: white;
+    padding-top: 60px;
+    font-family: 'Aclonica', sans-serif;
+  }
+  h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    color: white;
+    font-family: 'Aclonica', sans-serif;
+  }
+  img {
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  div {
+    padding-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .portal-img {
+    height: 260px;
+    width: 460px;
+    padding-bottom: 20px;
+    filter: grayscale(100%);
+  }
+  .Portal {
+    display: flex;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  p {
+    font-family: 'Aclonica', sans-serif;
+    font-size: 50px;
+    color: white;
+  }
+
+  p:hover {
+    color: #670208;
+    transition: 0.4s;
+  }
+
+  .portal-img:hover {
+    filter: grayscale(0%);
+    transition: 0.4s;
+  }
+}
