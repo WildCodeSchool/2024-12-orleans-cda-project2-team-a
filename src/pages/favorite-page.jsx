@@ -4,6 +4,7 @@ import '../style/favorites.scss';
 
 export default function FavoritePage({ favorites }) {
   return (
+
     <div className='favorite'>
       <h1 className='Favorite-typo'>My Favorite Characters</h1>
 
@@ -18,6 +19,7 @@ export default function FavoritePage({ favorites }) {
           />
         ))
       )}
+
     </div>
   );
 }

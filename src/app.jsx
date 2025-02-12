@@ -20,10 +20,12 @@ function App() {
     <>
       <Routes>
         <Route element={<Layout />}>
+
           {/* <Route path='/' element={<Home />} /> */}
           <Route path='/' element={<MarvelCharacters addToFavorites={addToFavorites} />} />
           <Route path='/favorites' element={<FavoritePage favorites={favorites} />} />
           <Route path='*' element={<NotFound />} />
+
         </Route>
       </Routes>
     </>
