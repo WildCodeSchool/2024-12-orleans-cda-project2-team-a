@@ -6,24 +6,33 @@ const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
 function ComicPage() {
   const [comics, setComics] = useState([]);
+  const [visibleCount, setVisibleCount] = useState(6);
+  const [offset, setOffset] = useState(0);
+
+  // visibleCount si j'ai passe, sinon affiche
 
   useEffect(() => {
-    fetch(`https://gateway.marvel.com/v1/public/comics?apikey=${publicKey}`)
+    fetch(`https://gateway.marvel.com/v1/public/comics?apikey=${publicKey}&limit=50&offset=${offset}`)
       .then((res) => {
         if (!res.ok) throw new Error('Erreur réseau');
         return res.json();
       })
       .then((data) => {
-        setComics(data.data.results);
+        setComics((prevComics) => [...prevComics, ...data.data.results]);
+        if (data.data.total > offset + 50) {
+          setOffset(offset + 50);
+        }
       })
-
-      // eslint-disable-next-line no-console
       .catch((err) => console.error(err));
-  }, []);
+  }, [offset]);
+
+  const loadMore = () => {
+    setVisibleCount((prev) => prev + 8);
+  };
 
   return (
     <>
-      <div className='grid-comics'>
+      <div className='comics'>
         {comics
           .filter(
             (comic) =>
@@ -34,15 +43,17 @@ function ComicPage() {
           )
           .map((comic) => (
             <div className='id' key={comic.id}>
-              <h2 className='titre'>{comic.title}</h2>
+              <h2 className='comics-title'>{comic.title}</h2>
+
               <img
-                className='img-comics'
+                className='comic-card'
                 src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
                 alt={comic.title}
               />
             </div>
           ))}
       </div>
+      <button onClick={loadMore}>More</button>
     </>
   );
 }

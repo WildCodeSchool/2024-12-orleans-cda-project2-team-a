@@ -17,6 +17,7 @@ function Card({ character, image, onAddToFavorites }) {
     <>
       <div className='card'>
         <img src={image} alt={character} onClick={handleDisplayProfil} />
+
         <div className='character-title'>
           <h2>{character}</h2>
         </div>

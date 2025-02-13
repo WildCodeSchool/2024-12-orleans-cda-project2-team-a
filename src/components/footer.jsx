@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import '../style/footer.scss';
 import Socials from './socials.jsx';
 
@@ -6,7 +8,10 @@ function Footer() {
     <>
       <footer>
         <div className='footer'>
-          <img src='\pictures\marvel-logo.png' alt='marvel-logo' />
+          <Link to='/'>
+            <img src='\pictures\marvel-logo.png' alt='marvel-logo' />
+          </Link>
+
           <div className='footer-nav'>
             <div>
               <a href='https://marvelofficial.com/shop/?srsltid=AfmBOorVehT8ELdv9CSRuSbn2YBFn_1tngBPVsIlMT4j70lF8KhpRGsb'>
