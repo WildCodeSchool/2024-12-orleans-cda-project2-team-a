@@ -4,12 +4,12 @@ import '../style/search.scss';
 import Characters from './characters.jsx';
 import Comics from './comics.jsx';
 
+const publicKey = import.meta.env.VITE_PUBLIC_KEY;
+
 export default function Search() {
   const [characterData, setCharacterData] = useState(null);
   const [comicData, setComicData] = useState(null);
   const [characterName, setCharacterName] = useState('');
-
-  const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
   const handleSubmit = (event) => {
     event.preventDefault();
