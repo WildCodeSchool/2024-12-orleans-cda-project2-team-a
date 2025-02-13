@@ -5,6 +5,7 @@ import './app.scss';
 import MarvelCharacters from './components/marvel-characters';
 import Layout from './components/router-layout';
 import FavoritePage from './pages/favorite-page';
+import NotFound from './pages/not-found-page';
 
 function App() {
   const [favorites, setFavorites] = useState([]);
@@ -21,6 +22,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path='/' element={<MarvelCharacters addToFavorites={addToFavorites} />} />
           <Route path='/favorites' element={<FavoritePage favorites={favorites} />} />
+          <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
     </>
