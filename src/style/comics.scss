@@ -1,0 +1,87 @@
+@use 'settings' as *;
+
+.comics {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 170px);
+  justify-content: center;
+  grid-gap: 10px;
+  padding: 1em;
+  background-color: white;
+}
+
+.comic-card {
+  width: 170px;
+  height: 260px;
+  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-decoration: none;
+  border:
+    solid 4px,
+    white;
+  border-radius: 8px;
+
+  .comics-title {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    background-color: #0000004b;
+    height: 100%;
+
+    h3 {
+      font-family: $font-family;
+      font-weight: 700;
+      font-size: 1em;
+      text-transform: lowercase;
+      color: white;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    filter: grayscale(0);
+    box-shadow: 6px 6px black;
+    transform: translate(-2px, -2px);
+
+    .comics-title {
+      opacity: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 349px) {
+  .comics {
+    display: grid;
+    grid-template-columns: repeat(1, 170px);
+  }
+}
+
+@media only screen and (min-width: 350px) and (max-width: 599px) {
+  .comics {
+    display: grid;
+    grid-template-columns: repeat(2, 170px);
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 799px) {
+  .comics {
+    display: grid;
+    grid-template-columns: repeat(3, 170px);
+    gap: 10px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .comics {
+    display: grid;
+    grid-template-columns: repeat(4, 170px);
+    gap: 10px;
+  }
+}

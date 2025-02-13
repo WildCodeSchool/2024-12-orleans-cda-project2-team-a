@@ -1,3 +1,4 @@
+@use 'settings' as *;
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
 
 .favorite {
@@ -8,7 +9,7 @@
 
   .Favorite-typo {
     background-color: #670208;
-    font-family: 'Aclonica', sans-serif;
+    font-family: $font-family;
     padding-top: 60px;
     width: 240px;
     font-size: 15px;
