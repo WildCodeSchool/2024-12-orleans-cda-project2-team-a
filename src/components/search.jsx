@@ -30,7 +30,7 @@ export default function Search() {
         );
         setCharacterData({ ...result.data, results: filteredCharacters });
       })
-      .catch(() => {});
+      .catch((error) => console.log(error));
   };
 
   const getComicData = (characterId) => {
@@ -46,7 +46,7 @@ export default function Search() {
         );
         setComicData({ ...result.data, results: filteredComics });
       })
-      .catch(() => {});
+      .catch((error) => console.log(error));
   };
 
   const handleChange = (event) => {

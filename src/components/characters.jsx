@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import '../style/characters.scss';
 
@@ -9,35 +9,24 @@ export default function Characters({ data, onClick }) {
     setIsVisible(false);
   };
 
-  const handleClickOutside = (event) => {
-    if (event.target.closest('.character-card') === null) {
-      hideCharacters();
-    }
-  };
-
-  useEffect(() => {
-    if (isVisible) {
-      document.addEventListener('click', handleClickOutside);
-    } else {
-      document.removeEventListener('click', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  });
-
   return (
     <>
       <div className='search-container' style={{ display: isVisible ? 'block' : 'none' }}>
-        <div className='search-result'>
+        <div className='search-result' onClick={hideCharacters}>
           <button className='close-search' onClick={hideCharacters}>
             X
           </button>
           <div className='characters'>
             {data.map((dataItem) => {
               return (
-                <div key={dataItem.id} className='character-card' onClick={() => onClick(dataItem.id)}>
+                <div
+                  key={dataItem.id}
+                  className='character-card'
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onClick(dataItem.id);
+                  }}
+                >
                   <img
                     className='character-img'
                     src={`${dataItem.thumbnail.path}.${dataItem.thumbnail.extension}`}

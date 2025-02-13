@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import '../style/comics.scss';
 
@@ -9,34 +9,15 @@ export default function Comics({ data, onClick }) {
     setIsVisible(false);
   };
 
-  const handleClickOutside = (event) => {
-    if (event.target.closest('.comic-card') === null) {
-      hideComics();
-    }
-  };
-
-  useEffect(() => {
-    if (isVisible) {
-      document.addEventListener('click', handleClickOutside);
-    } else {
-      document.removeEventListener('click', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  });
-
   return (
     <div className='search-container' style={{ display: isVisible ? 'block' : 'none' }}>
-      <div className='search-result'>
+      <div className='search-result' onClick={hideComics}>
         <button className='close-search' onClick={hideComics}>
           X
         </button>
         <div className='comics'>
           {data.map((dataItem) => {
             const detailsUrl = dataItem.urls.find((element) => element['type'] === 'detail').url;
-
             return (
               <a
                 key={dataItem.id}
@@ -45,7 +26,10 @@ export default function Comics({ data, onClick }) {
                   background: `url(${dataItem.thumbnail.path}.${dataItem.thumbnail.extension}) no-repeat center`,
                   backgroundSize: 'cover',
                 }}
-                onClick={() => onClick(dataItem.id)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onClick(dataItem.id);
+                }}
                 href={detailsUrl}
                 target='_blank'
                 rel='noreferrer'
