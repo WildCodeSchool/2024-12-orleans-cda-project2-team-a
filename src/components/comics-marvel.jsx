@@ -28,14 +28,16 @@ export default function ComicsMarvel() {
         {marvelComics
           .filter((comics) => comics.thumbnail && comics.thumbnail.path && comics.thumbnail.extension)
           .slice(0, 60)
-          .map((pictures) => (
-            <Profile
-              key={pictures.id}
-              img={`${pictures.thumbnail.path}.${pictures.thumbnail.extension}`}
-              title={`${pictures.title}`}
-              description={`${pictures.description}`}
-            />
-          ))}
+          .map((pictures) =>
+            console.log(pictures)(
+              <Profile
+                key={pictures.id}
+                img={`${pictures.thumbnail.path}.${pictures.thumbnail.extension}`}
+                title={`${pictures.title}`}
+                description={`${pictures.description}`}
+              />,
+            ),
+          )}
       </div>
     </div>
   );
