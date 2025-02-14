@@ -26,6 +26,8 @@ export default function ComicDetail() {
 
   if (!comic) return <div>Loading...</div>;
 
+  const releaseDate = new Date(comic.dates[0].date).toLocaleDateString();
+
   return (
     <div className='comics-display'>
       <div className='comics-img'>
@@ -33,7 +35,12 @@ export default function ComicDetail() {
       </div>
       <div className='comics-content'>
         <h2>{comic.title}</h2>
-        <p>{comic.description}</p>
+        <h3> Creators : {comic.creators.items[0].name} </h3>
+        <span> Role : {comic.creators.items[0].role} </span>
+        <span> Date de sortie : {releaseDate} </span>
+        <div className='creators'>
+          <p>{comic.description}</p>
+        </div>
       </div>
     </div>
   );

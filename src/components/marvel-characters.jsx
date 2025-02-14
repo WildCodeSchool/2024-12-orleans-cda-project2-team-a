@@ -89,7 +89,7 @@ export default function MarvelCharacters({ addToFavorites }) {
               img={`${selectedCharacter.thumbnail.path}.${selectedCharacter.thumbnail.extension}`}
               title={selectedCharacter.title}
               description={selectedCharacter.description}
-              comics={comics.slice(0, 5)}
+              comics={comics.filter((comic) => comic.description).slice(0, 5)}
             />
           )}
         </Modal>

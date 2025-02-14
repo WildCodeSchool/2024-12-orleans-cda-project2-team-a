@@ -1,22 +1,21 @@
 @use 'settings.scss' as *;
 
 .comics-display {
+  font-family: $font-family;
+  color: $text-color;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: center;
   height: 76svh;
-  background-color: rgb(32, 73, 211);
+  background-color: $background-comics;
   max-width: 1000px;
   margin: 0 auto;
   overflow: hidden;
   transition: all 0.3sease;
 
   .comics-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    margin: 0.5rem auto;
+    width: 67%;
+    margin: 1.5rem 1rem;
     height: 83%;
 
     img {
@@ -33,41 +32,25 @@
   .comics-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
     width: 80%;
-    margin: 0.5rem auto;
+    margin: 2.5rem 0;
     height: 83%;
+    gap: 2.5rem;
 
     h2 {
       font-size: 1.5rem;
-      color: white;
-      text-align: center;
-      margin: 0.5rem;
+      color: $text-color;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      color: $text-color;
     }
 
     p {
       font-size: 1rem;
-      color: purple;
-      text-align: center;
-      margin: 0.5rem;
-    }
-
-    a {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      margin: 0.5rem;
-      font-size: 1rem;
-
-      background-color: green;
-      border: none;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      transition: all 0.3sease;
-
-      &:hover {
-        background-color: black;
-      }
+      line-height: 1.5;
     }
   }
 }
