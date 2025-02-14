@@ -1,15 +1,14 @@
 @use 'settings' as *;
 
 .grid-box {
-  background-color: black;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
   gap: 1.5rem 0;
   align-items: center;
   padding: 11%;
   margin: auto;
   max-width: 1300px;
+
   .card {
     background-image: url(pictures/background-amended.jpg);
     width: 170px;
@@ -24,6 +23,12 @@
       white;
     border-radius: 8px;
 
+    .test {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+    }
     img {
       width: 150px;
       height: 150px;
@@ -50,6 +55,8 @@
         margin-left: -20px;
         margin-top: 16px;
         box-shadow: 5px 3px 5px;
+        margin: 0 auto;
+
         cursor: pointer;
 
         &::before,
@@ -93,7 +100,7 @@
       background-color: black;
       opacity: 85%;
       height: 70px;
-      margin-top: 10px;
+      // margin-top: 10px;
       border-radius: 8px;
     }
 
@@ -106,13 +113,13 @@
   }
 }
 
-@media (max-width: 500px) {
+@media screen and (max-width: 644px) {
   .grid-box {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-width: 75%;
-    gap: 8px;
-    background-color: black;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+    gap: 10px;
+    align-items: center;
 
     .card {
       background-image: url(pictures/background-amended.jpg);

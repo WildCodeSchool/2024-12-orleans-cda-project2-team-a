@@ -7,12 +7,12 @@
   justify-content: center;
   grid-gap: 10px;
   padding: 1em;
-  background-color: white;
+  margin-top: 20px;
 
-  h2 {
+  .comics-title {
     font-family: $font-family;
     font-weight: 700;
-    font-size: 1em;
+    font-size: 1.2em;
     text-transform: lowercase;
     color: black;
   }
@@ -67,5 +67,33 @@
         opacity: 1;
       }
     }
+  }
+}
+
+.more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 10px;
+
+  button {
+    background-color: #670208;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 45px;
+  }
+}
+.comics-footer footer {
+  margin-top: 50px;
+}
+
+@media screen and (min-width: 301px) and (max-width: 644px) {
+  .comics {
+    grid-template-columns: repeat(2, 170px);
   }
 }
