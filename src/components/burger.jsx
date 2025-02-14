@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import '../style/burger.scss';
 
@@ -19,9 +20,22 @@ const Burger = () => {
           <div className={`line ${burger ? 'active' : ''}`}></div>
           {burger && (
             <ul className={burger ? 'active' : ''}>
-              <li>Favorite</li>
-              <li>comics</li>
-              <li>Characters</li>
+              <li>
+                <Link to='/' className='burger-link'>
+                  Home
+                </Link>
+              </li>
+
+              <li>
+                <Link to='/favorites' className='burger-link'>
+                  Favorites
+                </Link>
+              </li>
+              <li>
+                <Link to='/comics' className='burger-link'>
+                  Comics
+                </Link>
+              </li>
             </ul>
           )}
         </div>

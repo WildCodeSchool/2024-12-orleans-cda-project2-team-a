@@ -71,6 +71,14 @@ export default function MarvelCharacters({ addToFavorites }) {
               !marvel.thumbnail.path.includes('image_not_available'),
           )
           .slice(0, 12)
+          .filter(
+            (marvel) =>
+              marvel.thumbnail &&
+              marvel.thumbnail.path &&
+              marvel.thumbnail.extension &&
+              !marvel.thumbnail.path.includes('image_not_available'),
+          )
+          .slice(0, 12)
           .map((character) => (
             <Card
               key={character.id}
