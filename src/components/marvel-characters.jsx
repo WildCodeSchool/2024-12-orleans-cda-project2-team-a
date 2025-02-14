@@ -60,7 +60,7 @@ export default function MarvelCharacters({ addToFavorites }) {
   };
 
   return (
-    <div>
+    <div className='characters-comics'>
       <div className='grid-box'>
         {marvelCharacter
           .filter(
@@ -81,17 +81,19 @@ export default function MarvelCharacters({ addToFavorites }) {
             />
           ))}
       </div>
-      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-        {selectedCharacter && (
-          <Profile
-            characterMarvel={selectedCharacter.name}
-            img={`${selectedCharacter.thumbnail.path}.${selectedCharacter.thumbnail.extension}`}
-            title={selectedCharacter.title}
-            description={selectedCharacter.description}
-            comics={comics}
-          />
-        )}
-      </Modal>
+      <div className='comics-modal'>
+        <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+          {selectedCharacter && (
+            <Profile
+              characterMarvel={selectedCharacter.name}
+              img={`${selectedCharacter.thumbnail.path}.${selectedCharacter.thumbnail.extension}`}
+              title={selectedCharacter.title}
+              description={selectedCharacter.description}
+              comics={comics.slice(0, 5)}
+            />
+          )}
+        </Modal>
+      </div>
     </div>
   );
 }

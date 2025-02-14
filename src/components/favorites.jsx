@@ -1,11 +1,11 @@
-import '../style/favorites.scss';
+// import '../style/favorites.scss';
 
-function Favorites() {
-  return (
-    <div className='favorite'>
-      <h1 className='Favorite-typo'>My Favorite Characters</h1>
-    </div>
-  );
-}
+// function Favorites() {
+//   return (
+//     <div className='favorite'>
+//       <h1 className='Favorite-typo'>My Favorite Characters</h1>
+//     </div>
+//   );
+// }
 
-export default Favorites;
+// export default Favorites;

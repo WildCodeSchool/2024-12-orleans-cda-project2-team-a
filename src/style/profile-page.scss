@@ -1,7 +1,7 @@
 @use 'settings.scss' as *;
 
 .profile {
-  max-width: 1000px;
+  max-width: 920px;
   margin: 0 auto;
 
   .comics-characters {
@@ -41,18 +41,25 @@
       .comics-section {
         margin: 0.3%;
 
+        h1 {
+          font-size: 1.5rem;
+          margin: 1rem 0;
+        }
+
         .comics-list {
           display: flex;
           flex-wrap: wrap;
           gap: 10px;
           max-width: 880px;
-          margin: 0 auto;
+          margin: 2.5rem auto;
 
           a {
-            width: 100px;
+            width: 18%;
             text-align: center;
             text-decoration: none;
             color: $text-color;
+            transition: all 0.5s ease;
+            position: relative;
 
             img {
               width: 100%;
@@ -61,6 +68,24 @@
 
             p {
               font-size: 0.8rem;
+              position: absolute;
+              bottom: 4rem;
+              background: $background-card;
+              left: 0;
+              right: 0;
+              text-transform: uppercase;
+              opacity: 0;
+              transition: all 0.5s ease;
+              transform: translateY(-100%);
+            }
+
+            &:hover {
+              transform: scale(1.05);
+              p {
+                opacity: 1;
+                transform: scale(1.05);
+                transform: translateY(0);
+              }
             }
           }
         }
