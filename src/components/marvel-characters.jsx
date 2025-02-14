@@ -1,10 +1,12 @@
 /* eslint-disable no-console */
 import { useEffect, useState } from 'react';
 
+
 import Card from '../components/card';
 import Modal from '../components/modal';
 import Profile from '../components/profile';
 import '../style/marvel-characters.scss';
+
 
 const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
@@ -25,8 +27,7 @@ export default function MarvelCharacters({ addToFavorites }) {
       .then((data) => {
         setMarvelCharacter(data.data.results);
       })
-      .catch((err) => console.error(err));
-  }, []);
+
 
   const handleAddToFavorites = (character) => {
     addToFavorites(character);

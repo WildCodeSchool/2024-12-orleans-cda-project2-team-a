@@ -1,3 +1,4 @@
+@use 'settings' as *;
 .home-page {
   background: linear-gradient(#670208, #151414 25% 76%, #670208);
 
@@ -35,7 +36,7 @@
     justify-content: space-evenly;
   }
   .search {
-    font-family: 'Aclonica', sans-serif;
+    font-family: $font-family;
     height: 30px;
     border-radius: 8px;
     padding-left: 5px;
