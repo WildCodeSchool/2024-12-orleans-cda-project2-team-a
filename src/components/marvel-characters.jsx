@@ -9,7 +9,7 @@ export default function MarvelCharacters({ addToFavorites }) {
   const [marvelCharacter, setMarvelCharacter] = useState([]);
 
   useEffect(() => {
-    fetch(`https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}`)
+    fetch(`https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}&limit=50`)
       .then((res) => {
         if (!res.ok) throw new Error('Erreur réseau');
         return res.json();
@@ -37,7 +37,7 @@ export default function MarvelCharacters({ addToFavorites }) {
               marvel.thumbnail.extension &&
               !marvel.thumbnail.path.includes('image_not_available'),
           )
-          .slice(0, 12)
+          .slice(0, 15)
           .map((character) => (
             <Card
               key={character.id}
