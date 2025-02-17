@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 import Card from '../components/card';
 import Modal from '../components/modal';
 import Profile from '../components/profile';
-import '../style/marvel-characters.scss';
+
+// import '../style/marvel-characters.scss';
 
 const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
@@ -15,7 +16,7 @@ export default function MarvelCharacters({ addToFavorites }) {
   const [comics, setComics] = useState([]);
 
   useEffect(() => {
-    const apiComics = `https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}`;
+    const apiComics = `https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}&limit=100`;
 
     fetch(apiComics)
       .then((res) => {
@@ -70,7 +71,7 @@ export default function MarvelCharacters({ addToFavorites }) {
               marvel.thumbnail.extension &&
               !marvel.thumbnail.path.includes('image_not_available'),
           )
-          .slice(0, 12)
+          .slice(0, 20)
           .filter(
             (marvel) =>
               marvel.thumbnail &&
@@ -78,7 +79,7 @@ export default function MarvelCharacters({ addToFavorites }) {
               marvel.thumbnail.extension &&
               !marvel.thumbnail.path.includes('image_not_available'),
           )
-          .slice(0, 12)
+          .slice(0, 20)
           .map((character) => (
             <Card
               key={character.id}
