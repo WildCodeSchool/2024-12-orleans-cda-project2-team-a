@@ -18,10 +18,10 @@ function ComicPage() {
     setDisplayProfil(false);
   };
   useEffect(() => {
-    document.body.classList.add('comics-footer'); // Ajoute la classe quand la page est montée
+    document.body.classList.add('comics-footer');
 
     return () => {
-      document.body.classList.remove('comics-footer'); // Retire la classe quand la page est démontée
+      document.body.classList.remove('comics-footer');
     };
   }, []);
 
