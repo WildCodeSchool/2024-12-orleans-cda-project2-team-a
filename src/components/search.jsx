@@ -29,7 +29,8 @@ export default function Search() {
           (character) => !character.thumbnail.path.includes('image_not_available'),
         );
         setCharacterData({ ...result.data, results: filteredCharacters });
-      });
+      })
+      .catch((error) => console.log(error));
   };
 
   const getComicData = (characterId) => {
@@ -44,7 +45,8 @@ export default function Search() {
           (comic) => !comic.thumbnail.path.includes('image_not_available'),
         );
         setComicData({ ...result.data, results: filteredComics });
-      });
+      })
+      .catch((error) => console.log(error));
   };
 
   const handleChange = (event) => {
@@ -61,7 +63,7 @@ export default function Search() {
         <Characters data={characterData.results} onClick={getComicData} />
       )}
 
-      {comicData && comicData.results[0] && <Comics data={comicData.results} />}
+      {comicData && comicData.results[0] && <Comics data={comicData.results} onClick={() => {}} />}
     </>
   );
 }
