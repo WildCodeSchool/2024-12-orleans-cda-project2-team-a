@@ -16,7 +16,6 @@ export default function MarvelCharacters({ addToFavorites }) {
   const [comics, setComics] = useState([]);
 
   useEffect(() => {
-
     const apiComics = `https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}&limit=100`;
 
     fetch(apiComics)

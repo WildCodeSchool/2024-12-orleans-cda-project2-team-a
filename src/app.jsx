@@ -4,9 +4,8 @@ import { Route, Routes } from 'react-router-dom';
 import './app.scss';
 import MarvelCharacters from './components/marvel-characters';
 import Layout from './components/router-layout';
-import ComicPage from './pages/comics-page';
-
 import ComicDetail from './pages/comics-display';
+import ComicPage from './pages/comics-page';
 import FavoritePage from './pages/favorite-page';
 import NotFound from './pages/not-found-page';
 import ProfilePage from './pages/profile-page';
