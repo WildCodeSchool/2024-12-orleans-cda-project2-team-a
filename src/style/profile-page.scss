@@ -1,30 +1,124 @@
 @use 'settings.scss' as *;
 
 .profile {
-  max-width: 920px;
+  max-width: 1000px;
   margin: 0 auto;
+  background: $background-image;
+  background-position: center;
 
-  .comics-characters {
-    .character-content {
-      .present {
+  .profile-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding: 1% 0.5%;
+
+    div {
+      text-align: center;
+
+      img {
+        width: 75%;
+        margin: 3% 0;
+      }
+      .btn {
+        button {
+          background: $background-card;
+          color: $text-color;
+          border: 1px solid $background-card;
+          border-radius: $border-radius;
+          padding: 0.5rem 1rem;
+          margin: 0.5rem;
+          cursor: pointer;
+          transition: all 0.3s;
+
+          &:hover {
+            background: none;
+            color: $text-color;
+            border: 1px solid $text-color;
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: self-start;
+      padding: 2%;
+      border: 1px solid $background-card;
+      background: $background-card;
+      color: $text-color;
+      border-radius: $border-radius;
+
+      p {
+        margin: 0.8rem 0 0 0;
+      }
+    }
+  }
+
+  .comics {
+    border: 1px solid $background-card;
+    border-radius: $border-radius;
+    max-width: 870px;
+    margin: 0.25rem auto;
+    background: $background-card;
+
+    .comic-container {
+      margin: 0.7rem;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      color: $text-color;
+
+      div {
+        flex: 1 1;
+        height: 56vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 1rem;
+
         img {
-          width: 24%;
-          margin: 1% 0;
-          border-radius: 2%;
+          width: 70%;
+          margin: 3% 0;
         }
 
-        span {
-          font-weight: bold;
+        h3 {
+          font-size: 1.5rem;
+          margin: 1rem 0;
         }
 
+        p {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          padding: 4px;
+        }
+      }
+    }
+  }
+
+  // version mobile
+  @media (max-width: 768px) {
+    .profile-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: 1% 0.5%;
+
+      div {
+        text-align: center;
+
+        img {
+          width: 75%;
+          margin: 3% 0;
+        }
         .btn {
           button {
             background: $background-card;
             color: $text-color;
             border: 1px solid $background-card;
             border-radius: $border-radius;
-            padding: 0.3rem 0.6rem;
-            margin: 0.3rem;
+            padding: 0.4rem 1rem;
+            margin: 0.4rem;
             cursor: pointer;
             transition: all 0.3s;
 
@@ -38,55 +132,59 @@
         }
       }
 
-      .comics-section {
-        margin: 0.3%;
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: self-start;
+        padding: 2%;
+        border: 1px solid $background-card;
+        background: $background-card;
+        color: $text-color;
+        border-radius: $border-radius;
 
-        h1 {
-          font-size: 1.5rem;
-          margin: 1rem 0;
+        p {
+          margin: 0.8rem 0 0 0;
         }
+      }
+    }
 
-        .comics-list {
+    .comics {
+      border: 1px solid $background-card;
+      border-radius: $border-radius;
+      max-width: 870px;
+      margin: 0.25rem auto;
+      background: $background-card;
+
+      .comic-container {
+        margin: 0.7rem;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        color: $text-color;
+
+        div {
+          flex: 1 1;
+          height: 56vh;
           display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
-          max-width: 880px;
-          margin: 2.5rem auto;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin: 1rem;
 
-          a {
-            width: 18%;
-            text-align: center;
-            text-decoration: none;
-            color: $text-color;
-            transition: all 0.5s ease;
-            position: relative;
+          img {
+            width: 75%;
+            margin: 3% 0;
+          }
 
-            img {
-              width: 100%;
-              height: auto;
-            }
+          h3 {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+          }
 
-            p {
-              font-size: 0.8rem;
-              position: absolute;
-              bottom: 4rem;
-              background: $background-card;
-              left: 0;
-              right: 0;
-              text-transform: uppercase;
-              opacity: 0;
-              transition: all 0.5s ease;
-              transform: translateY(-100%);
-            }
-
-            &:hover {
-              transform: scale(1.05);
-              p {
-                opacity: 1;
-                transform: scale(1.05);
-                transform: translateY(0);
-              }
-            }
+          p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 0.2rem;
           }
         }
       }
