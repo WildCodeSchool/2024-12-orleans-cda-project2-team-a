@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import './app.scss';
@@ -9,8 +9,21 @@ import FavoritePage from './pages/favorite-page';
 import NotFound from './pages/not-found-page';
 import ProfilePage from './pages/profile-page';
 
+const getFavoritesFromLocalStorage = () => {
+  const savedFavorites = localStorage.getItem('favorites');
+  return savedFavorites ? JSON.parse(savedFavorites) : [];
+};
+
+const saveFavoritesToLocalStorage = (favorites) => {
+  localStorage.setItem('favorites', JSON.stringify(favorites));
+};
+
 function App() {
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState(getFavoritesFromLocalStorage());
+
+  useEffect(() => {
+    saveFavoritesToLocalStorage(favorites);
+  }, [favorites]);
 
   const addToFavorites = (char) => {
     if (!favorites.some((fav) => fav.id === char.id)) {
