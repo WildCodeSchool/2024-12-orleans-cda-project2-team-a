@@ -17,6 +17,13 @@ function ComicPage() {
   const onClose = () => {
     setDisplayProfil(false);
   };
+  // useEffect(() => {
+  //   document.body.classList.add('comics-footer');
+
+  //   return () => {
+  //     document.body.classList.remove('comics-footer');
+  //   };
+  // }, []);
 
   useEffect(() => {
     fetch(`https://gateway.marvel.com/v1/public/comics?apikey=${publicKey}&limit=50&offset=${offset}`)

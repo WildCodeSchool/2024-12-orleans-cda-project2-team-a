@@ -17,16 +17,22 @@ function Card({ character, image, onAddToFavorites, isFavoritePage }) {
     <>
       <div className='card'>
         <img src={image} alt={character} onClick={handleDisplayProfil} />
-        <div className='test'>
+        <div className='space'>
           {!isFavoritePage && (
-            <button className='btn' onClick={onAddToFavorites}>
+            <button
+              className='btn'
+              onClick={(e) => {
+                e.stopPropagation();
+                onAddToFavorites();
+              }}
+            >
               <img className='heart' src='/pictures/heart-cards.png' alt='' />
             </button>
           )}
         </div>
 
         <div className='character-title'>
-          <h2>{character}</h2>
+          <h2 onClick={handleDisplayProfil}>{character}</h2>
         </div>
 
         <Modal open={displayProfil} onClose={onClose} />

@@ -23,8 +23,8 @@ function App() {
         <Route element={<Layout />}>
           <Route path='/' element={<MarvelCharacters addToFavorites={addToFavorites} />} />
           <Route path='/favorites' element={<FavoritePage favorites={favorites} />} />
-          <Route path='*' element={<NotFound />} />
           <Route path='/comics' element={<ComicPage />}></Route>
+          <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
     </>

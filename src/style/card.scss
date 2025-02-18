@@ -23,7 +23,7 @@
       white;
     border-radius: 8px;
 
-    .test {
+    .space {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -102,6 +102,12 @@
       height: 70px;
       // margin-top: 10px;
       border-radius: 8px;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.1);
+        transition: transform 0.5s;
+        filter: brightness(0.9);
+      }
     }
 
     h2 {
