@@ -46,32 +46,31 @@ function ComicPage() {
 
   return (
     <>
-    <div className='comics-container'>
-     <h1 className='typo-comics'> Comics</h1>
-      <div className='comics'>
-       
-        {comics.slice(0, visibleCount).map((comic) => (
-          <div className='id' key={comic.id}>
-            <Link
-              to={`/comics/${comic.id}`}
-              key={comic.id}
-              className='comic-card'
-              style={{
-                background: `url(${comic.thumbnail.path}.${comic.thumbnail.extension}) no-repeat center`,
-                backgroundSize: 'cover',
-              }}
-            >
-              <div className='comics-title'>
-                <h3>{comic.title}</h3>
-              </div>
-            </Link>
-          </div>
-        ))}
-      </div>
+      <div className='comics-container'>
+        <h1 className='typo-comics'> Comics</h1>
+        <div className='comics'>
+          {comics.slice(0, visibleCount).map((comic) => (
+            <div className='id' key={comic.id}>
+              <Link
+                to={`/comics/${comic.id}`}
+                key={comic.id}
+                className='comic-card'
+                style={{
+                  background: `url(${comic.thumbnail.path}.${comic.thumbnail.extension}) no-repeat center`,
+                  backgroundSize: 'cover',
+                }}
+              >
+                <div className='comics-title'>
+                  <h3>{comic.title}</h3>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
 
-      <div className='more'>
-        <button onClick={loadMore}>More</button>
-      </div>
+        <div className='more'>
+          <button onClick={loadMore}>More</button>
+        </div>
       </div>
     </>
   );

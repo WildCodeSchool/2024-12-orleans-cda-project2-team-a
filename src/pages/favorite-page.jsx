@@ -5,8 +5,6 @@ import '../style/favorite-page.scss';
 
 export default function FavoritePage({ favorites }) {
   return (
-
-    
     <div className='favorite'>
       <h1 className='typo'>My Favorite Characters</h1>
       <div className='grid-box'>
