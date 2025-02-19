@@ -1,28 +1,16 @@
 import '../style/modal.scss';
 
-const Modal = ({ open, onClose }) => {
-  if (!open) return null;
+export default function Modal({ isOpen, onClose, children }) {
+  if (!isOpen) return null;
 
   return (
-    <>
-      <div className='overlay'></div>
-
-      <div className='modal'>
-        <div>
-          <img className='thanos' src='/pictures/thanos.png' alt='marvel' />
-          <h1>Thanos</h1>
-        </div>
-        <div className='comics-content'>
-          <img src='/pictures/comics.png' alt='comic presentation' />
-          <img src='/pictures/comics.png' alt='comic presentation' />
-          <img src='/pictures/comics.png' alt='comic presentation' />
-        </div>
-        <button className='btn-modal' type='button' onClick={onClose}>
-          X
+    <div className='modal-overlay'>
+      <div className='modal-content'>
+        <button className='btn-modal ' onClick={onClose}>
+          &times;
         </button>
+        {children}
       </div>
-    </>
+    </div>
   );
-};
-
-export default Modal;
+}
