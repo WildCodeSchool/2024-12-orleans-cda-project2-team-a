@@ -12,7 +12,6 @@ function Layout() {
       }}
     >
       <Navbar />
-
       <Outlet />
       <Footer />
     </div>

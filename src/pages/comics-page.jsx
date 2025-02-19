@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import Modal from '../components/modal';
 import '../style/comics-page.scss';
 
 const publicKey = import.meta.env.VITE_PUBLIC_KEY;
@@ -9,14 +9,6 @@ function ComicPage() {
   const [comics, setComics] = useState([]);
   const [visibleCount, setVisibleCount] = useState(12);
   const [offset, setOffset] = useState(0);
-  const [displayProfil, setDisplayProfil] = useState(false);
-
-  const handleDisplayProfil = () => {
-    setDisplayProfil(!displayProfil);
-  };
-  const onClose = () => {
-    setDisplayProfil(false);
-  };
 
   useEffect(() => {
     fetch(`https://gateway.marvel.com/v1/public/comics?apikey=${publicKey}&limit=50&offset=${offset}`)
@@ -44,6 +36,7 @@ function ComicPage() {
           setOffset((prevOffset) => prevOffset + 50);
         }
       })
+      // eslint-disable-next-line no-console
       .catch((err) => console.error(err));
   }, [offset]);
 
@@ -56,9 +49,10 @@ function ComicPage() {
       <div className='comics'>
         {comics.slice(0, visibleCount).map((comic) => (
           <div className='id' key={comic.id}>
-            <a
+            <Link
+              to={`/comics/${comic.id}`}
+              key={comic.id}
               className='comic-card'
-              onClick={handleDisplayProfil}
               style={{
                 background: `url(${comic.thumbnail.path}.${comic.thumbnail.extension}) no-repeat center`,
                 backgroundSize: 'cover',
@@ -67,7 +61,7 @@ function ComicPage() {
               <div className='comics-title'>
                 <h3>{comic.title}</h3>
               </div>
-            </a>
+            </Link>
           </div>
         ))}
       </div>
@@ -75,7 +69,6 @@ function ComicPage() {
       <div className='more'>
         <button onClick={loadMore}>More</button>
       </div>
-      <Modal open={displayProfil} onClose={onClose} />
     </>
   );
 }

@@ -6,13 +6,13 @@ export default function Card({ character, image, onAddToFavorites, onClick }) {
       <img src={image} alt={character} className='heart' />
       <div className='space'>
         <button
-          className='btn'
+          className='btn favor'
           onClick={(e) => {
             e.stopPropagation();
             onAddToFavorites();
           }}
         >
-          <img className='heart' src='/pictures/heart-cards.png' alt='' />
+          <img className='heart ' src='/pictures/heart-cards.png' alt='' />
         </button>
       </div>
       <div className='character-title'>

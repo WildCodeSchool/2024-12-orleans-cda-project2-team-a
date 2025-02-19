@@ -8,7 +8,7 @@ export default function NotFound() {
       <h1> ERROR 404</h1>
 
       <div>
-        <img src='/pictures/snap-3.png' alt='' />
+        <img src='/pictures/snap-3.png' alt='thanos snap' />
         <h2>“Snap! This page just got dusted.”</h2>{' '}
       </div>
 
@@ -19,7 +19,7 @@ export default function NotFound() {
         </Link>
         <Link to='/'>
           {' '}
-          <img className='portal-img' src='\pictures\portal.png' alt='' />{' '}
+          <img className='portal-img' src='/pictures/portal.png' alt='portal image' />{' '}
         </Link>
       </div>
     </div>
