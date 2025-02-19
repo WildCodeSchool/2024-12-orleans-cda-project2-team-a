@@ -39,6 +39,9 @@
       font-size: 1em;
       text-transform: lowercase;
       color: white;
+      :hover {
+        transition: all 0.2s linear;
+      }
     }
   }
 
@@ -47,6 +50,7 @@
     filter: grayscale(0);
     box-shadow: 6px 6px black;
     transform: translate(-2px, -2px);
+    transition: all 0.2s linear;
 
     .comics-title {
       opacity: 0;

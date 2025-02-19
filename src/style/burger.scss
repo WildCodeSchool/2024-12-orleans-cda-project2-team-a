@@ -33,7 +33,7 @@
       padding: 10px;
       margin: 0;
       width: 100vw;
-      height: 100vh;
+      height: 34vh;
       opacity: 0;
       visibility: hidden;
       z-index: 50;
@@ -46,9 +46,11 @@
 
     ul.active {
       width: 100vw;
-      height: 100vh;
+      height: 34vh;
       opacity: 1;
       visibility: visible;
+      transform: translateX(5);
+
       li {
         color: black;
         padding: 8px 0;

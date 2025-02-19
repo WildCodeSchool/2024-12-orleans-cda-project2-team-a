@@ -4,10 +4,9 @@ import { Route, Routes } from 'react-router-dom';
 import './app.scss';
 import MarvelCharacters from './components/marvel-characters';
 import Layout from './components/router-layout';
-import ComicDetail from './pages/comics-display';
+import ComicPage from './pages/comics-page';
 import FavoritePage from './pages/favorite-page';
 import NotFound from './pages/not-found-page';
-import ProfilePage from './pages/profile-page';
 
 const getFavoritesFromLocalStorage = () => {
   const savedFavorites = localStorage.getItem('favorites');
@@ -37,9 +36,8 @@ function App() {
         <Route element={<Layout />}>
           <Route path='/' element={<MarvelCharacters addToFavorites={addToFavorites} />} />
           <Route path='/favorites' element={<FavoritePage favorites={favorites} />} />
+          <Route path='/comics' element={<ComicPage />}></Route>
           <Route path='*' element={<NotFound />} />
-          <Route path='/comics/:comicId' element={<ComicDetail />} />
-          <Route path='/profile' element={<ProfilePage />} />
         </Route>
       </Routes>
     </>
