@@ -12,7 +12,7 @@ export default function Card({ character, image, onAddToFavorites, onClick }) {
             onAddToFavorites();
           }}
         >
-          <img className='heart ' src='\pictures\heart-cards.png' alt='' />
+          <img className='heart ' src='/pictures/heart-cards.png' alt='' />
         </button>
       </div>
       <div className='character-title'>
