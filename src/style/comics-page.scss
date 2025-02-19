@@ -1,5 +1,28 @@
 @use 'settings' as *;
 
+.comics-container{
+  padding-top: 20px;
+  padding-left: 20px;
+  
+
+
+.typo-comics{
+
+  background-color: #670208;
+  font-family: 'Aclonica', sans-serif;
+  padding-top: 60px;
+  width: 140px;
+  font-size: 18px;
+  padding: 14px;
+  border-radius: 10px;
+  margin-left:400px;
+  color: white;
+  box-shadow: 0px 2px 6px black;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 3px 2px 8px black;
+  display: flex;
+}
 .comics {
   width: 100%;
   display: grid;
@@ -7,7 +30,7 @@
   justify-content: center;
   grid-gap: 10px;
   padding: 1em;
-  margin-top: 20px;
+  margin-top: 10px;
 
   .comics-title {
     font-family: $font-family;
@@ -96,4 +119,5 @@
   .comics {
     grid-template-columns: repeat(2, 170px);
   }
+}
 }

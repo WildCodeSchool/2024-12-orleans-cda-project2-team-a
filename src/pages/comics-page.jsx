@@ -46,7 +46,10 @@ function ComicPage() {
 
   return (
     <>
+    <div className='comics-container'>
+     <h1 className='typo-comics'> Comics</h1>
       <div className='comics'>
+       
         {comics.slice(0, visibleCount).map((comic) => (
           <div className='id' key={comic.id}>
             <Link
@@ -68,6 +71,7 @@ function ComicPage() {
 
       <div className='more'>
         <button onClick={loadMore}>More</button>
+      </div>
       </div>
     </>
   );

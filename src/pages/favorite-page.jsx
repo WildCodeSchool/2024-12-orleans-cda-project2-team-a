@@ -5,7 +5,10 @@ import '../style/favorite-page.scss';
 
 export default function FavoritePage({ favorites }) {
   return (
+
+    
     <div className='favorite'>
+      <h1 className='typo'>My Favorite Characters</h1>
       <div className='grid-box'>
         {favorites.length === 0 ? (
           <h1>No favorites added yet.</h1>
