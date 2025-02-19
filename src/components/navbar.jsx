@@ -10,29 +10,29 @@ function Navbar() {
     <>
       <nav className='navbar'>
         <Link to='/' className='my-link'>
-          <img className='logo' src='\pictures\marvel-logo.png' alt='marvel-logo' />
+          <img className='logo' src='/pictures/marvel-logo.png' alt='marvel-logo' />
         </Link>
 
         <ul className='nav-links'>
           <li>
             <Link to='/' className='my-link'>
-              <img src='\pictures\home.png' alt='' /> Home
+              <img src='/pictures/home.png' alt='' /> Home
             </Link>
           </li>
 
           <li className='input'>
-            <img src='\pictures\search.png' alt='' />
+            <img src='/pictures/search.png' alt='' />
             <Search />
           </li>
           <li>
             <Link to='/favorites' className='my-link'>
-              <img src='\pictures\heart.png' alt='' />
+              <img src='/pictures/heart.png' alt='' />
               Favorites
             </Link>
           </li>
           <li>
             <Link to='/comics' className='my-link'>
-              <img src='\pictures\comic-book.png' alt='' />
+              <img src='/pictures/comic-book.png' alt='' />
               Comics
             </Link>
           </li>
