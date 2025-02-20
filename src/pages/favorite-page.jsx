@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import Card from '../components/card';
 import '../style/burger.scss';
 import '../style/card.scss';
@@ -12,12 +14,14 @@ export default function FavoritePage({ favorites }) {
           <h1>No favorites added yet.</h1>
         ) : (
           favorites.map((character) => (
-            <Card
-              key={character.id}
-              character={character.name}
-              image={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-              isFavoritePage={true}
-            />
+            <Link to={`/${character.id}`} key={character.id}>
+              <Card
+                key={character.id}
+                character={character.name}
+                image={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+                isFavoritePage={true}
+              />
+            </Link>
           ))
         )}
       </div>
