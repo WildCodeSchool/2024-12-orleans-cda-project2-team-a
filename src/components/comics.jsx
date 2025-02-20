@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import '../style/comics.scss';
 
@@ -19,7 +20,7 @@ export default function Comics({ data, onClick }) {
           {data.map((dataItem) => {
             const detailsUrl = dataItem.urls.find((element) => element['type'] === 'detail').url;
             return (
-              <a
+              <Link
                 key={dataItem.id}
                 className='comic-card'
                 style={{
@@ -37,7 +38,7 @@ export default function Comics({ data, onClick }) {
                 <div className='comics-title'>
                   <h3>{dataItem.title}</h3>
                 </div>
-              </a>
+              </Link>
             );
           })}
         </div>

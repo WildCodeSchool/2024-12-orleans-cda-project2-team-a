@@ -7,12 +7,15 @@
   .comics-characters {
     .character-content {
       .present {
-        img {
-          width: 24%;
-          margin: 1% 0;
-          border-radius: 2%;
+        display: flex;
+        .image-containe {
+          img {
+            width: 340px;
+            margin: 1% 0;
+            border-radius: 2%;
+            margin-top: 7%;
+          }
         }
-
         span {
           font-weight: bold;
         }
@@ -37,7 +40,18 @@
           }
         }
       }
-
+      .bio {
+        margin-left: 16%;
+        margin-top: 2%;
+        h3 {
+          font-size: 3.3rem;
+          font-family: $font-family;
+        }
+        p {
+          font-size: 1.5rem;
+          font-family: $font-family;
+        }
+      }
       .comics-section {
         margin: 0.3%;
 
