@@ -50,7 +50,12 @@
 
     p {
       font-size: 1rem;
+      overflow: hidden;
       line-height: 1.5;
+      max-width: 300px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 6;
     }
   }
 }
