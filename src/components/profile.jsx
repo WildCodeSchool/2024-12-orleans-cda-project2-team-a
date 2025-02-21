@@ -11,6 +11,7 @@ export default function Profile({ characterMarvel, img, title, description, comi
             <div className='image-containe'>
               <img src={img} alt={characterMarvel} />
               <h2>{characterMarvel}</h2>
+              <h3>{title} </h3>
             </div>
             <div className='bio'>
               <h3>

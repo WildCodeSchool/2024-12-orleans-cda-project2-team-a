@@ -26,7 +26,9 @@ export default function MarvelCharacters({ addToFavorites }) {
         const randomCharacters = data.data.results.sort(() => Math.random() - 1);
         setMarvelCharacter(randomCharacters);
       })
+      // eslint-disable-next-line no-console
       .catch((err) => console.error(err));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [MarvelCharacters]);
 
   const handleAddToFavorites = (character) => {
@@ -62,6 +64,7 @@ export default function MarvelCharacters({ addToFavorites }) {
       .then((data) => {
         setComics(data.data.results);
       })
+      // eslint-disable-next-line no-console
       .catch((err) => console.error(err));
   };
 
