@@ -4,24 +4,6 @@
   padding-top: 20px;
   padding-left: 20px;
 
-  .more {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 10px;
-
-    button {
-      background-color: #670208;
-      border: none;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 1em;
-      font-weight: 700;
-      cursor: pointer;
-      margin-top: 45px;
-    }
-  }
   .typo-comics {
     background-color: #670208;
     font-family: 'Aclonica', sans-serif;
@@ -30,7 +12,7 @@
     font-size: 18px;
     padding: 14px;
     border-radius: 10px;
-    margin-left: 157px;
+    margin-left: 400px;
     color: white;
     box-shadow: 0px 2px 6px black;
     align-items: center;
@@ -38,15 +20,6 @@
     text-shadow: 3px 2px 8px black;
     display: flex;
   }
-}
-.comics {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(6, 170px);
-  justify-content: center;
-  grid-gap: 25px;
-  padding: 1em;
-  margin-top: 20px;
   .comics {
     width: 100%;
     display: grid;
@@ -117,6 +90,24 @@
     }
   }
 
+  .more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+
+    button {
+      background-color: #670208;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1em;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 45px;
+    }
+  }
   .comics-footer footer {
     margin-top: 50px;
   }

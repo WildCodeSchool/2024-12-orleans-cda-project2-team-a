@@ -25,7 +25,11 @@ export default function Profile({ characterMarvel, img, title, description, comi
             <div className='comics-list'>
               {comics.map((comic) => (
                 <Link to={`/comics/${comic.id}`} key={comic.id}>
-                  <img src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`} alt={comic.title} />
+                  <img
+                    className='item'
+                    src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
+                    alt={comic.title}
+                  />
                   <p>{comic.title}</p>
                 </Link>
               ))}
