@@ -8,13 +8,16 @@ export default function Profile({ characterMarvel, img, title, description, comi
       <div className='comics-characters'>
         <div className='character-content'>
           <div className='present'>
-            <img src={img} alt={characterMarvel} />
-            <h2>{characterMarvel}</h2>
-            <span>{title}</span>
-            <p>{description}</p>
-            <div className='btn'>
-              <button>Event</button>
-              <button>History</button>
+            <div className='image-containe'>
+              <img src={img} alt={characterMarvel} />
+              <h2>{characterMarvel}</h2>
+            </div>
+            <div className='bio'>
+              <h3>
+                {' '}
+                <strong>Bio :</strong>
+              </h3>
+              <p>{description}</p>
             </div>
           </div>
           <div className='comics-section'>

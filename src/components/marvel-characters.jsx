@@ -11,7 +11,6 @@ export default function MarvelCharacters({ addToFavorites }) {
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [comics, setComics] = useState([]);
-
   const [currentPage, setCurrentPage] = useState(0);
   const charactersPerPage = 20;
 
@@ -24,10 +23,11 @@ export default function MarvelCharacters({ addToFavorites }) {
         return res.json();
       })
       .then((data) => {
-        setMarvelCharacter(data.data.results);
+        const randomCharacters = data.data.results.sort(() => Math.random() - 1);
+        setMarvelCharacter(randomCharacters);
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [MarvelCharacters]);
 
   const handleAddToFavorites = (character) => {
     addToFavorites(character);
