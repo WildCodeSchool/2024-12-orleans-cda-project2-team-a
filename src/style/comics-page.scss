@@ -5,20 +5,34 @@
   padding-left: 20px;
 
   .typo-comics {
+    //Modification a faire pour desktop
     background-color: #670208;
     font-family: 'Aclonica', sans-serif;
-    padding-top: 60px;
     width: 140px;
     font-size: 18px;
     padding: 14px;
     border-radius: 10px;
-    margin-left: 400px;
+    margin-left: 91px;
     color: white;
     box-shadow: 0px 2px 6px black;
-    align-items: center;
-    justify-content: center;
     text-shadow: 3px 2px 8px black;
-    display: flex;
+    text-align: center;
+
+    //Pour la MediaQuery
+    // background-color: #670208;
+    // font-family: "Aclonica", sans-serif;
+    // /* padding-top: 60px; */
+    // width: 140px;
+    // font-size: 18px;
+    // padding: 14px;
+    // border-radius: 10px;
+    // margin-left: 96px;
+    // color: white;
+    // box-shadow: 0px 2px 6px black;
+    // /* align-items: center; */
+    // /* justify-content: center; */
+    // text-shadow: 3px 2px 8px black;
+    // text-align: center;
   }
   .comics {
     width: 100%;
@@ -115,6 +129,7 @@
   @media screen and (min-width: 301px) and (max-width: 644px) {
     .comics {
       grid-template-columns: repeat(2, 170px);
+      grid-gap: 20px 52px;
     }
   }
 }
