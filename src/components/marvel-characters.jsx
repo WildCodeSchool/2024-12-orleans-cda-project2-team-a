@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Card from '../components/card';
 import Modal from '../components/modal';
 import Profile from '../components/profile';
+import '../style/marvel-characters.scss';
 
 const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
@@ -12,10 +13,10 @@ export default function MarvelCharacters({ addToFavorites }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [comics, setComics] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
-  const charactersPerPage = 20;
+  const charactersPerPage = 15;
 
   useEffect(() => {
-    const apiComics = `https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}&limit=100`;
+    const apiComics = `https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}&limit=100&offset=0`;
 
     fetch(apiComics)
       .then((res) => {
@@ -84,9 +85,16 @@ export default function MarvelCharacters({ addToFavorites }) {
   return (
     <div className='characters-comics'>
       <div className='pagination'>
-        <button onClick={handlePrev}>prev</button>
-        <button onClick={handleNext} disabled={(currentPage + 1) * charactersPerPage >= marvelCharacter.length}>
-          next
+        <button className='btn-left' onClick={handlePrev}>
+          {' '}
+          {`<`}{' '}
+        </button>
+        <button
+          className='btn-right'
+          onClick={handleNext}
+          disabled={(currentPage + 1) * charactersPerPage >= marvelCharacter.length}
+        >
+          {`>`}
         </button>
       </div>
       <div className='grid-box'>

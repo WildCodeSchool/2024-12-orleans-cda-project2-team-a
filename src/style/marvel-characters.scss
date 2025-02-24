@@ -1,0 +1,67 @@
+@use 'settings' as *;
+.loading {
+  background-color: yellow;
+}
+.pagination {
+  .btn-right {
+    border-radius: 50%;
+    font-size: 190%;
+    gap: 30px;
+    padding: 6px;
+    background-color: $primary-color;
+    position: absolute;
+    margin-left: 88%;
+    margin-top: 30%;
+    width: 3%;
+    border: none;
+    color: $text-color;
+    cursor: pointer;
+  }
+  .btn-left {
+    border-radius: 50%;
+    font-size: 190%;
+    gap: 30px;
+    padding: 6px;
+    background-color: $primary-color;
+    position: absolute;
+    margin-left: 5%;
+    margin-top: 30%;
+    width: 3%;
+    border: none;
+    color: $text-color;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 644px) {
+  .pagination {
+    .btn-right {
+      border-radius: 50%;
+      font-size: 150%;
+      gap: 30px;
+      padding: 6px;
+      background-color: $primary-color;
+      position: absolute;
+
+      width: 8%;
+      border: none;
+      color: $text-color;
+      cursor: pointer;
+      margin-left: 65%;
+      margin-top: 530%;
+    }
+    .btn-left {
+      border-radius: 50%;
+      font-size: 150%;
+      gap: 30px;
+      padding: 6px;
+      background-color: $primary-color;
+      position: absolute;
+      width: 8%;
+      border: none;
+      color: $text-color;
+      cursor: pointer;
+      margin-left: 35%;
+      margin-top: 530%;
+    }
+  }
+}
