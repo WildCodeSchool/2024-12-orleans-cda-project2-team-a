@@ -1,15 +1,22 @@
 @use 'settings.scss' as *;
 
 .comics-display {
-  font-family: $font-family;
-  color: $text-color;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 76svh;
-  background-color: $background-comics;
+  font-family: 'Aclonica', sans-serif;
+  color: #f4f4f4;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 12%;
+  background-color: rgba(0, 0, 0, 0.5);
   max-width: 1000px;
   margin: 0.4% auto;
   overflow: hidden;
+
+  //mobile
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 
   .comics-img {
     width: 67%;
@@ -22,8 +29,7 @@
       border-radius: 0.5rem;
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
       border-radius: 2.5rem;
-      border: 2px solid red;
-      margin: 1rem;
+      border: 1px solid $text-color;
     }
   }
 
@@ -32,7 +38,7 @@
     flex-direction: column;
     justify-content: left;
     width: 80%;
-    margin: 2.5rem 0;
+    padding: 2rem;
     height: 83%;
     gap: 2.5rem;
 
