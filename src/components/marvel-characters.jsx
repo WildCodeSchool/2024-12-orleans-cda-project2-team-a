@@ -13,7 +13,7 @@ export default function MarvelCharacters({ addToFavorites }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [comics, setComics] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
-  const charactersPerPage = 15;
+  const charactersPerPage = 20;
 
   useEffect(() => {
     const apiComics = `https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}&limit=100&offset=0`;
