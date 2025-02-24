@@ -88,9 +88,7 @@ export default function MarvelCharacters({ addToFavorites }) {
     <div className='characters-comics'>
       <div className='pagination'>
         <button onClick={handlePrev}>prev</button>
-        <button onClick={handleNext} disabled={(currentPage + 1) * charactersPerPage >= marvelCharacter.length}>
-          next
-        </button>
+        <button onClick={handleNext}>next</button>
       </div>
       <div className='grid-box'>
         {displayedCharacters.map((character) => (
