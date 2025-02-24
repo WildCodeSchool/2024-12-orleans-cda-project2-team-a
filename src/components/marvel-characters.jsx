@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Card from '../components/card';
 import Modal from '../components/modal';
 import Profile from '../components/profile';
+import Loader from './loader';
 
 const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
@@ -12,10 +13,12 @@ export default function MarvelCharacters({ addToFavorites }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [comics, setComics] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
-  const charactersPerPage = 20;
+  const [loading, setLoading] = useState(true);
+  const [err, setError] = useState(null);
+  const charactersPerPage = 15;
 
   useEffect(() => {
-    const apiComics = `https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}&limit=100`;
+    const apiComics = `https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}&limit=70`;
 
     fetch(apiComics)
       .then((res) => {
@@ -23,10 +26,21 @@ export default function MarvelCharacters({ addToFavorites }) {
         return res.json();
       })
       .then((data) => {
-        const randomCharacters = data.data.results.sort(() => Math.random() - 1);
-        setMarvelCharacter(randomCharacters);
+        const filteredCharacters = data.data.results.filter(
+          (marvel) =>
+            marvel.thumbnail &&
+            marvel.thumbnail.path &&
+            marvel.thumbnail.extension &&
+            !marvel.thumbnail.path.includes('image_not_available'),
+        );
+        setLoading(false);
+        setMarvelCharacter(filteredCharacters);
       })
-      .catch((err) => console.error(err));
+
+      .catch((err) => {
+        setError(err);
+        setLoading(false);
+      });
   }, [MarvelCharacters]);
 
   const handleAddToFavorites = (character) => {
@@ -80,6 +94,15 @@ export default function MarvelCharacters({ addToFavorites }) {
         !marvel.thumbnail.path.includes('image_not_available'),
     )
     .slice(currentPage * charactersPerPage, (currentPage + 1) * charactersPerPage);
+
+  if (loading)
+    return (
+      <div className='Load'>
+        {' '}
+        <Loader />{' '}
+      </div>
+    );
+  if (err) return <div>Error: {err.message}</div>;
 
   return (
     <div className='characters-comics'>
