@@ -111,31 +111,8 @@
 }
 
 @media screen and (max-width: 450px) {
-  // .present {
-  //   flex-wrap: wrap;
-  // }
-
-  // .profile .comics-characters .character-content .bio h3 {
-  //   font-size: 1.2rem;
-
-  // }
-  //   .profile .comics-characters .character-content .bio p{
-  //     font-size: 1rem;
-  //     max-width: 70vh;
-  //   }
-  // }
-  // .profile .comics-characters .character-content .present .image-containe img{
-  //   width: 150px;
-  //   height: 200px;
-  //   margin-top: -10px;
-  // }
   .profile .comics-characters .character-content .comics-list {
     display: flex;
     gap: 16px 70px;
-
-    // a img {
-    //   width: 120px;
-    //   height: 160px;
-    // }
   }
 }
