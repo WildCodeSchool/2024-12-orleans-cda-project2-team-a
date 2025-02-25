@@ -1,6 +1,7 @@
 @use 'settings.scss' as *;
 
 .profile {
+  z-index: 10000;
   max-width: 920px;
   margin: 0 auto;
   overflow: auto;
@@ -114,9 +115,44 @@
   }
 }
 
-@media screen and (max-width: 450px) {
-  .profile .comics-characters .character-content .comics-list {
-    display: flex;
-    gap: 16px 70px;
+@media screen and (max-width: 644px) {
+  .profile .comics-characters .character-content {
+    margin-left: 1px;
+
+    .present {
+      // display: block;
+
+      .image-containe {
+        img {
+          height: 200px;
+          width: 200px;
+        }
+        h2 {
+          font-size: 1.2rem;
+          margin-left: 28%;
+        }
+      }
+      .bio {
+        margin-left: 10px;
+        h3 {
+          font-size: 1.3rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+    .comics-section {
+      .comics-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        a img {
+          height: 150px;
+          width: 100px;
+          margin-top: -10px;
+        }
+      }
+    }
   }
 }
