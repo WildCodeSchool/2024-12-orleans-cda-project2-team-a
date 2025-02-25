@@ -41,7 +41,6 @@ export default function MarvelCharacters({ addToFavorites }) {
         setError(err);
         setLoading(false);
       });
-
   }, [MarvelCharacters]);
 
   const handleAddToFavorites = (character) => {
