@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import Loader from '../components/loader';
 import '../style/comics-page.scss';
 
 const publicKey = import.meta.env.VITE_PUBLIC_KEY;
@@ -10,8 +9,6 @@ function ComicPage() {
   const [comics, setComics] = useState([]);
   const [visibleCount, setVisibleCount] = useState(12);
   const [offset, setOffset] = useState(0);
-  const [loading, setLoading] = useState(true);
-  const [err, setError] = useState(null);
 
   useEffect(() => {
     fetch(`https://gateway.marvel.com/v1/public/comics?apikey=${publicKey}&limit=50&offset=${offset}`)
@@ -28,7 +25,7 @@ function ComicPage() {
               comic.thumbnail.extension &&
               !comic.thumbnail.path.includes('image_not_available'),
           );
-          setLoading(false);
+
           const existingIds = prevComics.map((comic) => comic.id);
           const filteredNewComics = newComics.filter((comic) => !existingIds.includes(comic.id));
 
@@ -39,21 +36,10 @@ function ComicPage() {
           setOffset((prevOffset) => prevOffset + 50);
         }
       })
-
-      .catch((err) => {
-        setError(err);
-        setLoading(false);
-      });
+      // eslint-disable-next-line no-console
+      .catch((err) => console.error(err));
   }, [offset]);
 
-  if (loading)
-    return (
-      <div>
-        <Loader />
-      </div>
-    );
-
-  if (err) return <div>Error: {err.message}</div>;
   const loadMore = () => {
     setVisibleCount((prev) => prev + 12);
   };
