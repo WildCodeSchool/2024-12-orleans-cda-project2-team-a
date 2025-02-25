@@ -43,6 +43,12 @@ export default function MarvelCharacters({ addToFavorites }) {
       });
   }, []);
 
+  if (loading)
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
   const handleAddToFavorites = (character) => {
     addToFavorites(character);
   };
@@ -96,12 +102,6 @@ export default function MarvelCharacters({ addToFavorites }) {
     )
     .slice(currentPage * charactersPerPage, (currentPage + 1) * charactersPerPage);
 
-  if (loading)
-    return (
-      <div className='Load'>
-        <Loader />
-      </div>
-    );
   if (err) return <div>Error: {err.message}</div>;
 
   return (
