@@ -41,7 +41,7 @@ export default function MarvelCharacters({ addToFavorites }) {
         setError(err);
         setLoading(false);
       });
-  }, [MarvelCharacters]);
+  }, []);
 
   const handleAddToFavorites = (character) => {
     addToFavorites(character);
@@ -99,8 +99,7 @@ export default function MarvelCharacters({ addToFavorites }) {
   if (loading)
     return (
       <div className='Load'>
-        {' '}
-        <Loader />{' '}
+        <Loader />
       </div>
     );
   if (err) return <div>Error: {err.message}</div>;

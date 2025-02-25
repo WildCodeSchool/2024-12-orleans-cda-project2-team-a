@@ -2,8 +2,7 @@ import '../style/loader.scss';
 
 export default function Loader() {
   return (
-    <div className='Load'>
-      {' '}
+    <div className='load'>
       <img src='/pictures/hammer.png' alt='' /> <p> Loading..... </p>
     </div>
   );
