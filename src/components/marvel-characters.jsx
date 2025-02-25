@@ -13,7 +13,8 @@ export default function MarvelCharacters({ addToFavorites }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [comics, setComics] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
-  const charactersPerPage = 20;
+  const charactersPerPage = 15;
+  const [count, setcount] = useState(0);
 
   useEffect(() => {
     const apiComics = `https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}&limit=100&offset=0`;
@@ -36,13 +37,17 @@ export default function MarvelCharacters({ addToFavorites }) {
 
   const handlePrev = () => {
     if (currentPage > 0) {
-      setCurrentPage(currentPage - 1);
+      setCurrentPage((prevPage) => prevPage - 1);
+      setcount((prevCount) => Math.max(prevCount - 1, 0));
     }
   };
 
   const handleNext = () => {
-    if ((currentPage + 1) * charactersPerPage < marvelCharacter.length) {
-      setCurrentPage(currentPage + 1);
+    if (count <= 3) {
+      if ((currentPage + 1) * charactersPerPage < marvelCharacter.length) {
+        setCurrentPage(currentPage + 1);
+      }
+      setcount(count + 1);
     }
   };
 
@@ -86,14 +91,9 @@ export default function MarvelCharacters({ addToFavorites }) {
     <div className='characters-comics'>
       <div className='pagination'>
         <button className='btn-left' onClick={handlePrev}>
-          {' '}
-          {`<`}{' '}
+          {`<`}
         </button>
-        <button
-          className='btn-right'
-          onClick={handleNext}
-          disabled={(currentPage + 1) * charactersPerPage >= marvelCharacter.length}
-        >
+        <button className='btn-right' onClick={handleNext} disabled={count >= 3}>
           {`>`}
         </button>
       </div>
