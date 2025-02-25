@@ -107,7 +107,6 @@ export default function MarvelCharacters({ addToFavorites }) {
             <Profile
               characterMarvel={selectedCharacter.name}
               img={`${selectedCharacter.thumbnail.path}.${selectedCharacter.thumbnail.extension}`}
-              title={selectedCharacter.title}
               description={selectedCharacter.description}
               comics={comics.filter((comic) => comic.description).slice(0, 5)}
             />

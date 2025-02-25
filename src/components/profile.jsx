@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import '../style/profile-page.scss';
 
-export default function Profile({ characterMarvel, img, title, description, comics }) {
+export default function Profile({ characterMarvel, img, description, comics }) {
   return (
     <div className='profile'>
       <div className='comics-characters'>
@@ -11,14 +11,13 @@ export default function Profile({ characterMarvel, img, title, description, comi
             <div className='image-containe'>
               <img src={img} alt={characterMarvel} />
               <h2>{characterMarvel}</h2>
-              <h3>{title} </h3>
             </div>
             <div className='bio'>
               <h3>
                 {' '}
                 <strong>Bio :</strong>
               </h3>
-              <p>{description ? description : 'Description not avalable'}</p>
+              <p>{description ? description : 'Description not available'}</p>
             </div>
           </div>
           <div className='comics-section'>
