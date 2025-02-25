@@ -41,6 +41,7 @@ export default function MarvelCharacters({ addToFavorites }) {
         setError(err);
         setLoading(false);
       });
+
   }, [MarvelCharacters]);
 
   const handleAddToFavorites = (character) => {
@@ -76,6 +77,7 @@ export default function MarvelCharacters({ addToFavorites }) {
       .then((data) => {
         setComics(data.data.results);
       })
+      // eslint-disable-next-line no-console
       .catch((err) => console.error(err));
   };
 
@@ -108,9 +110,7 @@ export default function MarvelCharacters({ addToFavorites }) {
     <div className='characters-comics'>
       <div className='pagination'>
         <button onClick={handlePrev}>prev</button>
-        <button onClick={handleNext} disabled={(currentPage + 1) * charactersPerPage >= marvelCharacter.length}>
-          next
-        </button>
+        <button onClick={handleNext}>next</button>
       </div>
       <div className='grid-box'>
         {displayedCharacters.map((character) => (
@@ -129,7 +129,6 @@ export default function MarvelCharacters({ addToFavorites }) {
             <Profile
               characterMarvel={selectedCharacter.name}
               img={`${selectedCharacter.thumbnail.path}.${selectedCharacter.thumbnail.extension}`}
-              title={selectedCharacter.title}
               description={selectedCharacter.description}
               comics={comics.filter((comic) => comic.description).slice(0, 5)}
             />

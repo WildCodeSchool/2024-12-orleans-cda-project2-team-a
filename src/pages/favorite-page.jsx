@@ -20,6 +20,7 @@ export default function FavoritePage({ favorites }) {
       .then((data) => {
         setComics(data.data.results.filter((comic) => comic.description));
       })
+      // eslint-disable-next-line no-console
       .catch((err) => console.error(err));
   };
 

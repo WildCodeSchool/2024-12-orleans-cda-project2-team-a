@@ -11,9 +11,9 @@
     top: 10px;
 
     button {
-      background-color: #670208;
+      background-color: $primary-color;
       border: none;
-      color: white;
+      color: $text-color;
       padding: 10px 20px;
       border-radius: 5px;
       font-size: 1em;
@@ -23,20 +23,17 @@
     }
   }
   .typo-comics {
-    background-color: #670208;
-    font-family: 'Aclonica', sans-serif;
-    padding-top: 60px;
+    background-color: $primary-color;
+    font-family: $font-family;
     width: 140px;
     font-size: 18px;
     padding: 14px;
     border-radius: 10px;
     margin-left: 157px;
-    color: white;
-    box-shadow: 0px 2px 6px black;
-    align-items: center;
-    justify-content: center;
-    text-shadow: 3px 2px 8px black;
-    display: flex;
+    color: $text-color;
+    text-align: center;
+    box-shadow: 0px 2px 6px $background-card;
+    text-shadow: 3px 2px 8px $background-card;
   }
 }
 .comics {
@@ -61,7 +58,7 @@
       font-weight: 700;
       font-size: 1.2em;
       text-transform: lowercase;
-      color: black;
+      color: $background-card;
     }
 
     .comic-card {
@@ -74,7 +71,7 @@
       text-decoration: none;
       border:
         solid 4px,
-        white;
+        $text-color;
       border-radius: 8px;
 
       .caption {
@@ -83,9 +80,9 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        color: white;
+        color: $text-color;
         text-align: center;
-        background-color: #0000004b;
+        background: $background-card;
         height: 100%;
 
         &.bottom {
@@ -94,7 +91,7 @@
           left: 50%;
           transform: translateX(-50%);
           opacity: 0;
-          color: white;
+          color: $text-color;
           text-decoration: underline;
           width: 60%;
         }
@@ -103,7 +100,7 @@
       &:hover {
         cursor: pointer;
         filter: grayscale(0);
-        box-shadow: 6px 6px black;
+        box-shadow: 6px 6px $background-card;
         transform: translate(-2px, -2px);
 
         .caption {
