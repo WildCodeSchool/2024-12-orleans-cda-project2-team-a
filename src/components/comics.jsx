@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import '../style/comics.scss';
@@ -10,8 +10,21 @@ export default function Comics({ data, onClick }) {
     setIsVisible(false);
   };
 
+  const handleClickOutside = (event) => {
+    if (isVisible && !event.target.closest('.search-container')) {
+      hideComics();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  });
+
   return (
-    <div className='search-container' style={{ display: isVisible ? 'block' : 'none' }}>
+    <div className='search-container' style={{ display: isVisible ? '' : 'none' }}>
       <div className='search-result' onClick={hideComics}>
         <button className='close-search' onClick={hideComics}>
           X
