@@ -4,7 +4,6 @@ import Card from '../components/card';
 import Modal from '../components/modal';
 import Profile from '../components/profile';
 import '../style/marvel-characters.scss';
-
 import Loader from './loader';
 
 const publicKey = import.meta.env.VITE_PUBLIC_KEY;
@@ -17,13 +16,11 @@ export default function MarvelCharacters({ addToFavorites }) {
   const [currentPage, setCurrentPage] = useState(0);
   const charactersPerPage = 15;
   const [count, setcount] = useState(0);
-
   const [loading, setLoading] = useState(true);
   const [err, setError] = useState(null);
-  const charactersPerPage = 15;
 
   useEffect(() => {
-    const apiComics = `https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}&limit=40`;
+    const apiComics = `https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}&limit=100`;
 
     fetch(apiComics)
       .then((res) => {
