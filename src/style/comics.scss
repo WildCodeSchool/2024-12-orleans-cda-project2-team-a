@@ -5,7 +5,7 @@
   display: grid;
   grid-template-columns: repeat(6, 170px);
   justify-content: center;
-  grid-gap: 10px;
+  grid-gap: 40px;
   padding: 1em;
 }
 
@@ -77,14 +77,6 @@
   .comics {
     display: grid;
     grid-template-columns: repeat(3, 170px);
-    gap: 10px;
-  }
-}
-
-@media only screen and (min-width: 800px) {
-  .comics {
-    display: grid;
-    grid-template-columns: repeat(4, 170px);
     gap: 10px;
   }
 }
