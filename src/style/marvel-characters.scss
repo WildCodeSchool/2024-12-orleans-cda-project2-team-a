@@ -3,6 +3,8 @@
   background-color: yellow;
 }
 .pagination {
+  position: relative;
+
   .btn-right {
     border-radius: 50%;
     font-size: 190%;
@@ -10,6 +12,7 @@
     padding: 6px;
     background-color: $primary-color;
     position: absolute;
+    right: 125px;
     margin-left: 88%;
     margin-top: 30%;
     width: 3%;
@@ -50,6 +53,10 @@
       margin-top: 530%;
     }
     .btn-left {
+      position: absolute;
+      top: 0;
+      left: 0;
+
       border-radius: 50%;
       font-size: 150%;
       gap: 30px;

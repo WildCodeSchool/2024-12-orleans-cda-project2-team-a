@@ -25,13 +25,12 @@
     grid-gap: 10px;
     padding: 1em;
     margin-top: 10px;
-
     .comics-title {
       font-family: $font-family;
       font-weight: 700;
       font-size: 1.2em;
       text-transform: lowercase;
-      color: black;
+      color: $background-card;
     }
 
     .comic-card {
@@ -44,7 +43,7 @@
       text-decoration: none;
       border:
         solid 4px,
-        white;
+        $text-color;
       border-radius: 8px;
 
       .caption {
@@ -53,9 +52,9 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        color: white;
+        color: $text-color;
         text-align: center;
-        background-color: #0000004b;
+        background: $background-card;
         height: 100%;
 
         &.bottom {
@@ -64,7 +63,7 @@
           left: 50%;
           transform: translateX(-50%);
           opacity: 0;
-          color: white;
+          color: $text-color;
           text-decoration: underline;
           width: 60%;
         }
@@ -73,7 +72,7 @@
       &:hover {
         cursor: pointer;
         filter: grayscale(0);
-        box-shadow: 6px 6px black;
+        box-shadow: 6px 6px $background-card;
         transform: translate(-2px, -2px);
 
         .caption {

@@ -1,13 +1,13 @@
+@use 'settings.scss' as *;
 .favorite {
-  padding-top: 20px;
-  padding-left: 20px;
+  padding: 20px 0 0 20px;
 
   .favor {
     display: none;
   }
 
   .typo {
-    background-color: #670208;
+    background: $primary-color;
     font-family: 'Aclonica', sans-serif;
     padding-top: 60px;
     width: 240px;
@@ -15,10 +15,10 @@
     padding: 14px;
     border-radius: 10px;
     margin-left: 160px;
-    color: white;
-    box-shadow: 0px 2px 6px black;
+    color: $text-color;
+    box-shadow: 0px 2px 6px $background-card;
     align-items: center;
-    text-shadow: 3px 2px 8px black;
+    text-shadow: 3px 2px 8px $background-card;
   }
   @media screen and (min-width: 301px) and (max-width: 644px) {
     .typo {
