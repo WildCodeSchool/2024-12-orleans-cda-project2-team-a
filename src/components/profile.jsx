@@ -17,7 +17,7 @@ export default function Profile({ characterMarvel, img, description, comics }) {
                 {' '}
                 <strong>Bio :</strong>
               </h3>
-              <p>{description}</p>
+              <p>{description ? description : 'Description not available'}</p>
             </div>
           </div>
           <div className='comics-section'>

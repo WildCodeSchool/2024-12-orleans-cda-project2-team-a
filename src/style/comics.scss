@@ -19,7 +19,7 @@
   text-decoration: none;
   border:
     solid 4px,
-    white;
+    $text-color;
   border-radius: 8px;
 
   .comics-title {
@@ -28,9 +28,9 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: $text-color;
     text-align: center;
-    background-color: #0000004b;
+    background-color: $background-card;
     height: 100%;
 
     h3 {
@@ -38,7 +38,7 @@
       font-weight: 700;
       font-size: 1em;
       text-transform: lowercase;
-      color: white;
+      color: $text-color;
       :hover {
         transition: all 0.2s linear;
       }
@@ -48,7 +48,7 @@
   &:hover {
     cursor: pointer;
     filter: grayscale(0);
-    box-shadow: 6px 6px black;
+    box-shadow: 6px 6px $background-card;
     transform: translate(-2px, -2px);
     transition: all 0.2s linear;
 
