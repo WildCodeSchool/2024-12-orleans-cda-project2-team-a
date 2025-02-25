@@ -4,7 +4,7 @@ export default function Loader() {
   return (
     <div className='Load'>
       {' '}
-      <img src='\public\pictures\hammer.png' alt='' />
+      <img src='/pictures/hammer.png' alt='' /> <p> Loading..... </p>
     </div>
   );
 }

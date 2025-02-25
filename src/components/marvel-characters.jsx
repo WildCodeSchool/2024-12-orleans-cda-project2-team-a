@@ -18,7 +18,7 @@ export default function MarvelCharacters({ addToFavorites }) {
   const charactersPerPage = 15;
 
   useEffect(() => {
-    const apiComics = `https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}&limit=70`;
+    const apiComics = `https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}&limit=40`;
 
     fetch(apiComics)
       .then((res) => {
