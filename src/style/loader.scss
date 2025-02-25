@@ -1,0 +1,29 @@
+@use 'settings' as *;
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.load {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    padding-bottom: 20px;
+    color: white;
+    font-size: 50px;
+
+    font-family: $font-family;
+  }
+  img {
+    width: 150px;
+    animation: spin 1s linear infinite;
+    padding-top: 20px;
+  }
+}

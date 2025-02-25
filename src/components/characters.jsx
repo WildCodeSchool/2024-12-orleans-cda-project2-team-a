@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import '../style/characters.scss';
 
@@ -9,9 +9,22 @@ export default function Characters({ data, onClick }) {
     setIsVisible(false);
   };
 
+  const handleClickOutside = (event) => {
+    if (isVisible && !event.target.closest('.search-container')) {
+      hideCharacters();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  });
+
   return (
     <>
-      <div className='search-container' style={{ display: isVisible ? 'block' : 'none' }}>
+      <div className='search-container' style={{ display: isVisible ? '' : 'none' }}>
         <div className='search-result' onClick={hideCharacters}>
           <button className='close-search' onClick={hideCharacters}>
             X

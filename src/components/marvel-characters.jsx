@@ -5,6 +5,8 @@ import Modal from '../components/modal';
 import Profile from '../components/profile';
 import '../style/marvel-characters.scss';
 
+import Loader from './loader';
+
 const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
 export default function MarvelCharacters({ addToFavorites }) {
@@ -16,8 +18,12 @@ export default function MarvelCharacters({ addToFavorites }) {
   const charactersPerPage = 15;
   const [count, setcount] = useState(0);
 
+  const [loading, setLoading] = useState(true);
+  const [err, setError] = useState(null);
+  const charactersPerPage = 15;
+
   useEffect(() => {
-    const apiComics = `https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}&limit=100`;
+    const apiComics = `https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}&limit=40`;
 
     fetch(apiComics)
       .then((res) => {
@@ -25,14 +31,29 @@ export default function MarvelCharacters({ addToFavorites }) {
         return res.json();
       })
       .then((data) => {
-        const randomCharacters = data.data.results.sort(() => Math.random() - 1);
-        setMarvelCharacter(randomCharacters);
+        const filteredCharacters = data.data.results.filter(
+          (marvel) =>
+            marvel.thumbnail &&
+            marvel.thumbnail.path &&
+            marvel.thumbnail.extension &&
+            !marvel.thumbnail.path.includes('image_not_available'),
+        );
+        setLoading(false);
+        setMarvelCharacter(filteredCharacters);
       })
-      // eslint-disable-next-line no-console
-      .catch((err) => console.error(err));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [MarvelCharacters]);
 
+      .catch((err) => {
+        setError(err);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading)
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
   const handleAddToFavorites = (character) => {
     addToFavorites(character);
   };
@@ -89,6 +110,8 @@ export default function MarvelCharacters({ addToFavorites }) {
         !marvel.thumbnail.path.includes('image_not_available'),
     )
     .slice(currentPage * charactersPerPage, (currentPage + 1) * charactersPerPage);
+
+  if (err) return <div>Error: {err.message}</div>;
 
   return (
     <div className='characters-comics'>
