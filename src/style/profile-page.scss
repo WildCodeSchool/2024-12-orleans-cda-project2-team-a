@@ -3,15 +3,18 @@
 .profile {
   max-width: 920px;
   margin: 0 auto;
+  overflow: auto;
 
   .comics-characters {
     .character-content {
       .present {
         display: flex;
+        margin-top: 5%;
         .image-containe {
           img {
-            width: 340px;
+            width: 300px;
             margin: 1% 0;
+            height: 300px;
             border-radius: 2%;
             margin-top: 7%;
           }
@@ -58,56 +61,62 @@
       }
       .comics-section {
         margin: 0.3%;
+      }
+      h1 {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+      }
 
-        h1 {
-          font-size: 1.5rem;
-          margin: 1rem 0;
-        }
+      .comics-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        max-width: 880px;
+        margin: 2.5rem auto;
 
-        .comics-list {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
-          max-width: 880px;
-          margin: 2.5rem auto;
+        a {
+          width: 18%;
+          text-align: center;
+          text-decoration: none;
+          color: $text-color;
+          transition: all 0.5s ease;
+          position: relative;
 
-          a {
-            width: 18%;
-            text-align: center;
-            text-decoration: none;
-            color: $text-color;
+          img {
+            width: 160px;
+            height: auto;
+          }
+
+          p {
+            font-size: 0.8rem;
+            position: absolute;
+            bottom: 4rem;
+            background: $background-card;
+            left: 0;
+            right: 0;
+            text-transform: uppercase;
+            opacity: 0;
             transition: all 0.5s ease;
-            position: relative;
+            transform: translateY(-100%);
+          }
 
-            img {
-              width: 100%;
-              height: auto;
-            }
-
+          &:hover {
+            transform: scale(1.05);
             p {
-              font-size: 0.8rem;
-              position: absolute;
-              bottom: 4rem;
-              background: $background-card;
-              left: 0;
-              right: 0;
-              text-transform: uppercase;
-              opacity: 0;
-              transition: all 0.5s ease;
-              transform: translateY(-100%);
-            }
-
-            &:hover {
+              opacity: 1;
               transform: scale(1.05);
-              p {
-                opacity: 1;
-                transform: scale(1.05);
-                transform: translateY(0);
-              }
+              transform: translateY(0);
             }
           }
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .profile .comics-characters .character-content .comics-list {
+    display: flex;
+    gap: 16px 70px;
   }
 }

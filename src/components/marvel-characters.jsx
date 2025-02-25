@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Card from '../components/card';
 import Modal from '../components/modal';
 import Profile from '../components/profile';
+import '../style/marvel-characters.scss';
 import Loader from './loader';
 
 const publicKey = import.meta.env.VITE_PUBLIC_KEY;
@@ -13,12 +14,13 @@ export default function MarvelCharacters({ addToFavorites }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [comics, setComics] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
+  const charactersPerPage = 15;
+  const [count, setcount] = useState(0);
   const [loading, setLoading] = useState(true);
   const [err, setError] = useState(null);
-  const charactersPerPage = 15;
 
   useEffect(() => {
-    const apiComics = `https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}&limit=40`;
+    const apiComics = `https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}&limit=100`;
 
     fetch(apiComics)
       .then((res) => {
@@ -55,13 +57,17 @@ export default function MarvelCharacters({ addToFavorites }) {
 
   const handlePrev = () => {
     if (currentPage > 0) {
-      setCurrentPage(currentPage - 1);
+      setCurrentPage((prevPage) => prevPage - 1);
+      setcount((prevCount) => Math.max(prevCount - 1, 0));
     }
   };
 
   const handleNext = () => {
-    if ((currentPage + 1) * charactersPerPage < marvelCharacter.length) {
-      setCurrentPage(currentPage + 1);
+    if (count <= 3) {
+      if ((currentPage + 1) * charactersPerPage < marvelCharacter.length) {
+        setCurrentPage(currentPage + 1);
+      }
+      setcount(count + 1);
     }
   };
 
@@ -107,8 +113,12 @@ export default function MarvelCharacters({ addToFavorites }) {
   return (
     <div className='characters-comics'>
       <div className='pagination'>
-        <button onClick={handlePrev}>prev</button>
-        <button onClick={handleNext}>next</button>
+        <button className='btn-left' onClick={handlePrev}>
+          {`<`}
+        </button>
+        <button className='btn-right' onClick={handleNext} disabled={count >= 3}>
+          {`>`}
+        </button>
       </div>
       <div className='grid-box'>
         {displayedCharacters.map((character) => (
