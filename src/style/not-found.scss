@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+@use 'settings.scss' as *;
 
 .notFound {
-  background: linear-gradient($primary-color, #151414 25% 76%, $primary-color);
+  background: linear-gradient($primary-color, $not-found-color 25% 76%, $primary-color);
   height: 1100px;
   display: column;
   justify-content: center;
   align-items: center;
+  font-family: $font-family;
 
   h1 {
     display: flex;
@@ -13,14 +14,12 @@
     font-size: 100px;
     color: $text-color;
     padding-top: 60px;
-    font-family: 'Aclonica', sans-serif;
   }
   h2 {
     display: flex;
     justify-content: center;
     font-size: 50px;
     color: $text-color;
-    font-family: 'Aclonica', sans-serif;
   }
   img {
     height: 450px;
@@ -50,7 +49,6 @@
   }
 
   p {
-    font-family: 'Aclonica', sans-serif;
     font-size: 50px;
     color: $text-color;
   }
