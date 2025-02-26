@@ -29,7 +29,6 @@
     "husky": "^8.0.3",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.5.5",
-    "react-router-dom": "^7.1.5",
     "sass": "^1.83.4",
     "vite": "^4.4.9"
   }

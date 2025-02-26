@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import '../style/profile-page.scss';
+import '../style/profile.scss';
 
 export default function Profile({ characterMarvel, img, description, comics }) {
   return (
@@ -14,7 +14,6 @@ export default function Profile({ characterMarvel, img, description, comics }) {
             </div>
             <div className='bio'>
               <h3>
-                {' '}
                 <strong>Bio :</strong>
               </h3>
               <p>{description ? description : 'Description not available'}</p>

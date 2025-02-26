@@ -57,7 +57,7 @@ export default function Search() {
 
   return (
     <>
-      <form className='' onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <input type='text' placeholder='Search' onChange={handleChange} />
       </form>
 

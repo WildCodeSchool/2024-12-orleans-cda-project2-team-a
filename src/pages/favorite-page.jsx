@@ -3,8 +3,6 @@ import { useState } from 'react';
 import Card from '../components/card';
 import Modal from '../components/modal';
 import Profile from '../components/profile';
-import '../style/burger.scss';
-import '../style/card.scss';
 import '../style/favorite-page.scss';
 
 export default function FavoritePage({ favorites }) {

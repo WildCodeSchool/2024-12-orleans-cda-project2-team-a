@@ -12,7 +12,7 @@ const Burger = () => {
 
   return (
     <>
-      <div className='contenair'>
+      <div className='container'>
         <div className='input'></div>
         <div className='burger' onClick={toggleBurger}>
           <div className={`line ${burger ? 'active' : ''}`}></div>
