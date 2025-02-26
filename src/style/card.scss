@@ -3,7 +3,7 @@
 .grid-box {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 1.5rem 0;
+  gap: 10px;
   align-items: center;
   padding: 4% 6%;
   margin: auto;
@@ -120,10 +120,136 @@
   }
 }
 
-@media screen and (max-width: 644px) {
+@media screen and (min-width: 200px) and (max-width: 399px) {
+  .grid-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+    gap: 10px;
+
+    .card {
+      background-image: url(pictures/background-amended.jpg);
+      width: 170px;
+      height: 285px;
+      object-fit: cover;
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      border:
+        solid 4px,
+        $text-color;
+      border-radius: 8px;
+      padding: 15px;
+      img {
+        width: 150px;
+        height: 150px;
+        margin-left: -1px;
+        border: solid 4.5px $text-color;
+        margin-top: -10px;
+        border-radius: 8px;
+      }
+    }
+
+    .arrow {
+      display: none;
+    }
+    .character-title {
+      display: flex;
+      justify-content: center;
+      align-items: end;
+    }
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 599px) {
   .grid-box {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+    gap: 10px;
+    align-items: center;
+
+    .card {
+      background-image: url(pictures/background-amended.jpg);
+      width: 170px;
+      height: 285px;
+      object-fit: cover;
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      border:
+        solid 4px,
+        $text-color;
+      border-radius: 8px;
+      padding: 15px;
+      img {
+        width: 150px;
+        height: 150px;
+        margin-left: -1px;
+        border: solid 4.5px $text-color;
+        margin-top: -10px;
+        border-radius: 8px;
+      }
+    }
+
+    .arrow {
+      display: none;
+    }
+    .character-title {
+      display: flex;
+      justify-content: center;
+      align-items: end;
+    }
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 800px) {
+  .grid-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 100%;
+    gap: 10px;
+    align-items: center;
+
+    .card {
+      background-image: url(pictures/background-amended.jpg);
+      width: 170px;
+      height: 285px;
+      object-fit: cover;
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      border:
+        solid 4px,
+        $text-color;
+      border-radius: 8px;
+      padding: 15px;
+      img {
+        width: 150px;
+        height: 150px;
+        margin-left: -1px;
+        border: solid 4.5px $text-color;
+        margin-top: -10px;
+        border-radius: 8px;
+      }
+    }
+
+    .arrow {
+      display: none;
+    }
+    .character-title {
+      display: flex;
+      justify-content: center;
+      align-items: end;
+    }
+  }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1000px) {
+  .grid-box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     max-width: 100%;
     gap: 10px;
     align-items: center;
