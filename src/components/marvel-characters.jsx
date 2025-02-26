@@ -7,14 +7,14 @@ import '../style/marvel-characters.scss';
 import Loader from './loader';
 
 const publicKey = import.meta.env.VITE_PUBLIC_KEY;
+const charactersPerPage = 15;
 
 export default function MarvelCharacters({ addToFavorites }) {
-  const [marvelCharacter, setMarvelCharacter] = useState([]);
-  const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [comics, setComics] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
-  const charactersPerPage = 15;
+  const [marvelCharacter, setMarvelCharacter] = useState([]);
+  const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [count, setcount] = useState(0);
   const [loading, setLoading] = useState(true);
   const [err, setError] = useState(null);
