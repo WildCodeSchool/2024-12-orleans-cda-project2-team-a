@@ -31,9 +31,9 @@ export default function Comics({ data, onClick }) {
         </button>
         <div className='comics'>
           {data.map((dataItem) => {
-            const detailsUrl = dataItem.urls.find((element) => element['type'] === 'detail').url;
             return (
               <Link
+                to={`/comics/${dataItem.id}`}
                 key={dataItem.id}
                 className='comic-card'
                 style={{
@@ -44,9 +44,6 @@ export default function Comics({ data, onClick }) {
                   e.stopPropagation();
                   onClick(dataItem.id);
                 }}
-                href={detailsUrl}
-                target='_blank'
-                rel='noreferrer'
               >
                 <div className='comics-title'>
                   <h3>{dataItem.title}</h3>
