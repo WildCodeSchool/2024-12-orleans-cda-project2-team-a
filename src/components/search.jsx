@@ -14,6 +14,7 @@ export default function Search() {
   const handleSubmit = (event) => {
     event.preventDefault();
     getCharacterData();
+    setCharacterName('');
   };
 
   const getCharacterData = () => {
@@ -57,8 +58,8 @@ export default function Search() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input type='text' placeholder='Search' onChange={handleChange} />
+      <form className='' onSubmit={handleSubmit}>
+        <input type='text' placeholder='Search' value={characterName} onChange={handleChange} />
       </form>
 
       {!comicData && characterData && characterData.results[0] && (
