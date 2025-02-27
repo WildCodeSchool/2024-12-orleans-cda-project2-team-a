@@ -26,6 +26,7 @@ export default function Comics({ data, onClick }) {
                 onClick={(e) => {
                   e.stopPropagation();
                   onClick(dataItem.id);
+                  hideComicsCharacters();
                 }}
               >
                 <div className='comics-title'>

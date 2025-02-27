@@ -14,11 +14,11 @@ const charactersPerPage = 15;
 export default function MarvelCharacters({ addToFavorites }) {
   const [marvelCharacter, setMarvelCharacter] = useState([]);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
-  const [count, setcount] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [err, setError] = useState(null);
 
   const { loading, setLoading } = useLoading();
-  const { isModalOpen, setIsModalOpen, comics, setComics, currentPage, setCurrentPage } = useLoading();
+  const { count, setcount, comics, setComics, currentPage, setCurrentPage } = useLoading();
 
   useEffect(() => {
     setLoading(true);
@@ -41,7 +41,6 @@ export default function MarvelCharacters({ addToFavorites }) {
         setMarvelCharacter(filteredCharacters);
       })
       .catch((err) => {
-        // console.error('Fetch error:', err);
         setError(err);
         setLoading(false);
       });

@@ -1,7 +1,7 @@
 @use 'settings' as *;
 
 .modal-overlay {
-  color: #f4f4f4;
+  color: $text-color;
   position: fixed;
   top: -1px;
   left: 0%;
@@ -10,14 +10,14 @@
   bottom: 0;
   max-width: 100%;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.5);
+  background: $background-card;
 
   .modal-content {
     padding: 0 20px;
     border-radius: 8px;
     position: relative;
     width: 87%;
-    background: #460702;
+    background: $primary-color;
     left: 6%;
 
     .btn-modal {
