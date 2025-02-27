@@ -2,9 +2,10 @@
 
 .grid-box {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 170px);
   gap: 10px;
   align-items: center;
+  justify-content: center;
   padding: 4% 6%;
   margin: auto;
   max-width: 1300px;
@@ -232,7 +233,7 @@ h2 {
 @media screen and (min-width: 480px) and (max-width: 800px) {
   .grid-box {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 170px);
     max-width: 100%;
     gap: 10px;
     align-items: center;
@@ -273,7 +274,7 @@ h2 {
 @media screen and (min-width: 801px) and (max-width: 995px) {
   .grid-box {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 170px);
     max-width: 100%;
     gap: 10px;
     align-items: center;
@@ -314,7 +315,7 @@ h2 {
 @media screen and (min-width: 996px) and (max-width: 1199px) {
   .grid-box {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 170px);
     max-width: 100%;
     gap: 10px;
     align-items: center;
