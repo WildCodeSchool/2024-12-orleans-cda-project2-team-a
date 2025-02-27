@@ -94,6 +94,7 @@ export default function MarvelCharacters({ addToFavorites }) {
       .catch((err) => {
         console.error('Fetch comics error:', err);
       });
+    setLoading(false);
   };
 
   const handleCloseModal = () => {
