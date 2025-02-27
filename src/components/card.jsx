@@ -3,12 +3,11 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import '../style/card.scss';
 
-const notify = () => {
-  toast.success('🎉 Added to Favorites !', {
+const notify = (character) => {
+  toast.success(`🎉 ${character} Added to Favorites !`, {
     position: 'top-right',
     autoClose: 3000,
     hideProgressBar: false,
-
     closeOnClick: true,
     pauseOnHover: true,
     draggable: true,
@@ -26,7 +25,7 @@ export default function Card({ character, image, onAddToFavorites, onClick, onRe
           onClick={(e) => {
             e.stopPropagation();
             onAddToFavorites();
-            notify();
+            notify(character);
           }}
         >
           <img className='heart ' src='/pictures/heart-cards.png' alt='' />
