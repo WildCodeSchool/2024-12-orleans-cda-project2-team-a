@@ -45,11 +45,13 @@
     }
 
     ul.active {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 100vw;
       height: 40vh;
       opacity: 1;
       visibility: visible;
-      transform: translateX(5);
 
       li {
         color: $background-card;
