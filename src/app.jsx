@@ -32,12 +32,19 @@ function App() {
     }
   };
 
+  const removeFromFavorites = (char) => {
+    setFavorites(favorites.filter((fav) => fav.id !== char.id));
+  };
+
   return (
     <>
       <Routes>
         <Route element={<Layout />}>
           <Route path='/' element={<MarvelCharacters addToFavorites={addToFavorites} />} />
-          <Route path='/favorites' element={<FavoritePage favorites={favorites} />} />+
+          <Route
+            path='/favorites'
+            element={<FavoritePage favorites={favorites} removeFromFavorites={removeFromFavorites} />}
+          />
           <Route path='/comics/:comicId' element={<ComicDisplay />} />
           <Route path='/profile' element={<ProfilePage />} />
           <Route path='/comics' element={<ComicsPage />} />

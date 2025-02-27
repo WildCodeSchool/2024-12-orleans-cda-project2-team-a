@@ -50,13 +50,14 @@
         padding: 1rem;
         border-radius: $border-radius;
         background: $background-card;
+        width: 450px;
 
         h3 {
-          font-size: 3.3rem;
+          font-size: 2.5rem;
           font-family: $font-family;
         }
         p {
-          font-size: 1.5rem;
+          font-size: 1rem;
           font-family: $font-family;
           line-height: 1.5;
         }
