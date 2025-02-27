@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import '../style/characters.scss';
+import Loader from './loader';
 
 export default function Characters({ data, onClick }) {
   const [isVisible, setIsVisible] = useState(true);

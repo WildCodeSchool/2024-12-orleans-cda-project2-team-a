@@ -3,6 +3,7 @@ import { useState } from 'react';
 import '../style/search.scss';
 import Characters from './characters.jsx';
 import Comics from './comics.jsx';
+import Loader from './loader.jsx';
 
 const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
@@ -10,6 +11,7 @@ export default function Search() {
   const [characterData, setCharacterData] = useState(null);
   const [comicData, setComicData] = useState(null);
   const [characterName, setCharacterName] = useState('');
+  const [loading, setLoading] = useState(true);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -29,6 +31,7 @@ export default function Search() {
         const filteredCharacters = result.data.results.filter(
           (character) => !character.thumbnail.path.includes('image_not_available'),
         );
+
         setCharacterData({ ...result.data, results: filteredCharacters });
       })
       // eslint-disable-next-line no-console
@@ -46,6 +49,7 @@ export default function Search() {
         const filteredComics = result.data.results.filter(
           (comic) => !comic.thumbnail.path.includes('image_not_available'),
         );
+
         setComicData({ ...result.data, results: filteredComics });
       })
       // eslint-disable-next-line no-console
