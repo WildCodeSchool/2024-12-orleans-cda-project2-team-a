@@ -112,14 +112,12 @@ export default function MarvelCharacters({ addToFavorites }) {
 
   return (
     <div className='characters-comics'>
-      <div className='pagination'>
+      <div className='btn-container'>
         <button className='btn-left' onClick={handlePrev}>
           {`<`}
         </button>
-        <button className='btn-right' onClick={handleNext} disabled={count >= 3}>
-          {`>`}
-        </button>
       </div>
+
       <div className='grid-box'>
         {displayedCharacters.map((character) => (
           <Card
@@ -131,6 +129,21 @@ export default function MarvelCharacters({ addToFavorites }) {
           />
         ))}
       </div>
+      <div className='btn-container'>
+        <button className='btn-right' onClick={handleNext} disabled={count >= 3}>
+          {`>`}
+        </button>
+      </div>
+
+      <div className='btn-mobile'>
+        <button className='left-arrow' onClick={handlePrev}>
+          {`<`}
+        </button>
+        <button className='right-arrow' onClick={handleNext} disabled={count >= 3}>
+          {`>`}
+        </button>
+      </div>
+
       <div className='comics-modal'>
         <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
           {selectedCharacter && (
