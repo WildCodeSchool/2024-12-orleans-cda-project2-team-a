@@ -1,5 +1,6 @@
 import useVisibleStatus from '../hooks/use-visible-status';
 import '../style/characters.scss';
+import Loader from './loader';
 
 export default function Characters({ data, onClick }) {
   const [isVisible, hideComicsCharacters] = useVisibleStatus();
