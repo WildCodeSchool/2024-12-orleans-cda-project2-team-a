@@ -1,25 +1,27 @@
+/* eslint-disable no-console */
 import { useEffect, useState } from 'react';
 
 import Card from '../components/card';
 import Modal from '../components/modal';
 import Profile from '../components/profile';
+import { useLoading } from '../contexts/loading-Context';
 import '../style/marvel-characters.scss';
 import Loader from './loader';
 
 const publicKey = import.meta.env.VITE_PUBLIC_KEY;
+const charactersPerPage = 15;
 
 export default function MarvelCharacters({ addToFavorites }) {
   const [marvelCharacter, setMarvelCharacter] = useState([]);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [comics, setComics] = useState([]);
-  const [currentPage, setCurrentPage] = useState(0);
-  const charactersPerPage = 15;
   const [count, setcount] = useState(0);
-  const [loading, setLoading] = useState(true);
   const [err, setError] = useState(null);
 
+  const { loading, setLoading } = useLoading();
+  const { isModalOpen, setIsModalOpen, comics, setComics, currentPage, setCurrentPage } = useLoading();
+
   useEffect(() => {
+    setLoading(true);
     const apiComics = `https://gateway.marvel.com/v1/public/characters?apikey=${publicKey}&limit=100`;
 
     fetch(apiComics)
@@ -38,12 +40,12 @@ export default function MarvelCharacters({ addToFavorites }) {
         setLoading(false);
         setMarvelCharacter(filteredCharacters);
       })
-
       .catch((err) => {
+        // console.error('Fetch error:', err);
         setError(err);
         setLoading(false);
       });
-  }, []);
+  }, [setLoading]);
 
   if (loading)
     return (
@@ -51,6 +53,7 @@ export default function MarvelCharacters({ addToFavorites }) {
         <Loader />
       </div>
     );
+
   const handleAddToFavorites = (character) => {
     addToFavorites(character);
   };
@@ -88,8 +91,9 @@ export default function MarvelCharacters({ addToFavorites }) {
       .then((data) => {
         setComics(data.data.results);
       })
-      // eslint-disable-next-line no-console
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        console.error('Fetch comics error:', err);
+      });
   };
 
   const handleCloseModal = () => {
@@ -112,14 +116,12 @@ export default function MarvelCharacters({ addToFavorites }) {
 
   return (
     <div className='characters-comics'>
-      <div className='pagination'>
+      <div className='btn-container'>
         <button className='btn-left' onClick={handlePrev}>
           {`<`}
         </button>
-        <button className='btn-right' onClick={handleNext} disabled={count >= 3}>
-          {`>`}
-        </button>
       </div>
+
       <div className='grid-box'>
         {displayedCharacters.map((character) => (
           <Card
@@ -131,6 +133,21 @@ export default function MarvelCharacters({ addToFavorites }) {
           />
         ))}
       </div>
+      <div className='btn-container'>
+        <button className='btn-right' onClick={handleNext} disabled={count >= 3}>
+          {`>`}
+        </button>
+      </div>
+
+      <div className='btn-mobile'>
+        <button className='left-arrow' onClick={handlePrev}>
+          {`<`}
+        </button>
+        <button className='right-arrow' onClick={handleNext} disabled={count >= 3}>
+          {`>`}
+        </button>
+      </div>
+
       <div className='comics-modal'>
         <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
           {selectedCharacter && (

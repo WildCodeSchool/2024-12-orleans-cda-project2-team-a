@@ -1,33 +1,15 @@
-import { useEffect, useState } from 'react';
-
+import useVisibleStatus from '../hooks/use-visible-status';
 import '../style/characters.scss';
 import Loader from './loader';
 
 export default function Characters({ data, onClick }) {
-  const [isVisible, setIsVisible] = useState(true);
-
-  const hideCharacters = () => {
-    setIsVisible(false);
-  };
-
-  const handleClickOutside = (event) => {
-    if (isVisible && !event.target.closest('.search-container')) {
-      hideCharacters();
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('click', handleClickOutside);
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  });
+  const [isVisible, hideComicsCharacters] = useVisibleStatus();
 
   return (
     <>
       <div className='search-container' style={{ display: isVisible ? '' : 'none' }}>
-        <div className='search-result' onClick={hideCharacters}>
-          <button className='close-search' onClick={hideCharacters}>
+        <div className='search-result' onClick={() => hideComicsCharacters()}>
+          <button className='close-search' onClick={() => hideComicsCharacters()}>
             X
           </button>
           <div className='characters'>

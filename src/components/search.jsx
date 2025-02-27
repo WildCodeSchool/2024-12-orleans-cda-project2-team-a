@@ -11,7 +11,9 @@ export default function Search() {
   const [characterData, setCharacterData] = useState(null);
   const [comicData, setComicData] = useState(null);
   const [characterName, setCharacterName] = useState('');
-  const [loading, setLoading] = useState(true);
+
+  const [loading, setLoading] = useState(false);
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -20,6 +22,7 @@ export default function Search() {
   };
 
   const getCharacterData = () => {
+    setLoading(true);
     setCharacterData(null);
     setComicData(null);
 
@@ -35,10 +38,12 @@ export default function Search() {
         setCharacterData({ ...result.data, results: filteredCharacters });
       })
       // eslint-disable-next-line no-console
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error))
+      .finally(() => setLoading(false));
   };
 
   const getComicData = (characterId) => {
+    setLoading(true);
     window.scrollTo({ top: 0, left: 0 });
 
     const url = `https://gateway.marvel.com/v1/public/characters/${characterId}/comics?apikey=${publicKey}`;
@@ -53,7 +58,8 @@ export default function Search() {
         setComicData({ ...result.data, results: filteredComics });
       })
       // eslint-disable-next-line no-console
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error))
+      .finally(() => setLoading(false));
   };
 
   const handleChange = (event) => {
@@ -66,11 +72,17 @@ export default function Search() {
         <input type='text' placeholder='Search' value={characterName} onChange={handleChange} />
       </form>
 
-      {!comicData && characterData && characterData.results[0] && (
+      {loading && (
+        <div>
+          <Loader />
+        </div>
+      )}
+
+      {!loading && !comicData && characterData && characterData.results[0] && (
         <Characters data={characterData.results} onClick={getComicData} />
       )}
 
-      {comicData && comicData.results[0] && <Comics data={comicData.results} onClick={() => {}} />}
+      {!loading && comicData && comicData.results[0] && <Comics data={comicData.results} onClick={() => {}} />}
     </>
   );
 }

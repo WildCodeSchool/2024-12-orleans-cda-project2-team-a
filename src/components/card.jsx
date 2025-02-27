@@ -3,7 +3,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import '../style/card.scss';
 
-export default function Card({ character, image, onAddToFavorites, onClick }) {
   const notify = () => {
     toast.success('🎉 Added to Favorites !', {
       position: 'top-right',
@@ -16,6 +15,9 @@ export default function Card({ character, image, onAddToFavorites, onClick }) {
       theme: 'light',
     });
   };
+
+
+export default function Card({ character, image, onAddToFavorites, onClick, onRemove, isFavoritePage }) {
 
   return (
     <div className='card' onClick={onClick}>
@@ -31,7 +33,21 @@ export default function Card({ character, image, onAddToFavorites, onClick }) {
         >
           <img className='heart ' src='/pictures/heart-cards.png' alt='' />
         </button>
+
         <ToastContainer />
+
+        {isFavoritePage && (
+          <button
+            className='delete-fav'
+            onClick={(e) => {
+              e.stopPropagation();
+              onRemove();
+            }}
+          >
+            <img className='remove-fav' src='/pictures/remove-fave.svg' alt='' />
+          </button>
+        )}
+
       </div>
       <div className='character-title'>
         <h2>{character}</h2>
