@@ -14,7 +14,6 @@ export default function Search() {
 
   const [loading, setLoading] = useState(false);
 
-
   const handleSubmit = (event) => {
     event.preventDefault();
     getCharacterData();
