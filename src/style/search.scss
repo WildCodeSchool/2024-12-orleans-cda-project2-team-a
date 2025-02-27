@@ -1,0 +1,21 @@
+@use 'settings' as *;
+.search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 200px;
+  margin: 1em auto;
+}
+
+input {
+  font-family: $font-family;
+  height: 30px;
+  border-radius: 8px;
+  padding-left: 5px;
+  border: none;
+  background-color: transparent;
+  font-size: 22px;
+  width: 100%;
+  color: $background-card;
+  outline: none;
+}

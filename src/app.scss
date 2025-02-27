@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.absolute-center-container {
+  height: 100svh;
+
+  .open-modal {
+    position: relative;
+    z-index: 1;
+  }
+}
