@@ -16,12 +16,13 @@ export default function Card({ character, image, onAddToFavorites, onClick, onRe
         </button>
         {isFavoritePage && (
           <button
+            className='delete-fav'
             onClick={(e) => {
               e.stopPropagation();
               onRemove();
             }}
           >
-            Remove from Favorites
+            <img className='remove-fav' src='/pictures/remove-fave.svg' alt='' />
           </button>
         )}
       </div>

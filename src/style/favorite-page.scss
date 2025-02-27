@@ -1,7 +1,12 @@
 @use 'settings.scss' as *;
 .favorite {
   padding: 20px 0 0 20px;
-
+  .h1-favorite {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: 'Aclonica', sans-serif;
+  }
   .favor {
     display: none;
   }

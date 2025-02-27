@@ -42,7 +42,7 @@ export default function FavoritePage({ favorites, removeFromFavorites }) {
       <h1 className='typo'>My Favorite Characters</h1>
       <div className='grid-box'>
         {favorites.length === 0 ? (
-          <h1>No favorites added yet.</h1>
+          <h1 className='h1-favorite'>No favorites added yet.</h1>
         ) : (
           favorites.map((character) => (
             <Card
