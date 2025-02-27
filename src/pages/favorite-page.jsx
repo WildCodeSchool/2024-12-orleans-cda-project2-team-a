@@ -5,7 +5,7 @@ import Modal from '../components/modal';
 import Profile from '../components/profile';
 import '../style/favorite-page.scss';
 
-export default function FavoritePage({ favorites }) {
+export default function FavoritePage({ favorites, removeFromFavorites }) {
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [comics, setComics] = useState([]);
@@ -51,6 +51,7 @@ export default function FavoritePage({ favorites }) {
               image={`${character.thumbnail.path}.${character.thumbnail.extension}`}
               isFavoritePage={true}
               onClick={() => handleCardClick(character)}
+              onRemove={() => removeFromFavorites(character)}
             />
           ))
         )}
