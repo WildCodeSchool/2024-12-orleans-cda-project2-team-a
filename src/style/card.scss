@@ -85,8 +85,7 @@
 
     .btn:active {
       animation: pop 0.5s ease;
-      // background-color: red;
-      color: #670208;
+      color: $primary-color;
       width: 45px;
       height: 45px;
     }
