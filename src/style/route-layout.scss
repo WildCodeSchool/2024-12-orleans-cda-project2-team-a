@@ -1,0 +1,5 @@
+@use 'settings' as *;
+.layout {
+  background: linear-gradient(to bottom, $primary-color, $not-found-color 15% 86%, $primary-color);
+  min-height: 100vh;
+}

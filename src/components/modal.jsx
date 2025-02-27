@@ -6,8 +6,8 @@ export default function Modal({ isOpen, onClose, children }) {
   return (
     <div className='modal-overlay'>
       <div className='modal-content'>
-        <button className='btn-modal ' onClick={onClose}>
-          &times;
+        <button className='btn-modal' onClick={onClose}>
+          x
         </button>
         {children}
       </div>

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import '../style/footer.scss';
-import Socials from './socials.jsx';
+import Socials from './socials';
 
 function Footer() {
   return (
@@ -14,12 +14,8 @@ function Footer() {
 
           <div className='footer-nav'>
             <div>
-              <a href='https://marvelofficial.com/shop/?srsltid=AfmBOorVehT8ELdv9CSRuSbn2YBFn_1tngBPVsIlMT4j70lF8KhpRGsb'>
-                Shops
-              </a>
-              <a href='https://www.disneyplus.com/brand/marvel?cid=DTCI-Synergy-Marvel-Site-Acquisition-Library-US-Marvel-NA-EN-NavFooter-Marvel_DisneyPlus_NavFooter_Evergreen-NA'>
-                Disney+
-              </a>
+              <a href='https://marvelofficial.com/shop/'>Shops</a>
+              <a href='https://www.disneyplus.com/brand/'>Disney+</a>
             </div>
 
             <div>

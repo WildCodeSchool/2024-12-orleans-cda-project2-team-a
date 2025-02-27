@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 
-import '../style/burger.scss';
 import '../style/navbar.scss';
 import Burger from './burger';
 import Search from './search';

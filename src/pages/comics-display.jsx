@@ -5,7 +5,7 @@ import '../style/comics-display.scss';
 
 const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
-export default function ComicDetail() {
+export default function ComicDisplay() {
   const { comicId } = useParams();
   const [comic, setComic] = useState(null);
 
@@ -35,9 +35,9 @@ export default function ComicDetail() {
       </div>
       <div className='comics-content'>
         <h2>{comic.title}</h2>
-        <h3> Creators : {comic.creators.items[0].name} </h3>
-        <span> Role : {comic.creators.items[0].role} </span>
-        <span> Date de sortie : {releaseDate} </span>
+        <h3>Creators:{comic.creators.items[0].name} </h3>
+        <span>Role:{comic.creators.items[0].role} </span>
+        <span>Date de sortie:{releaseDate} </span>
         <div className='creators'>
           <p>{comic.description}</p>
         </div>

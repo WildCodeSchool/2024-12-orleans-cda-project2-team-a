@@ -1,39 +1,22 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import useVisibleStatus from '../hooks/use-visible-status';
 import '../style/comics.scss';
 
 export default function Comics({ data, onClick }) {
-  const [isVisible, setIsVisible] = useState(true);
-
-  const hideComics = () => {
-    setIsVisible(false);
-  };
-
-  const handleClickOutside = (event) => {
-    if (isVisible && !event.target.closest('.search-container')) {
-      hideComics();
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('click', handleClickOutside);
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  });
+  const [isVisible, hideComicsCharacters] = useVisibleStatus();
 
   return (
     <div className='search-container' style={{ display: isVisible ? '' : 'none' }}>
-      <div className='search-result' onClick={hideComics}>
-        <button className='close-search' onClick={hideComics}>
+      <div className='search-result' onClick={hideComicsCharacters}>
+        <button className='close-search' onClick={hideComicsCharacters}>
           X
         </button>
         <div className='comics'>
           {data.map((dataItem) => {
-            const detailsUrl = dataItem.urls.find((element) => element['type'] === 'detail').url;
             return (
               <Link
+                to={`/comics/${dataItem.id}`}
                 key={dataItem.id}
                 className='comic-card'
                 style={{
@@ -43,10 +26,8 @@ export default function Comics({ data, onClick }) {
                 onClick={(e) => {
                   e.stopPropagation();
                   onClick(dataItem.id);
+                  hideComicsCharacters();
                 }}
-                href={detailsUrl}
-                target='_blank'
-                rel='noreferrer'
               >
                 <div className='comics-title'>
                   <h3>{dataItem.title}</h3>
