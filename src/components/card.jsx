@@ -55,7 +55,7 @@ export default function Card({ character, image, onAddToFavorites, onClick, onRe
               onRemove();
             }}
           >
-            <img className='remove-fav' src='/pictures/remove-fave.svg' alt='' />
+            <img className='remove-fav' src='/pictures/remove-fav.svg' alt='' />
           </button>
         )}
       </div>

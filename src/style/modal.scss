@@ -33,10 +33,11 @@
       font-size: 24px;
       cursor: pointer;
       transition: all 0.5s ease;
+      color: $text-color;
 
       &:hover {
         background: $text-color;
-        color: $background-image;
+        color: $primary-color;
         translate: scale(1.1);
       }
     }
