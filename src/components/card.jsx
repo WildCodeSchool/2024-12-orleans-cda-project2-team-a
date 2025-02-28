@@ -4,15 +4,29 @@ import 'react-toastify/dist/ReactToastify.css';
 import '../style/card.scss';
 
 const notify = (character) => {
-  toast.success(`🎉 ${character} Added to Favorites !`, {
-    position: 'top-right',
-    autoClose: 3000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    theme: 'light',
-  });
+  const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+  if (favorites.some((fav) => fav.name === character)) {
+    toast.info(`🔔 ${character} is already in your Favorites!`, {
+      position: 'top-right',
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: 'light',
+    });
+  } else {
+    toast.success(`🎉 ${character} Added to Favorites!`, {
+      position: 'top-right',
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: 'light',
+    });
+  }
 };
 
 export default function Card({ character, image, onAddToFavorites, onClick, onRemove, isFavoritePage }) {
