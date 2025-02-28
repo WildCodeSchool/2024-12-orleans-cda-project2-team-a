@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { useState } from 'react';
 
 import '../style/search.scss';
@@ -37,7 +36,7 @@ export default function Search() {
 
         setCharacterData({ ...result.data, results: filteredCharacters });
       })
-
+      // eslint-disable-next-line no-console
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
   };
@@ -57,7 +56,7 @@ export default function Search() {
 
         setComicData({ ...result.data, results: filteredComics });
       })
-
+      // eslint-disable-next-line no-console
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
   };
