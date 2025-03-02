@@ -127,7 +127,7 @@ export default function MarvelCharacters({ favorites, addToFavorites }) {
             key={character.id}
             character={character.name}
             image={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-            isFavorite={favorites.some((fav) => fav.id === character.id)} // Vérifie si le personnage est dans les favoris
+            isFavorite={favorites.some((fav) => fav.id === character.id)}
             onAddToFavorites={() => handleAddToFavorites(character)}
             onClick={() => handleCardClick(character)}
           />
