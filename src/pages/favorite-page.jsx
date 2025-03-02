@@ -51,7 +51,7 @@ export default function FavoritePage({ favorites, removeFromFavorites }) {
               key={character.id}
               character={character.name}
               image={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-              isFavorite={true} // Tous les personnages affichés sont des favoris
+              isFavorite={true}
               isFavoritePage={true}
               onClick={() => handleCardClick(character)}
               onRemove={() => removeFromFavorites(character)}
