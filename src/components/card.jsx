@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -28,27 +28,13 @@ const notify = (character, isFavorite) => {
   }
 };
 
-export default function Card({ character, image, onAddToFavorites, onClick, isFavoritePage, onRemove }) {
-  const [isFavorite, setIsFavorite] = useState(false);
-
-  useEffect(() => {
-    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    if (favorites.includes(character)) {
-      setIsFavorite(true);
-    }
-  }, [character]);
-
+export default function Card({ character, image, isFavorite, onAddToFavorites, onClick, isFavoritePage, onRemove }) {
   const handleFavoriteClick = (e) => {
     e.stopPropagation();
 
     if (!isFavorite) {
-      setIsFavorite(true);
       onAddToFavorites();
       notify(character, false);
-
-      const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-      favorites.push(character);
-      localStorage.setItem('favorites', JSON.stringify(favorites));
     } else {
       notify(character, true);
     }

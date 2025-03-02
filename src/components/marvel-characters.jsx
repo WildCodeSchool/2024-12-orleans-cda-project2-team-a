@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { useEffect, useState } from 'react';
 
 import Card from '../components/card';
@@ -11,7 +10,7 @@ import Loader from './loader';
 const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 const charactersPerPage = 15;
 
-export default function MarvelCharacters({ addToFavorites }) {
+export default function MarvelCharacters({ favorites, addToFavorites }) {
   const [marvelCharacter, setMarvelCharacter] = useState([]);
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -128,11 +127,13 @@ export default function MarvelCharacters({ addToFavorites }) {
             key={character.id}
             character={character.name}
             image={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+            isFavorite={favorites.some((fav) => fav.id === character.id)}
             onAddToFavorites={() => handleAddToFavorites(character)}
             onClick={() => handleCardClick(character)}
           />
         ))}
       </div>
+
       <div className='btn-container'>
         <button className='btn-right' onClick={handleNext} disabled={count >= 3}>
           {`>`}
