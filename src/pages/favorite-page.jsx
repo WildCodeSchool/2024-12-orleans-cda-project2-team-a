@@ -18,7 +18,6 @@ export default function FavoritePage({ favorites, removeFromFavorites }) {
       .then((data) => {
         setComics(data.data.results.filter((comic) => comic.description));
       })
-      // eslint-disable-next-line no-console
       .catch((err) => console.error(err));
   };
 
@@ -42,13 +41,17 @@ export default function FavoritePage({ favorites, removeFromFavorites }) {
       <h1 className='typo'>My Favorite Characters</h1>
       <div className='grid-box'>
         {favorites.length === 0 ? (
-          <h1 className='h1-favorite'>No favorites added yet.</h1>
+          <div className='no-favorites'>
+            <h1 className='h1-favorite'>No favorites added yet.</h1>
+            <p>Start adding your favorite characters from the Home page!</p>
+          </div>
         ) : (
           favorites.map((character) => (
             <Card
               key={character.id}
               character={character.name}
               image={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+              isFavorite={true} // Tous les personnages affichés sont des favoris
               isFavoritePage={true}
               onClick={() => handleCardClick(character)}
               onRemove={() => removeFromFavorites(character)}

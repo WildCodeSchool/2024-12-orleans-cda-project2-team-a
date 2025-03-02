@@ -40,7 +40,7 @@ function App() {
     <>
       <Routes>
         <Route element={<Layout />}>
-          <Route path='/' element={<MarvelCharacters addToFavorites={addToFavorites} />} />
+          <Route path='/' element={<MarvelCharacters favorites={favorites} addToFavorites={addToFavorites} />} />
           <Route
             path='/favorites'
             element={<FavoritePage favorites={favorites} removeFromFavorites={removeFromFavorites} />}
