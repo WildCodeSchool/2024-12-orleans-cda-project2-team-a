@@ -1,72 +1,83 @@
 @use 'settings' as *;
 
-.pagination {
-  position: relative;
+.characters-comics {
+  display: flex;
+  flex-direction: column;
 
-  .btn-right {
-    border-radius: 50%;
-    font-size: 190%;
-    gap: 30px;
-    padding: 6px;
-    background-color: $primary-color;
-    position: absolute;
-    right: 125px;
-    margin-left: 88%;
-    margin-top: 30%;
-    width: 3%;
-    border: none;
-    color: $text-color;
-    cursor: pointer;
-  }
-  .btn-left {
-    border-radius: 50%;
-    font-size: 190%;
-    gap: 30px;
-    padding: 6px;
-    background-color: $primary-color;
-    position: absolute;
-    margin-left: 5%;
-    margin-top: 30%;
-    width: 3%;
-    border: none;
-    color: $text-color;
-    cursor: pointer;
-  }
-}
-@media screen and (max-width: 644px) {
-  .pagination {
+  .btn-container {
+    position: fixed;
+    width: 100%;
+
     .btn-right {
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      font-size: 150%;
-      gap: 30px;
-      padding: 6px;
+      font-size: 35px;
       background-color: $primary-color;
       position: absolute;
-
-      width: 8%;
+      top: 45vh;
+      right: 10vw;
       border: none;
       color: $text-color;
       cursor: pointer;
-      margin-left: 65%;
-      margin-top: 530%;
     }
     .btn-left {
-      position: absolute;
-      top: 0;
-      left: 0;
-
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      font-size: 150%;
-      gap: 30px;
-      padding: 6px;
+      font-size: 35px;
       background-color: $primary-color;
       position: absolute;
-      width: 8%;
+      top: 45vh;
+      left: 10vw;
       border: none;
       color: $text-color;
       cursor: pointer;
-      margin-left: 27%;
-      margin-top: 530%;
     }
+  }
+
+  .comics-modal {
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 600px) {
+  .btn-container {
+    display: none;
+  }
+
+  .btn-mobile {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .right-arrow {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 35px;
+      background-color: $primary-color;
+      border: none;
+      color: $text-color;
+      cursor: pointer;
+    }
+    .left-arrow {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 35px;
+      background-color: $primary-color;
+      border: none;
+      color: $text-color;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .btn-mobile {
+    display: none;
   }
 }

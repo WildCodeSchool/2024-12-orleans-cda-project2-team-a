@@ -1,9 +1,6 @@
 @use 'settings' as *;
 
 .comics-container {
-  padding-top: 20px;
-  padding-left: 20px;
-
   .typo-comics {
     background-color: $primary-color;
     font-family: $font-family;

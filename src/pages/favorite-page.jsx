@@ -3,11 +3,9 @@ import { useState } from 'react';
 import Card from '../components/card';
 import Modal from '../components/modal';
 import Profile from '../components/profile';
-import '../style/burger.scss';
-import '../style/card.scss';
 import '../style/favorite-page.scss';
 
-export default function FavoritePage({ favorites }) {
+export default function FavoritePage({ favorites, removeFromFavorites }) {
   const [selectedCharacter, setSelectedCharacter] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [comics, setComics] = useState([]);
@@ -20,7 +18,6 @@ export default function FavoritePage({ favorites }) {
       .then((data) => {
         setComics(data.data.results.filter((comic) => comic.description));
       })
-      // eslint-disable-next-line no-console
       .catch((err) => console.error(err));
   };
 
@@ -44,15 +41,19 @@ export default function FavoritePage({ favorites }) {
       <h1 className='typo'>My Favorite Characters</h1>
       <div className='grid-box'>
         {favorites.length === 0 ? (
-          <h1>No favorites added yet.</h1>
+          <div className='no-favorites'>
+            <h1 className='h1-favorite'>No favorites added yet.</h1>
+          </div>
         ) : (
           favorites.map((character) => (
             <Card
               key={character.id}
               character={character.name}
               image={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+              isFavorite={true}
               isFavoritePage={true}
               onClick={() => handleCardClick(character)}
+              onRemove={() => removeFromFavorites(character)}
             />
           ))
         )}

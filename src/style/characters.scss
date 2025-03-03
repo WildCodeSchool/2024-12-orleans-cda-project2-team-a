@@ -48,7 +48,7 @@
   }
 
   .character-card {
-    background-image: url(pictures/background-amended.jpg);
+    background-image: $background-image-comics;
     background: cover no-repeat;
     width: 170px;
     height: 260px;

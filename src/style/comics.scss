@@ -3,9 +3,9 @@
 .comics {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(6, 170px);
+  grid-template-columns: repeat(4, 170px);
   justify-content: center;
-  grid-gap: 40px;
+  grid-gap: 10px;
   padding: 1em;
 }
 
@@ -60,23 +60,29 @@
 
 @media only screen and (max-width: 349px) {
   .comics {
-    display: grid;
     grid-template-columns: repeat(1, 170px);
+    width: 100%;
+    height: 100%;
+    justify-content: center;
   }
 }
 
 @media only screen and (min-width: 350px) and (max-width: 599px) {
   .comics {
-    display: grid;
     grid-template-columns: repeat(2, 170px);
     padding: 0;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    justify-content: center;
   }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 799px) {
   .comics {
-    display: grid;
     grid-template-columns: repeat(3, 170px);
+    width: 100%;
+    height: 100%;
     gap: 10px;
   }
 }

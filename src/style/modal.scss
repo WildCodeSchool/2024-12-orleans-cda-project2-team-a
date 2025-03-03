@@ -3,17 +3,23 @@
 .modal-overlay {
   color: $text-color;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: -1px;
+  left: 0%;
   right: 0;
+  padding: 37px;
   bottom: 0;
+  max-width: 100%;
   z-index: 1000;
-  background: $background-comics;
+  background: $background-card;
+  overflow-y: scroll;
 
   .modal-content {
     padding: 0 20px;
     border-radius: 8px;
     position: relative;
+    width: 87%;
+    background: $primary-color;
+    left: 6%;
 
     .btn-modal {
       position: absolute;
@@ -28,11 +34,59 @@
       font-size: 24px;
       cursor: pointer;
       transition: all 0.5s ease;
+      color: $text-color;
 
       &:hover {
         background: $text-color;
-        color: $background-image;
+        color: $primary-color;
         translate: scale(1.1);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .modal-overlay {
+    color: $text-color;
+    position: fixed;
+    top: -1px;
+    left: 0;
+    right: 0;
+    padding: 5px;
+    bottom: 0;
+    max-width: 100%;
+    z-index: 1000;
+    background: $background-card;
+    overflow-y: scroll;
+
+    .modal-content {
+      padding: 0 5px;
+      border-radius: 8px;
+      position: relative;
+      width: 100%;
+      background: $primary-color;
+      left: 0;
+
+      .btn-modal {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 3rem;
+        color: $primary-color;
+        height: 3rem;
+        border-radius: 3rem;
+        background: none;
+        border: 3px solid $text-color;
+        font-size: 24px;
+        cursor: pointer;
+        transition: all 0.5s ease;
+        color: $text-color;
+
+        &:hover {
+          background: $text-color;
+          color: $primary-color;
+          translate: scale(1.1);
+        }
       }
     }
   }
