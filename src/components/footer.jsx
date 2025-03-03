@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom';
 import '../style/footer.scss';
 import Socials from './socials';
 
+const pictures = import.meta.env.BASE_URL;
+
 function Footer() {
   return (
     <>
       <footer>
         <div className='footer'>
           <Link to='/'>
-            <img src='/pictures/marvel-logo.png' alt='marvel-logo' />
+            <img src={`${pictures}pictures/marvel-logo.png`} alt='marvel-logo' />
           </Link>
 
           <div className='footer-nav'>
