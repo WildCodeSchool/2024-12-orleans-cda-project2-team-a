@@ -27,6 +27,7 @@ const notify = (character, isFavorite) => {
     });
   }
 };
+const pictures = import.meta.env.BASE_URL;
 
 export default function Card({ character, image, isFavorite, onAddToFavorites, onClick, isFavoritePage, onRemove }) {
   const handleFavoriteClick = (e) => {
@@ -48,7 +49,7 @@ export default function Card({ character, image, isFavorite, onAddToFavorites, o
         <button className='btn favor' onClick={handleFavoriteClick}>
           <img
             className='heart'
-            src={isFavorite ? '/pictures/heart-cards.png' : '/pictures/heart.png'}
+            src={isFavorite ? `${pictures}pictures/heart-cards.png` : `${pictures}pictures/heart.png`}
             alt='favorite icon'
           />
         </button>
@@ -60,7 +61,7 @@ export default function Card({ character, image, isFavorite, onAddToFavorites, o
               onRemove();
             }}
           >
-            <img className='remove-fav' src='/pictures/remove-fav.svg' alt='' />
+            <img className='remove-fav' src={`${pictures}pictures/remove-fav.svg`} alt='' />
           </button>
         )}
       </div>

@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import Loader from '../components/loader';
 import { useLoading } from '../contexts/loading-Context';
 import '../style/comics-page.scss';
 
@@ -50,19 +49,19 @@ function ComicsPage() {
     fetchComics(offset);
   }, [offset]);
 
-  if (loading)
-    return (
-      <div>
-        <Loader />
-      </div>
-    );
-
   if (err) return <div>Error: {err.message}</div>;
 
-  const loadMore = () => {
+  const loadMore = (e) => {
+    e.stopPropagation();
     setVisibleCount((prev) => prev + 12);
     setOffset((prevOffset) => prevOffset + 50);
   };
+  // if (loading)
+  //   return (
+  //     <div>
+  //       <Loader />
+  //     </div>
+  //   )
 
   return (
     <>

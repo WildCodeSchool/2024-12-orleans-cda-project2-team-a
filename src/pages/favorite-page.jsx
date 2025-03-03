@@ -43,7 +43,6 @@ export default function FavoritePage({ favorites, removeFromFavorites }) {
         {favorites.length === 0 ? (
           <div className='no-favorites'>
             <h1 className='h1-favorite'>No favorites added yet.</h1>
-            <p>Start adding your favorite characters from the Home page!</p>
           </div>
         ) : (
           favorites.map((character) => (
