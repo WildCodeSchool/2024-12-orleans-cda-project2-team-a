@@ -1,0 +1,46 @@
+@use 'settings' as *;
+
+.comics-container {
+  .typo-comics {
+    background-color: $primary-color;
+    font-family: $font-family;
+    width: 140px;
+    font-size: 18px;
+    padding: 14px;
+    border-radius: 10px;
+    margin-left: 8%;
+    color: $text-color;
+    box-shadow: 0px 2px 6px $background-card;
+    text-shadow: 3px 2px 8px $background-card;
+    text-align: center;
+  }
+  .more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+
+    button {
+      background-color: $primary-color;
+      border: none;
+      color: $text-color;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1em;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 45px;
+    }
+  }
+
+  @media screen and (min-width: 301px) and (max-width: 644px) {
+    .typo-comics {
+      margin: 0 0 21px 25px;
+
+      .comics {
+        grid-template-columns: repeat(2, 170px);
+        grid-gap: 20px 52px;
+      }
+    }
+  }
+}
