@@ -11,13 +11,23 @@
       .present {
         display: flex;
         margin-top: 5%;
+        margin-bottom: 50px;
         .image-containe {
+          width: 25vw;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
           img {
-            width: 300px;
+            width: 100%;
             margin: 1% 0;
-            height: 300px;
+            height: 100%;
             border-radius: 2%;
             margin-top: 7%;
+          }
+          h2 {
+            font-size: 1.5rem;
+            margin: 10px 0;
           }
         }
         span {
@@ -50,10 +60,10 @@
         padding: 1rem;
         border-radius: $border-radius;
         background: $background-card;
-        width: 450px;
+        width: 50vw;
 
         h3 {
-          font-size: 2.5rem;
+          font-size: 1.8rem;
           font-family: $font-family;
         }
         p {
@@ -63,11 +73,12 @@
         }
       }
       .comics-section {
-        margin: 3%;
+        margin: 0;
       }
-      h1 {
-        font-size: 1.5rem;
-        margin: 1rem 0;
+
+      h3 {
+        font-size: 1.8rem;
+        margin: 10px 0 0 0;
       }
 
       .comics-list {
@@ -75,18 +86,18 @@
         flex-wrap: wrap;
         gap: 10px;
         max-width: 880px;
-        margin: 2.5rem auto;
+        margin: 2.5rem 0;
 
         a {
-          width: 18%;
+          width: 170px;
           text-align: center;
           text-decoration: none;
           color: $text-color;
           transition: all 0.5s ease;
           position: relative;
 
-          img {
-            width: 160px;
+          .item {
+            width: 170px;
             height: auto;
           }
 
@@ -117,27 +128,34 @@
   }
 }
 
-@media screen and (max-width: 644px) {
+@media screen and (max-width: 900px) {
   .profile .comics-characters .character-content {
-    margin-left: 1px;
-
+    width: 100%;
     .present {
-      // display: block;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
 
       .image-containe {
+        width: 250px;
+        height: auto;
         img {
-          height: 200px;
-          width: 200px;
+          height: 100%;
+          width: 100%;
         }
         h2 {
-          font-size: 1.2rem;
-          margin-left: 28%;
+          font-size: 1.5rem;
+          margin: 20px 0;
         }
       }
       .bio {
-        margin-left: 10px;
+        width: 98%;
+        margin: 20px 0;
         h3 {
-          font-size: 1.3rem;
+          font-size: 1.4rem;
         }
         p {
           font-size: 1rem;
@@ -145,14 +163,68 @@
       }
     }
     .comics-section {
+      h3 {
+        font-size: 1.4rem;
+      }
       .comics-list {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
         a img {
-          height: 150px;
-          width: 100px;
-          margin-top: -10px;
+          width: 150px;
+          height: auto;
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1080px) {
+  .profile .comics-characters .character-content {
+    width: 100%;
+    .present {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+
+      .image-containe {
+        width: 20vw;
+        height: auto;
+        img {
+          height: 100%;
+          width: 100%;
+        }
+        h2 {
+          font-size: 1.5rem;
+          margin: 20px 0;
+        }
+      }
+      .bio {
+        width: 50vw;
+        margin: 20px 0;
+        h3 {
+          font-size: 1.4rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+    .comics-section {
+      h3 {
+        font-size: 1.4rem;
+      }
+      .comics-list {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        a img {
+          width: 150px;
+          height: auto;
+          padding: 0;
         }
       }
     }
